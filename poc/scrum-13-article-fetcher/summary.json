@@ -1,0 +1,46 @@
+{
+  "tested_url_count": 10,
+  "success_count": 7,
+  "failure_count": 3,
+  "success_rate": 0.7,
+  "average_full_text_length": 4539.3,
+  "best_method_by_count": "trafilatura",
+  "method_counts": {
+    "readability": 1,
+    "trafilatura": 6
+  },
+  "blocked_or_paywalled": [
+    {
+      "source": "NYT Home",
+      "url": "https://www.nytimes.com/2026/04/12/us/politics/vance-iran-talks.html",
+      "http_status": 403,
+      "fetch_error": "No extractor produced >= 400 chars"
+    },
+    {
+      "source": "MarketWatch Top Stories",
+      "url": "https://www.marketwatch.com/story/here-are-some-bargain-bank-stocks-heading-into-earnings-season-d0e6b3da?mod=mw_rss_topstories",
+      "http_status": 401,
+      "fetch_error": "No extractor produced >= 400 chars"
+    }
+  ],
+  "failures": [
+    {
+      "source": "NPR World",
+      "url": "https://www.npr.org/2026/04/11/nx-s1-5779725/pakistan-hosts-historic-face-to-face-talks-between-the-us-and-iran",
+      "http_status": null,
+      "fetch_error": "HTTPSConnectionPool(host='www.npr.org', port=443): Read timed out. (read timeout=20)"
+    },
+    {
+      "source": "NYT Home",
+      "url": "https://www.nytimes.com/2026/04/12/us/politics/vance-iran-talks.html",
+      "http_status": 403,
+      "fetch_error": "No extractor produced >= 400 chars"
+    },
+    {
+      "source": "MarketWatch Top Stories",
+      "url": "https://www.marketwatch.com/story/here-are-some-bargain-bank-stocks-heading-into-earnings-season-d0e6b3da?mod=mw_rss_topstories",
+      "http_status": 401,
+      "fetch_error": "No extractor produced >= 400 chars"
+    }
+  ]
+}
