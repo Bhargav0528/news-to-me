@@ -1,0 +1,60 @@
+{
+  "feed": {
+    "name": "TechCrunch",
+    "category": "Tech",
+    "url": "https://techcrunch.com/feed/"
+  },
+  "http_status": 200,
+  "final_url": "https://techcrunch.com/feed/",
+  "item_count_in_feed": 20,
+  "items_sampled": 15,
+  "articles_in_last_24h_with_timestamp": 5,
+  "freshness_hours_since_newest": 4.95,
+  "reliability": "good",
+  "sample_content_types": {
+    "headline + short excerpt": 5
+  },
+  "sample_entries": [
+    {
+      "title": "Walmart-owned Flipkart, Amazon are squeezing India\u2019s quick commerce startups",
+      "published": "2026-04-12T03:00:00+00:00",
+      "summary_words": 19,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://techcrunch.com/2026/04/11/walmart-owned-flipkart-amazon-are-squeezing-indias-quick-commerce-startups/"
+    },
+    {
+      "title": "Kalshi wins temporary pause in Arizona criminal case",
+      "published": "2026-04-11T21:20:24+00:00",
+      "summary_words": 24,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://techcrunch.com/2026/04/11/kalshi-wins-temporary-pause-in-arizona-criminal-case/"
+    },
+    {
+      "title": "AMC will stream \u2018The Audacity\u2019 premiere in 21 parts on TikTok",
+      "published": "2026-04-11T20:32:23+00:00",
+      "summary_words": 16,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://techcrunch.com/2026/04/11/amc-will-stream-the-audacity-premiere-in-21-parts-on-tiktok/"
+    },
+    {
+      "title": "Sam Altman responds to \u2018incendiary\u2019 New Yorker article after attack on his home",
+      "published": "2026-04-11T17:18:22+00:00",
+      "summary_words": 26,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/"
+    },
+    {
+      "title": "Nvidia-backed SiFive hits $3.65 billion valuation for open AI chips",
+      "published": "2026-04-11T14:03:00+00:00",
+      "summary_words": 22,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://techcrunch.com/2026/04/11/nvidia-backed-sifive-hits-3-65-billion-valuation-for-open-ai-chips/"
+    }
+  ],
+  "raw_xml_path": "samples/techcrunch.xml"
+}

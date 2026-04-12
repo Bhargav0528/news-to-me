@@ -1,0 +1,86 @@
+{
+  "run": 3,
+  "yfinance": {
+    "sp500": {
+      "ok": true,
+      "value": 6816.89013671875,
+      "change": -7.77001953125,
+      "change_percent": -0.1138521091652343,
+      "currency": "USD",
+      "source_symbol": "^GSPC",
+      "as_of": "2026-04-10 00:00:00-04:00"
+    },
+    "nasdaq": {
+      "ok": true,
+      "value": 22902.890625,
+      "change": 80.470703125,
+      "change_percent": 0.35259496320050554,
+      "currency": "USD",
+      "source_symbol": "^IXIC",
+      "as_of": "2026-04-10 00:00:00-04:00"
+    },
+    "nifty50": {
+      "ok": true,
+      "value": 24050.599609375,
+      "change": 275.5,
+      "change_percent": 1.1587753764504307,
+      "currency": "INR",
+      "source_symbol": "^NSEI",
+      "as_of": "2026-04-10 00:00:00+05:30"
+    },
+    "sensex": {
+      "ok": true,
+      "value": 77550.25,
+      "change": 918.6015625,
+      "change_percent": 1.198723479437092,
+      "currency": "INR",
+      "source_symbol": "^BSESN",
+      "as_of": "2026-04-10 00:00:00+05:30"
+    }
+  },
+  "alpha_vantage": {
+    "sp500": {
+      "ok": true,
+      "value": 679.46,
+      "change": -0.45,
+      "change_percent": -0.0662,
+      "source_symbol": "SPY",
+      "latest_trading_day": "2026-04-10",
+      "raw_symbol": "SPY"
+    },
+    "nasdaq": {
+      "ok": false,
+      "symbol": "QQQ",
+      "raw": {
+        "Information": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints"
+      }
+    },
+    "nifty50": {
+      "ok": false,
+      "symbol": "NIFTYBEES.BSE",
+      "raw": {
+        "Information": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints"
+      }
+    },
+    "sensex": {
+      "ok": false,
+      "symbol": "SETS.BSE",
+      "raw": {
+        "Information": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints"
+      }
+    },
+    "top_movers": {
+      "top_gainers_count": 0,
+      "top_losers_count": 0,
+      "most_actively_traded_count": 0,
+      "sample_gainer": null,
+      "sample_loser": null,
+      "metadata": {
+        "Information": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints"
+      },
+      "raw": {
+        "Information": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints"
+      }
+    }
+  }
+}

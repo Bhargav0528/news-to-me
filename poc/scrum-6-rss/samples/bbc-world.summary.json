@@ -1,0 +1,60 @@
+{
+  "feed": {
+    "name": "BBC World",
+    "category": "World",
+    "url": "http://feeds.bbci.co.uk/news/world/rss.xml"
+  },
+  "http_status": 200,
+  "final_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+  "item_count_in_feed": 26,
+  "items_sampled": 15,
+  "articles_in_last_24h_with_timestamp": 14,
+  "freshness_hours_since_newest": 0.21,
+  "reliability": "good",
+  "sample_content_types": {
+    "headline + short excerpt": 5
+  },
+  "sample_entries": [
+    {
+      "title": "Hungarians vote on whether to end 16 years of Orb\u00e1n rule and elect rival",
+      "published": "2026-04-12T07:44:27+00:00",
+      "summary_words": 19,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.bbc.com/news/articles/cdxdepjrv95o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "title": "'We need real peace': Easter truce fails to lift grim mood in war-torn Ukraine",
+      "published": "2026-04-12T04:20:37+00:00",
+      "summary_words": 18,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.bbc.com/news/articles/cj0vn30574no?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "title": "At least 30 feared dead in crush at Haitian tourist site",
+      "published": "2026-04-12T07:22:28+00:00",
+      "summary_words": 16,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.bbc.com/news/articles/cwyj8d49wzxo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "title": "Prosecutor probes abuse claims against California governor candidate Swalwell",
+      "published": "2026-04-12T05:22:34+00:00",
+      "summary_words": 14,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.bbc.com/news/articles/c7vq0jnn0yro?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "title": "Why this disillusioned Trump voter spends hours searching Epstein files",
+      "published": "2026-04-12T00:30:44+00:00",
+      "summary_words": 20,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.bbc.com/news/articles/cx237vmr2lyo?at_medium=RSS&at_campaign=rss"
+    }
+  ],
+  "raw_xml_path": "samples/bbc-world.xml"
+}

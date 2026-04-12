@@ -1,0 +1,32 @@
+[
+  {
+    "section": "top",
+    "region": "india",
+    "count": 260
+  },
+  {
+    "section": "business",
+    "region": "india",
+    "count": 60
+  },
+  {
+    "section": "technology",
+    "region": "us",
+    "count": 40
+  },
+  {
+    "section": "top",
+    "region": "world",
+    "count": 39
+  },
+  {
+    "section": "business",
+    "region": "us",
+    "count": 30
+  },
+  {
+    "section": "top",
+    "region": "us",
+    "count": 20
+  }
+]

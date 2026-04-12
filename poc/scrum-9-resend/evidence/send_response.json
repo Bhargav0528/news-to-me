@@ -1,0 +1,19 @@
+{
+  "request": {
+    "from": "News To Me POC <onboarding@resend.dev>",
+    "to": [
+      "delivered@resend.dev"
+    ],
+    "subject": "Your Morning Paper - April 11, 2026",
+    "html_file": "email_template.html",
+    "text_summary": "News To Me / Your Morning Paper / Sunday, April 11, 2026 / TLDR bullets / CTA link"
+  },
+  "response": {
+    "id": "4043e351-31c0-4f4d-9113-8bf499f23147"
+  },
+  "notes": [
+    "Sent successfully via Resend API using the send-only API key.",
+    "Used Resend test sender onboarding@resend.dev and test recipient delivered@resend.dev.",
+    "This validates API send capability, payload shape, and HTML acceptance, but not Gmail/Apple Mail inbox placement."
+  ]
+}

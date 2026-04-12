@@ -1,0 +1,61 @@
+{
+  "feed": {
+    "name": "The Hindu",
+    "category": "India / General",
+    "url": "https://www.thehindu.com/feeder/default.rss"
+  },
+  "http_status": 200,
+  "final_url": "https://www.thehindu.com/feeder/default.rss",
+  "item_count_in_feed": 60,
+  "items_sampled": 15,
+  "articles_in_last_24h_with_timestamp": 15,
+  "freshness_hours_since_newest": 0.2,
+  "reliability": "good",
+  "sample_content_types": {
+    "headline + short excerpt": 4,
+    "headline/link only": 1
+  },
+  "sample_entries": [
+    {
+      "title": "First-ever life-size Vivekananda statue in U.S. unveiled in Seattle",
+      "published": "2026-04-12T07:45:10+00:00",
+      "summary_words": 25,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindu.com/news/international/first-ever-life-size-vivekananda-statue-in-us-unveiled-in-seattle/article70853444.ece"
+    },
+    {
+      "title": "Unions, experts blame delay in Aavin milk supply on poor man-management",
+      "published": "2026-04-12T07:44:51+00:00",
+      "summary_words": 0,
+      "content_words": 0,
+      "content_type": "headline/link only",
+      "link": "https://www.thehindu.com/news/national/tamil-nadu/unions-experts-blame-delay-in-aavin-milk-supply-on-poor-man-management/article70851698.ece"
+    },
+    {
+      "title": "Asha Bhosle, legendary playback singer, passes away at 92 in Mumbai",
+      "published": "2026-04-12T07:44:14+00:00",
+      "summary_words": 20,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindu.com/entertainment/music/legendary-singer-asha-bhosle-passes-away-in-mumbai/article70853571.ece"
+    },
+    {
+      "title": "Amarnath Yatra to begin from July 3; registrations to open from April 15",
+      "published": "2026-04-12T07:39:54+00:00",
+      "summary_words": 29,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindu.com/news/national/jammu-and-kashmir/amarnath-yatra-to-begin-from-july-3-registrations-to-open-from-april-15/article70853525.ece"
+    },
+    {
+      "title": "Chennai Poll Canvas: Harbour | Seeking growth, peace and stability",
+      "published": "2026-04-12T07:39:19+00:00",
+      "summary_words": 28,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindu.com/videos/chennai-poll-canvas-harbour-seeking-growth-peace-and-stability/article70850971.ece"
+    }
+  ],
+  "raw_xml_path": "samples/the-hindu.xml"
+}

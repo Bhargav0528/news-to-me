@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "the-hindu-general",
+      "kind": "rss",
+      "region": "india",
+      "section": "top",
+      "tier": "primary",
+      "url": "https://www.thehindu.com/news/national/feeder/default.rss"
+    },
+    {
+      "id": "businessline-markets",
+      "kind": "rss",
+      "region": "india",
+      "section": "business",
+      "tier": "primary",
+      "url": "https://www.thehindubusinessline.com/markets/feeder/default.rss"
+    },
+    {
+      "id": "bbc-world",
+      "kind": "rss",
+      "region": "world",
+      "section": "top",
+      "tier": "primary",
+      "url": "http://feeds.bbci.co.uk/news/world/rss.xml"
+    },
+    {
+      "id": "nyt-home",
+      "kind": "rss",
+      "region": "us",
+      "section": "top",
+      "tier": "primary",
+      "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+    },
+    {
+      "id": "techcrunch",
+      "kind": "rss",
+      "region": "us",
+      "section": "technology",
+      "tier": "primary",
+      "url": "https://techcrunch.com/feed/"
+    },
+    {
+      "id": "indian-express-india",
+      "kind": "rss",
+      "region": "india",
+      "section": "top",
+      "tier": "secondary",
+      "url": "https://indianexpress.com/section/india/feed/"
+    },
+    {
+      "id": "npr-world",
+      "kind": "rss",
+      "region": "world",
+      "section": "top",
+      "tier": "secondary",
+      "url": "https://feeds.npr.org/1004/rss.xml"
+    },
+    {
+      "id": "cnbc-top-news",
+      "kind": "rss",
+      "region": "us",
+      "section": "business",
+      "tier": "secondary",
+      "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+    },
+    {
+      "id": "ars-technica",
+      "kind": "rss",
+      "region": "us",
+      "section": "technology",
+      "tier": "secondary",
+      "url": "https://feeds.arstechnica.com/arstechnica/index"
+    }
+  ]
+}

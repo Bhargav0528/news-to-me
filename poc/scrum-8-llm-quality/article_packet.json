@@ -1,0 +1,55 @@
+{
+  "articleCount": 5,
+  "articles": [
+    {
+      "source_poc": "scrum-5-newsapi/samples/top_us_business.summary.json",
+      "title": "Record gas price surge fuels sharp rise in U.S. inflation - Honolulu Star-Advertiser",
+      "source": "Honolulu Star-Advertiser",
+      "author": "Reuters",
+      "publishedAt": "2026-04-11T02:26:01Z",
+      "description": "WASHINGTON >> U.S. consumer prices increased by the most in nearly four years in March as the war with Iran led to a record surge in the cost of gasoline and diesel, dealing a blow to President Donald Trump, whose approval ratings have been falling because of\u2026",
+      "content": "WASHINGTON &gt;&gt; U.S. consumer prices increased by the most in nearly four years in March as the war with Iran led to a record surge in the cost of gasoline and diesel, dealing a blow to President\u2026 [+4618 chars]",
+      "url": "https://www.staradvertiser.com/2026/04/10/breaking-news/record-gas-price-surge-fuels-sharp-rise-in-u-s-inflation/"
+    },
+    {
+      "source_poc": "scrum-5-newsapi/samples/top_us_business.summary.json",
+      "title": "Sam Altman\u2019s Home Attacked With Molotov Cocktail, Suspect Taken Into Custody - WSJ",
+      "source": "The Wall Street Journal",
+      "author": "Victoria Albert, Meghan Bobrowsky, Zusha Elinson",
+      "publishedAt": "2026-04-11T00:20:00Z",
+      "description": "The individual allegedly made threats at OpenAI\u2019s San Francisco headquarters, company says",
+      "content": "A person was taken into custody after allegedly throwing a Molotov cocktail at OpenAI Chief Executive \r\nSam Altmans home and making threats at the companys San Francisco headquarters, a spokeswoman f\u2026 [+481 chars]",
+      "url": "https://www.wsj.com/tech/ai/sam-altmans-home-attacked-with-molotov-cocktail-suspect-taken-into-custody-ad3d7d6e"
+    },
+    {
+      "source_poc": "scrum-5-newsapi/samples/top_us_business.summary.json",
+      "title": "What smart people are saying about Mythos, Anthropic's new AI model that has some cybersecurity experts spooked - Business Insider",
+      "source": "Business Insider",
+      "author": null,
+      "publishedAt": "2026-04-11T00:14:00Z",
+      "description": null,
+      "content": null,
+      "url": "https://www.businessinsider.com/anthropic-mythos-cybersecurity-concerns-what-smart-people-are-saying-ai-2026-4"
+    },
+    {
+      "source_poc": "scrum-5-newsapi/samples/top_us_technology.summary.json",
+      "title": "'I Saw How It Was Getting Damaged': Ex-Bethesda Exec Goes to Town on Xbox's Mistreatment - Push Square",
+      "source": "Push Square",
+      "author": "Sammy Barker",
+      "publishedAt": "2026-04-11T00:30:00Z",
+      "description": "\"That shouldn't be a surprise to you\"",
+      "content": "In a brutal and damning section of a wider interview, ex-Bethesda boss Pete Hines has put Microsoft on blast, without specifically mentioning the Redmond firm by name.\r\nAs part of a chat with journal\u2026 [+2987 chars]",
+      "url": "https://www.pushsquare.com/news/2026/04/i-saw-how-it-was-getting-damaged-ex-bethesda-exec-goes-to-town-on-xboxs-mistreatment"
+    },
+    {
+      "source_poc": "scrum-5-newsapi/samples/top_us_technology.summary.json",
+      "title": "The Latest Foldable iPhone Rumors: What's Changed and What We Know Now - MacRumors",
+      "source": "MacRumors",
+      "author": "Juli Clover",
+      "publishedAt": "2026-04-10T21:57:17Z",
+      "description": "Rumors about Apple's first foldable iPhone are picking up now that the device has entered a new testing stage that precedes mass production. If...",
+      "content": "Rumors about Apple's first foldable iPhone are picking up now that the device has entered a new testing stage that precedes mass production. If you've been having trouble keeping up with what's new, \u2026 [+3504 chars]",
+      "url": "https://www.macrumors.com/2026/04/10/iphone-fold-rumor-recap/"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "status": "success",
+  "totalResults": 7851,
+  "nextPage": "1775934543900973370",
+  "returned": 10,
+  "sampleResults": [
+    {
+      "title": "UP\u2019s \u2018Urdu-speaking\u2019 assembly seats clock lower voter deletions, higher additions",
+      "source_id": "toi",
+      "source_name": null,
+      "pubDate": "2026-04-11 19:17:48",
+      "country": [
+        "india"
+      ],
+      "category": [
+        "top",
+        "politics"
+      ],
+      "description": "UP\u2019s \u2018Urdu-speaking\u2019 assembly seats clock lower voter deletions, higher additions",
+      "content": "ONLY AVAILABLE IN PAID PLANS",
+      "link": "https://timesofindia.indiatimes.com/city/lucknow/ups-urdu-speaking-assembly-seats-clock-lower-voter-deletions-higher-additions/articleshow/130198656.cms"
+    },
+    {
+      "title": "London police arrest over 200 in Palestine Action protest",
+      "source_id": "telanganatoday",
+      "source_name": null,
+      "pubDate": "2026-04-11 19:16:26",
+      "country": [
+        "india"
+      ],
+      "category": [
+        "top",
+        "politics"
+      ],
+      "description": "London police detained more than 200 protesters during a demonstration against the government\u2019s ban on Palestine Action, a group labelled a terrorist organisation. Despite a High Court ruling declaring the ban unlawful, it remains in place pending appeal.",
+      "content": "ONLY AVAILABLE IN PAID PLANS",
+      "link": "https://telanganatoday.com/london-police-arrest-over-200-in-palestine-action-protest"
+    },
+    {
+      "title": "Eric Swalwell Allegations: Who Is Ally Sammarco? Influencer Accusing Congressman Amid Sexual Assault row",
+      "source_id": "timesnownews",
+      "source_name": null,
+      "pubDate": "2026-04-11 19:14:29",
+      "country": [
+        "india"
+      ],
+      "category": [
+        "top",
+        "politics",
+        "crime"
+      ],
+      "description": "Ally Sammarco, a Washington DC-based political strategist and influencer, is among four women accusing California Congressman Eric Swalwell of misconduct.",
+      "content": "ONLY AVAILABLE IN PAID PLANS",
+      "link": "https://www.timesnownews.com/world/us/us-news/eric-swalwell-allegations-ally-sammarco-influencer-california-congressman-sexual-assault-row-article-154055747"
+    }
+  ]
+}

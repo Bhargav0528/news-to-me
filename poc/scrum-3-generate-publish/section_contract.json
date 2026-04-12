@@ -1,0 +1,12 @@
+{
+  "ticket": "SCRUM-3",
+  "sections": [
+    {"id": "tldr", "label": "TLDR", "source": "multi-section synthesis", "required": true},
+    {"id": "india", "label": "India", "source": "foundation DB, region=india, section=top", "required": true},
+    {"id": "world", "label": "World", "source": "foundation DB, region=world, section=top", "required": true},
+    {"id": "us", "label": "US", "source": "foundation DB, region=us, section=top", "required": true},
+    {"id": "business", "label": "Business", "source": "foundation DB, region=us, section=business", "required": true},
+    {"id": "technology", "label": "Technology", "source": "foundation DB, region=us, section=technology", "required": true},
+    {"id": "markets", "label": "Markets", "source": "SCRUM-7 stock snapshot", "required": true}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "feed": {
+    "name": "NPR World",
+    "category": "World",
+    "url": "https://feeds.npr.org/1004/rss.xml"
+  },
+  "http_status": 200,
+  "final_url": "https://feeds.npr.org/1004/rss.xml",
+  "item_count_in_feed": 10,
+  "items_sampled": 10,
+  "articles_in_last_24h_with_timestamp": 9,
+  "freshness_hours_since_newest": 10.87,
+  "reliability": "good",
+  "sample_content_types": {
+    "headline + short excerpt": 5
+  },
+  "sample_entries": [
+    {
+      "title": "Pakistan hosts historic face-to-face talks between the US and Iran",
+      "published": "2026-04-11T21:04:49+00:00",
+      "summary_words": 26,
+      "content_words": 26,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.npr.org/2026/04/11/nx-s1-5779725/pakistan-hosts-historic-face-to-face-talks-between-the-us-and-iran"
+    },
+    {
+      "title": "At a concert in Budapest, anti-Orb\u00e1n sentiments take center stage ahead of election",
+      "published": "2026-04-11T21:04:47+00:00",
+      "summary_words": 17,
+      "content_words": 17,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.npr.org/2026/04/11/nx-s1-5773325/at-a-concert-in-budapest-anti-orban-sentiments-take-center-stage-ahead-of-election"
+    },
+    {
+      "title": "How Hungarian Prime Minister Viktor Orb\u00e1n's hometown became a symbol of excesses",
+      "published": "2026-04-11T21:04:45+00:00",
+      "summary_words": 31,
+      "content_words": 35,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.npr.org/2026/04/11/nx-s1-5773321/viktor-orban-hungary-hometown"
+    },
+    {
+      "title": "In Hungary, upcoming elections could bring an end to Orban's 16-year rule",
+      "published": "2026-04-11T21:04:44+00:00",
+      "summary_words": 32,
+      "content_words": 32,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.npr.org/2026/04/11/nx-s1-5773320/in-hungary-upcoming-elections-could-bring-an-end-to-orbans-16-year-rule"
+    },
+    {
+      "title": "What's it like to cover the Ukraine war as the world's attention is focused on Iran?",
+      "published": "2026-04-11T21:04:43+00:00",
+      "summary_words": 30,
+      "content_words": 30,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.npr.org/2026/04/11/nx-s1-5768193/whats-it-like-to-cover-the-ukraine-war-as-the-worlds-attention-is-focused-on-iran"
+    }
+  ],
+  "raw_xml_path": "samples/npr-world.xml"
+}

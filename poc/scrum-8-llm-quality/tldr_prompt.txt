@@ -1,0 +1,16 @@
+You are writing the top TL;DR box for a smart morning newspaper. Read the article packet and return JSON only with this schema:
+{
+  "headline": string,
+  "summary": string,
+  "why_it_matters": string,
+  "stories_used": [string]
+}
+
+Rules:
+- Use only the supplied articles.
+- Be concrete, crisp, and non-hypey.
+- Headline max 14 words.
+- Summary 2 to 3 sentences, 70 to 110 words total.
+- why_it_matters 1 sentence, max 28 words.
+- stories_used should list 3 to 5 exact article titles that drove the TL;DR.
+- Output valid parseable JSON and nothing else.

@@ -1,0 +1,400 @@
+{
+  "generated_at": "2026-04-12T13:34:30+00:00",
+  "ticket": "SCRUM-3",
+  "inputs": {
+    "foundation_db": "poc/scrum-2-foundation/sample_output/news_to_me.db",
+    "markets": "poc/scrum-7-stock-data/stock_results.json"
+  },
+  "tldr": {
+    "headline": "A real 7-section edition is now reproducible from saved intake artifacts",
+    "summary": "The generate-and-publish spike can now assemble a full morning edition from the saved Sprint 1 foundation database plus the validated market snapshot. The strongest packet is still hard-news led by top-tier RSS sources, while business and technology quality remains more sensitive to source mix.",
+    "why_it_matters": "This de-risks Sprint 2 at the pipeline level: intake artifacts can be turned into a readable edition shape without inventing fake data or needing deploy access first.",
+    "stories_used": [
+      "Special session on sacrilege law an attempt by AAP Government to cover up its failures: Punjab Cong chief",
+      "We spoke to the man making viral Lego-style AI videos for Iran. Experts say it's powerful propaganda",
+      "Manhattan DA Opens Investigation Into Eric Swalwell After Sexual Assault Allegations",
+      "How to help kids form healthy relationships with money: They 'end up in much better financial shape' as adults, psychologist says",
+      "TechCrunch is heading to Tokyo \u2014 and bringing the Startup Battlefield with it"
+    ],
+    "source_mix": {
+      "the-hindu-general": 1,
+      "bbc-world": 1,
+      "nyt-home": 1,
+      "cnbc-top-news": 1,
+      "techcrunch": 1
+    }
+  },
+  "section_order": [
+    "TLDR",
+    "India",
+    "World",
+    "US",
+    "Business",
+    "Technology",
+    "Markets"
+  ],
+  "sections": [
+    {
+      "id": "tldr",
+      "label": "TLDR",
+      "lead": "The generate-and-publish spike can now assemble a full morning edition from the saved Sprint 1 foundation database plus the validated market snapshot. The strongest packet is still hard-news led by top-tier RSS sources, while business and technology quality remains more sensitive to source mix.",
+      "story_count": 5,
+      "stories": [
+        {
+          "title": "Special session on sacrilege law an attempt by AAP Government to cover up its failures: Punjab Cong chief",
+          "url": "",
+          "source": "multi-source",
+          "excerpt": "",
+          "score": null
+        },
+        {
+          "title": "We spoke to the man making viral Lego-style AI videos for Iran. Experts say it's powerful propaganda",
+          "url": "",
+          "source": "multi-source",
+          "excerpt": "",
+          "score": null
+        },
+        {
+          "title": "Manhattan DA Opens Investigation Into Eric Swalwell After Sexual Assault Allegations",
+          "url": "",
+          "source": "multi-source",
+          "excerpt": "",
+          "score": null
+        },
+        {
+          "title": "How to help kids form healthy relationships with money: They 'end up in much better financial shape' as adults, psychologist says",
+          "url": "",
+          "source": "multi-source",
+          "excerpt": "",
+          "score": null
+        },
+        {
+          "title": "TechCrunch is heading to Tokyo \u2014 and bringing the Startup Battlefield with it",
+          "url": "",
+          "source": "multi-source",
+          "excerpt": "",
+          "score": null
+        }
+      ],
+      "summary_points": [
+        "This de-risks Sprint 2 at the pipeline level: intake artifacts can be turned into a readable edition shape without inventing fake data or needing deploy access first."
+      ]
+    },
+    {
+      "id": "india",
+      "label": "India",
+      "lead": "India is currently led by Special session on sacrilege law an attempt by AAP Government to cover up its failures: Punjab Cong chief, with All the light we cannot see: Tamil Nadu\u2019s match industry faces threat from cheap Chinese lighters also shaping the read.",
+      "story_count": 5,
+      "stories": [
+        {
+          "title": "Special session on sacrilege law an attempt by AAP Government to cover up its failures: Punjab Cong chief",
+          "url": "https://www.thehindu.com/news/national/punjab/special-session-on-sacrilege-law-an-attempt-by-aap-government-to-cover-up-its-failures-punjab-cong-chief/article70853892.ece",
+          "source": "the-hindu-general",
+          "published_at": "Sun, 12 Apr 2026 17:30:53 +0530",
+          "excerpt": "The state Congress chief asked why the AAP had \"failed\" to punish those responsible for the sacrilege and the later killing of protesters. He was referring to the series of sacrilege incidents in 2015, the protests that\u2026",
+          "score": 115
+        },
+        {
+          "title": "All the light we cannot see: Tamil Nadu\u2019s match industry faces threat from cheap Chinese lighters",
+          "url": "https://www.thehindu.com/news/national/tamil-nadu/all-the-light-we-cannot-see-tamil-nadu-match-industry-faces-threat-from-cheap-chinese-lighters/article70852039.ece",
+          "source": "the-hindu-general",
+          "published_at": "Sun, 12 Apr 2026 12:40:54 +0530",
+          "excerpt": "The match industry in Tamil Nadu, over a 100 years old, might have just met its most formidable enemy. A new threat has emerged in the form of cheap, imported, limited-use plastic lighters, and it looks like they may tak\u2026",
+          "score": 114
+        },
+        {
+          "title": "\u2018Devious intentions\u2019: Derek O'Brien attacks govt ahead of Parliament sitting on women's quota, delimitation",
+          "url": "https://www.thehindu.com/news/national/opposition-on-womens-quota-discussions-parliament/article70853530.ece",
+          "source": "the-hindu-general",
+          "published_at": "Sun, 12 Apr 2026 13:56:21 +0530",
+          "excerpt": "Prime Minister Narendra Modi on Sunday, April 12, wrote to floor leaders of Lok Sabha and Rajya Sabha, urging them to support the amendments to the women's reservation law during the special three-day session of Parliame\u2026",
+          "score": 114
+        },
+        {
+          "title": "We have created a safe environment that encourages women to speak up: DMK Minister Geetha Jeevan",
+          "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/we-have-created-a-safe-environment-that-encourages-women-to-speak-up-dmk-minister-geetha-jeevan-interview/article70850521.ece",
+          "source": "the-hindu-general",
+          "published_at": "Sun, 12 Apr 2026 14:14:08 +0530",
+          "excerpt": "Tamil Nadu Social Welfare Minister P. Geetha Jeevan says number of cases registered, chargesheets filed, and convictions secured have increased; highlighting steps taken to ensure fresh eggs for noon day meals, she promi\u2026",
+          "score": 114
+        },
+        {
+          "title": "PM Modi urges all political parties to clear amendments to Women\u2019s Reservation Bill in \u2018one voice\u2019",
+          "url": "https://www.thehindu.com/news/national/womens-reservation-act-pm-modi-letter-to-parliament-floor-leaders/article70853388.ece",
+          "source": "the-hindu-general",
+          "published_at": "Sun, 12 Apr 2026 11:57:41 +0530",
+          "excerpt": "In response to the Prime Minister\u2019s letter, Congress President Mallikarjun Kharge questioned the timing of bringing in the amendments and pointed to the lack of consultations on legislation that would deeply affect the f\u2026",
+          "score": 113
+        }
+      ],
+      "summary_points": [
+        "Special session on sacrilege law an attempt by AAP Government to cover up its failures: Punjab Cong chief (the-hindu-general)",
+        "All the light we cannot see: Tamil Nadu\u2019s match industry faces threat from cheap Chinese lighters (the-hindu-general)",
+        "\u2018Devious intentions\u2019: Derek O'Brien attacks govt ahead of Parliament sitting on women's quota, delimitation (the-hindu-general)"
+      ]
+    },
+    {
+      "id": "world",
+      "label": "World",
+      "lead": "World is currently led by We spoke to the man making viral Lego-style AI videos for Iran. Experts say it's powerful propaganda, with 'It's a special thing to be on Planet Earth': Artemis crew welcomed home in Houston also shaping the read.",
+      "story_count": 5,
+      "stories": [
+        {
+          "title": "We spoke to the man making viral Lego-style AI videos for Iran. Experts say it's powerful propaganda",
+          "url": "https://www.bbc.com/news/articles/cjd8jrd1vnyo?at_medium=RSS&at_campaign=rss",
+          "source": "bbc-world",
+          "published_at": "Sat, 11 Apr 2026 23:13:23 GMT",
+          "excerpt": "\"Slopaganda\" is too weak a term to capture how powerful this \"highly sophisticated\" content is, one expert says.",
+          "score": 111
+        },
+        {
+          "title": "'It's a special thing to be on Planet Earth': Artemis crew welcomed home in Houston",
+          "url": "https://www.bbc.com/news/videos/cd7jzj9rg1qo?at_medium=RSS&at_campaign=rss",
+          "source": "bbc-world",
+          "published_at": "Sat, 11 Apr 2026 21:23:07 GMT",
+          "excerpt": "The four astronauts flew around the Moon in a nine-day voyage that took them further from Earth than any humans in history.",
+          "score": 110
+        },
+        {
+          "title": "This idyllic US town was full of police families - and a serial killer in their midst",
+          "url": "https://www.bbc.com/news/articles/cpwjkqq910go?at_medium=RSS&at_campaign=rss",
+          "source": "bbc-world",
+          "published_at": "Sat, 11 Apr 2026 01:19:55 GMT",
+          "excerpt": "For years, rumours swirled about who could be behind the bodies being discovered on the shores of Gilgo Beach.",
+          "score": 109
+        },
+        {
+          "title": "India refuses to criminalise marital rape. This new series shines a light on it",
+          "url": "https://www.bbc.com/news/articles/cgqkl2kqkxzo?at_medium=RSS&at_campaign=rss",
+          "source": "bbc-world",
+          "published_at": "Sun, 12 Apr 2026 00:16:41 GMT",
+          "excerpt": "Chiraiya, which has drawn an audience of millions, has prompted conversations on social media around consent and misogyny.",
+          "score": 109
+        },
+        {
+          "title": "Irish cabinet meeting to be held to discuss ongoing fuel protests",
+          "url": "https://www.bbc.com/news/articles/c0e7rpjqw5po?at_medium=RSS&at_campaign=rss",
+          "source": "bbc-world",
+          "published_at": "Sat, 11 Apr 2026 20:12:22 GMT",
+          "excerpt": "Hundreds of petrol stations in the Republic of Ireland have run out of fuel as the protests and blockades continued for a fifth day.",
+          "score": 108
+        }
+      ],
+      "summary_points": [
+        "We spoke to the man making viral Lego-style AI videos for Iran. Experts say it's powerful propaganda (bbc-world)",
+        "'It's a special thing to be on Planet Earth': Artemis crew welcomed home in Houston (bbc-world)",
+        "This idyllic US town was full of police families - and a serial killer in their midst (bbc-world)"
+      ]
+    },
+    {
+      "id": "us",
+      "label": "US",
+      "lead": "US is currently led by Manhattan DA Opens Investigation Into Eric Swalwell After Sexual Assault Allegations, with Push to Expel Swalwell Could Touch Off Chain Reaction of House Removal Votes also shaping the read.",
+      "story_count": 5,
+      "stories": [
+        {
+          "title": "Manhattan DA Opens Investigation Into Eric Swalwell After Sexual Assault Allegations",
+          "url": "https://www.nytimes.com/2026/04/11/us/politics/eric-swalwell-california-governor-sexual-misconduct.html",
+          "source": "nyt-home",
+          "published_at": "Sat, 11 Apr 2026 22:52:40 +0000",
+          "excerpt": "The Manhattan district attorney\u2019s office is examining a claim that Representative Eric Swalwell, a candidate for governor in California, assaulted a woman in New York City in 2024.",
+          "score": 117
+        },
+        {
+          "title": "Push to Expel Swalwell Could Touch Off Chain Reaction of House Removal Votes",
+          "url": "https://www.nytimes.com/2026/04/11/us/swalwell-house-removal-votes.html",
+          "source": "nyt-home",
+          "published_at": "Sun, 12 Apr 2026 01:05:21 +0000",
+          "excerpt": "The House could move within days to consider expelling Representative Eric Swalwell, Democrat of California, in light of sexual assault allegations against him. There could be more to come for both parties.",
+          "score": 117
+        },
+        {
+          "title": "Control of the Strait of Hormuz and Iran\u2019s Uranium Stockpiles Were Sticking Points",
+          "url": "https://www.nytimes.com/2026/04/11/world/middleeast/iran-strait-of-hormuz-uranium-stockpile-sticking-points.html",
+          "source": "nyt-home",
+          "published_at": "Sun, 12 Apr 2026 08:20:25 +0000",
+          "excerpt": "The U.S. had demanded that Iran immediately reopen the strait to all maritime traffic, but Iran said it would do so only after a final peace deal, according to Iranian officials.",
+          "score": 117
+        },
+        {
+          "title": "What the \u2018Real Housewives\u2019 Think About Congress\u2019s Reality TV Drama",
+          "url": "https://www.nytimes.com/2026/04/12/us/politics/real-housewives-congress.html",
+          "source": "nyt-home",
+          "published_at": "Sun, 12 Apr 2026 09:00:26 +0000",
+          "excerpt": "A visit to the Capitol by stars of the \u201cReal Housewives\u201d offered a glimpse into how the nation\u2019s elected representatives mimic the gossipy world of reality TV. Nobody appears to relish the similarities.",
+          "score": 116
+        },
+        {
+          "title": "In Pakistan Talks, Iran Saw a U.S. Trying to Dictate, Not Negotiate",
+          "url": "https://www.nytimes.com/2026/04/12/world/middleeast/iran-united-states-negotiations.html",
+          "source": "nyt-home",
+          "published_at": "Sun, 12 Apr 2026 11:24:22 +0000",
+          "excerpt": "Iran sees American demands as reaching far beyond what it achieved in war. Tehran is gambling that it can withstand further bombardment more than Washington is willing to sustain economic chaos, experts say.",
+          "score": 116
+        }
+      ],
+      "summary_points": [
+        "Manhattan DA Opens Investigation Into Eric Swalwell After Sexual Assault Allegations (nyt-home)",
+        "Push to Expel Swalwell Could Touch Off Chain Reaction of House Removal Votes (nyt-home)",
+        "Control of the Strait of Hormuz and Iran\u2019s Uranium Stockpiles Were Sticking Points (nyt-home)"
+      ]
+    },
+    {
+      "id": "business",
+      "label": "Business",
+      "lead": "Business is currently led by How to help kids form healthy relationships with money: They 'end up in much better financial shape' as adults, psychologist says, with Eli Lilly market share drops, Novo Nordisk holds firm as generic weight-loss drugs flood India also shaping the read.",
+      "story_count": 5,
+      "stories": [
+        {
+          "title": "How to help kids form healthy relationships with money: They 'end up in much better financial shape' as adults, psychologist says",
+          "url": "https://www.cnbc.com/2026/04/11/how-to-help-kids-form-healthy-relationships-with-money-psychologist.html",
+          "source": "cnbc-top-news",
+          "published_at": "Sat, 11 Apr 2026 13:05:02 GMT",
+          "excerpt": "Amid rising costs and a tighter economic climate, more parents are teaching their kids financial literacy lessons that could serve them well later in life.",
+          "score": 105
+        },
+        {
+          "title": "Eli Lilly market share drops, Novo Nordisk holds firm as generic weight-loss drugs flood India",
+          "url": "https://www.cnbc.com/2026/04/10/eli-lilly-slips-novo-nordisk-holds-firm-as-generic-weight-loss-drugs-flood-india.html",
+          "source": "cnbc-top-news",
+          "published_at": "Fri, 10 Apr 2026 06:38:07 GMT",
+          "excerpt": "Eli Lilly loses share in India\u2019s GLP\u20111 market as cheap semaglutide generics surge, while Novo holds steady after deep price cuts to defend Ozempic, Wegovy.",
+          "score": 101
+        },
+        {
+          "title": "Former Sen. Ben Sasse shines the spotlight on a possible breakthrough for pancreatic cancer",
+          "url": "https://www.cnbc.com/2026/04/10/ben-sasse-shines-spotlight-on-daraxonrasib-for-pancreatic-cancer.html",
+          "source": "cnbc-top-news",
+          "published_at": "Fri, 10 Apr 2026 17:49:43 GMT",
+          "excerpt": "Former Sen. Ben Sasse is taking Revolution Medicines' daraxonrasib, which has shown promise as a treatment for pancreatic cancer.",
+          "score": 100
+        },
+        {
+          "title": "Vance, Bessent questioned tech giants on AI security before Anthropic's Mythos release",
+          "url": "https://www.cnbc.com/2026/04/10/trump-white-house-ai-cyber-threat-anthropic-mythos.html",
+          "source": "cnbc-top-news",
+          "published_at": "Fri, 10 Apr 2026 21:39:21 GMT",
+          "excerpt": "Bessent and Fed Chair Jerome Powell separately met with the heads of the biggest U.S. banks to address the potential cyber threat of Anthropic's Mythos.",
+          "score": 100
+        },
+        {
+          "title": "Man arrested after Sam Altman's house hit with Molotov cocktail, OpenAI headquarters threatened",
+          "url": "https://www.cnbc.com/2026/04/10/sam-altman-house-hit-with-molotov-cocktail-openai-office-threatened.html",
+          "source": "cnbc-top-news",
+          "published_at": "Fri, 10 Apr 2026 23:17:40 GMT",
+          "excerpt": "Police arrested a suspect at OpenAI's headquarters for allegedly threatening arson after an attack on CEO Sam Altman's home.",
+          "score": 100
+        }
+      ],
+      "summary_points": [
+        "How to help kids form healthy relationships with money: They 'end up in much better financial shape' as adults, psychologist says (cnbc-top-news)",
+        "Eli Lilly market share drops, Novo Nordisk holds firm as generic weight-loss drugs flood India (cnbc-top-news)",
+        "Former Sen. Ben Sasse shines the spotlight on a possible breakthrough for pancreatic cancer (cnbc-top-news)"
+      ]
+    },
+    {
+      "id": "technology",
+      "label": "Technology",
+      "lead": "Technology is currently led by TechCrunch is heading to Tokyo \u2014 and bringing the Startup Battlefield with it, with Stalking victim sues OpenAI, claims ChatGPT fueled her abuser\u2019s delusions and ignored her warnings also shaping the read.",
+      "story_count": 5,
+      "stories": [
+        {
+          "title": "TechCrunch is heading to Tokyo \u2014 and bringing the Startup Battlefield with it",
+          "url": "https://techcrunch.com/2026/04/10/techcrunch-is-heading-to-tokyo-and-bringing-the-startup-battlefield-with-it/",
+          "source": "techcrunch",
+          "published_at": "Fri, 10 Apr 2026 16:38:43 +0000",
+          "excerpt": "SusHi Tech 2026 is zeroing in on four technology domains reshaping society: AI, Robotics, Resilience, and Entertainment. Expect live demos of humanoid robots, sessions on autonomous driving's software revolution, deep di\u2026",
+          "score": 99
+        },
+        {
+          "title": "Stalking victim sues OpenAI, claims ChatGPT fueled her abuser\u2019s delusions and ignored her warnings",
+          "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
+          "source": "techcrunch",
+          "published_at": "Fri, 10 Apr 2026 16:41:34 +0000",
+          "excerpt": "OpenAI ignored three warnings that a ChatGPT user was dangerous \u2014 including its own mass-casualty flag \u2014 while he stalked and harassed his ex-girlfriend, a new lawsuit alleges.",
+          "score": 99
+        },
+        {
+          "title": "PSA: If you use the Meta AI app, your friends will find out and it will be embarrassing",
+          "url": "https://techcrunch.com/2026/04/10/psa-if-you-use-the-meta-ai-app-your-friends-will-find-out-and-it-will-be-embarrassing/",
+          "source": "techcrunch",
+          "published_at": "Fri, 10 Apr 2026 13:52:02 +0000",
+          "excerpt": "Now that Meta released its Muse Spark model, more people are downloading the Meta AI app. And if you join the app, your friends will probably get an Instagram notification about it.",
+          "score": 97
+        },
+        {
+          "title": "Florida AG to probe OpenAI, alleging possible connection to FSU shooting",
+          "url": "https://techcrunch.com/2026/04/09/florida-ag-to-probe-openai-alleging-possible-connection-to-fsu-shooting/",
+          "source": "techcrunch",
+          "published_at": "Thu, 09 Apr 2026 22:13:26 +0000",
+          "excerpt": "Florida Attorney General James Uthmeier plans to investigate OpenAI for its alleged harm to minors, potential to threaten national security, and its possible link to a shooting at Florida State University last year.",
+          "score": 97
+        },
+        {
+          "title": "Sam Altman responds to \u2018incendiary\u2019 New Yorker article after attack on his home",
+          "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
+          "source": "techcrunch",
+          "published_at": "Sat, 11 Apr 2026 17:18:22 +0000",
+          "excerpt": "The OpenAI CEO's new blog post responds to both an apparent attack on his home and an in-depth New Yorker profile raising questions about his trustworthiness.",
+          "score": 95
+        }
+      ],
+      "summary_points": [
+        "TechCrunch is heading to Tokyo \u2014 and bringing the Startup Battlefield with it (techcrunch)",
+        "Stalking victim sues OpenAI, claims ChatGPT fueled her abuser\u2019s delusions and ignored her warnings (techcrunch)",
+        "PSA: If you use the Meta AI app, your friends will find out and it will be embarrassing (techcrunch)"
+      ]
+    },
+    {
+      "id": "markets",
+      "label": "Markets",
+      "lead": "Indices-only market snapshot from the validated Yahoo Finance path.",
+      "story_count": 4,
+      "stories": [
+        {
+          "label": "S&P 500",
+          "symbol": "^GSPC",
+          "value": 6816.89013671875,
+          "change": -7.77001953125,
+          "change_percent": -0.1138521091652343,
+          "currency": "USD",
+          "as_of": "2026-04-10 00:00:00-04:00"
+        },
+        {
+          "label": "NASDAQ",
+          "symbol": "^IXIC",
+          "value": 22902.890625,
+          "change": 80.470703125,
+          "change_percent": 0.35259496320050554,
+          "currency": "USD",
+          "as_of": "2026-04-10 00:00:00-04:00"
+        },
+        {
+          "label": "NIFTY 50",
+          "symbol": "^NSEI",
+          "value": 24050.599609375,
+          "change": 275.5,
+          "change_percent": 1.1587753764504307,
+          "currency": "INR",
+          "as_of": "2026-04-10 00:00:00+05:30"
+        },
+        {
+          "label": "SENSEX",
+          "symbol": "^BSESN",
+          "value": 77550.25,
+          "change": 918.6015625,
+          "change_percent": 1.198723479437092,
+          "currency": "INR",
+          "as_of": "2026-04-10 00:00:00+05:30"
+        }
+      ],
+      "summary_points": []
+    }
+  ],
+  "quality_notes": [
+    "All editorial sections were populated from real saved intake rows in the Sprint 1 foundation SQLite database.",
+    "Markets used the validated Yahoo Finance snapshot from SCRUM-7.",
+    "This spike proves renderability and section assembly, not final production-level ranking or LLM writing quality.",
+    "Deployment is still pending environment access, so this artifact remains a local static output proof."
+  ]
+}

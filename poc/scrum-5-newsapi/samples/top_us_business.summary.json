@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "totalResults": 27,
+  "articleCount": 5,
+  "sampleArticles": [
+    {
+      "title": "Record gas price surge fuels sharp rise in U.S. inflation - Honolulu Star-Advertiser",
+      "source": "Honolulu Star-Advertiser",
+      "author": "Reuters",
+      "publishedAt": "2026-04-11T02:26:01Z",
+      "description": "WASHINGTON >> U.S. consumer prices increased by the most in nearly four years in March as the war with Iran led to a record surge in the cost of gasoline and diesel, dealing a blow to President Donald Trump, whose approval ratings have been falling because of\u2026",
+      "content": "WASHINGTON &gt;&gt; U.S. consumer prices increased by the most in nearly four years in March as the war with Iran led to a record surge in the cost of gasoline and diesel, dealing a blow to President\u2026 [+4618 chars]",
+      "url": "https://www.staradvertiser.com/2026/04/10/breaking-news/record-gas-price-surge-fuels-sharp-rise-in-u-s-inflation/"
+    },
+    {
+      "title": "Sam Altman\u2019s Home Attacked With Molotov Cocktail, Suspect Taken Into Custody - WSJ",
+      "source": "The Wall Street Journal",
+      "author": "Victoria Albert, Meghan Bobrowsky, Zusha Elinson",
+      "publishedAt": "2026-04-11T00:20:00Z",
+      "description": "The individual allegedly made threats at OpenAI\u2019s San Francisco headquarters, company says",
+      "content": "A person was taken into custody after allegedly throwing a Molotov cocktail at OpenAI Chief Executive \r\nSam Altmans home and making threats at the companys San Francisco headquarters, a spokeswoman f\u2026 [+481 chars]",
+      "url": "https://www.wsj.com/tech/ai/sam-altmans-home-attacked-with-molotov-cocktail-suspect-taken-into-custody-ad3d7d6e"
+    },
+    {
+      "title": "What smart people are saying about Mythos, Anthropic's new AI model that has some cybersecurity experts spooked - Business Insider",
+      "source": "Business Insider",
+      "author": null,
+      "publishedAt": "2026-04-11T00:14:00Z",
+      "description": null,
+      "content": null,
+      "url": "https://www.businessinsider.com/anthropic-mythos-cybersecurity-concerns-what-smart-people-are-saying-ai-2026-4"
+    }
+  ]
+}

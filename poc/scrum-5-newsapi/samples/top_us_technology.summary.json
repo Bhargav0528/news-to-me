@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "totalResults": 68,
+  "articleCount": 5,
+  "sampleArticles": [
+    {
+      "title": "'I Saw How It Was Getting Damaged': Ex-Bethesda Exec Goes to Town on Xbox's Mistreatment - Push Square",
+      "source": "Push Square",
+      "author": "Sammy Barker",
+      "publishedAt": "2026-04-11T00:30:00Z",
+      "description": "\"That shouldn't be a surprise to you\"",
+      "content": "In a brutal and damning section of a wider interview, ex-Bethesda boss Pete Hines has put Microsoft on blast, without specifically mentioning the Redmond firm by name.\r\nAs part of a chat with journal\u2026 [+2987 chars]",
+      "url": "https://www.pushsquare.com/news/2026/04/i-saw-how-it-was-getting-damaged-ex-bethesda-exec-goes-to-town-on-xboxs-mistreatment"
+    },
+    {
+      "title": "The Latest Foldable iPhone Rumors: What's Changed and What We Know Now - MacRumors",
+      "source": "MacRumors",
+      "author": "Juli Clover",
+      "publishedAt": "2026-04-10T21:57:17Z",
+      "description": "Rumors about Apple's first foldable iPhone are picking up now that the device has entered a new testing stage that precedes mass production. If...",
+      "content": "Rumors about Apple's first foldable iPhone are picking up now that the device has entered a new testing stage that precedes mass production. If you've been having trouble keeping up with what's new, \u2026 [+3504 chars]",
+      "url": "https://www.macrumors.com/2026/04/10/iphone-fold-rumor-recap/"
+    },
+    {
+      "title": "10 PS5, PS4 Space Games to Play After Artemis 2's Big Moon Mission - Push Square",
+      "source": "Push Square",
+      "author": null,
+      "publishedAt": "2026-04-10T19:45:11Z",
+      "description": null,
+      "content": null,
+      "url": "https://www.pushsquare.com/features/10-ps5-ps4-space-games-to-play-after-artemis-2s-big-moon-mission"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "totalResults": 27,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "Honolulu Star-Advertiser"
+      },
+      "author": "Reuters",
+      "title": "Record gas price surge fuels sharp rise in U.S. inflation - Honolulu Star-Advertiser",
+      "description": "WASHINGTON >> U.S. consumer prices increased by the most in nearly four years in March as the war with Iran led to a record surge in the cost of gasoline and diesel, dealing a blow to President Donald Trump, whose approval ratings have been falling because of\u2026",
+      "url": "https://www.staradvertiser.com/2026/04/10/breaking-news/record-gas-price-surge-fuels-sharp-rise-in-u-s-inflation/",
+      "urlToImage": "https://www.staradvertiser.com/wp-content/uploads/2026/04/web1_20260410_brk_gas01.jpg",
+      "publishedAt": "2026-04-11T02:26:01Z",
+      "content": "WASHINGTON &gt;&gt; U.S. consumer prices increased by the most in nearly four years in March as the war with Iran led to a record surge in the cost of gasoline and diesel, dealing a blow to President\u2026 [+4618 chars]"
+    },
+    {
+      "source": {
+        "id": "the-wall-street-journal",
+        "name": "The Wall Street Journal"
+      },
+      "author": "Victoria Albert, Meghan Bobrowsky, Zusha Elinson",
+      "title": "Sam Altman\u2019s Home Attacked With Molotov Cocktail, Suspect Taken Into Custody - WSJ",
+      "description": "The individual allegedly made threats at OpenAI\u2019s San Francisco headquarters, company says",
+      "url": "https://www.wsj.com/tech/ai/sam-altmans-home-attacked-with-molotov-cocktail-suspect-taken-into-custody-ad3d7d6e",
+      "urlToImage": "https://images.wsj.net/im-30256118/social",
+      "publishedAt": "2026-04-11T00:20:00Z",
+      "content": "A person was taken into custody after allegedly throwing a Molotov cocktail at OpenAI Chief Executive \r\nSam Altmans home and making threats at the companys San Francisco headquarters, a spokeswoman f\u2026 [+481 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": null,
+      "title": "What smart people are saying about Mythos, Anthropic's new AI model that has some cybersecurity experts spooked - Business Insider",
+      "description": null,
+      "url": "https://www.businessinsider.com/anthropic-mythos-cybersecurity-concerns-what-smart-people-are-saying-ai-2026-4",
+      "urlToImage": null,
+      "publishedAt": "2026-04-11T00:14:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "Holly Ramer, Jennifer McDermott",
+      "title": "Developer of Massachusetts offshore wind farm sues to stop turbine manufacturer from walking away - AP News",
+      "description": "The developer of a major Massachusetts offshore wind farm is suing its turbine manufacturer seeking to force it to stay with the project. Vineyard Wind filed a lawsuit Wednesday in Massachusetts against GE Renewables. That comes after the parent company for G\u2026",
+      "url": "https://apnews.com/article/offshore-wind-energy-climate-vineyard-wind-d4af076fa15263c3e6a4611f3f7b109b",
+      "urlToImage": "https://dims.apnews.com/dims4/default/4d717b2/2147483647/strip/true/crop/6381x4252+0+1/resize/980x653!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F70%2F34%2Ff6b471833104ebfcdd233acc773c%2F98bde1dfba384f19a73cbe8c0ab0374d",
+      "publishedAt": "2026-04-11T00:09:00Z",
+      "content": "The developer of a major Massachusetts offshore wind farm is suing its turbine manufacturer seeking to force it to stay with the project.\r\nVineyard Wind filed a lawsuit Wednesday in Massachusetts aga\u2026 [+3605 chars]"
+    },
+    {
+      "source": {
+        "id": "bloomberg",
+        "name": "Bloomberg"
+      },
+      "author": "Katanga Johnson, Dawn Lim, Silla Brush, Lydia Beyoud",
+      "title": "Fed Seeks Details on US Banks\u2019 Exposure to Private Credit Firms - Bloomberg.com",
+      "description": "The Federal Reserve is asking major US banks for details about their exposure to private credit following a surge in redemptions from the funds and a rise in troubled loans in the industry, according to people with knowledge of the matter.",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-10/fed-seeks-details-on-us-banks-exposure-to-private-credit-firms",
+      "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iwofxUb7fCtE/v1/1200x800.jpg",
+      "publishedAt": "2026-04-10T22:30:34Z",
+      "content": "The Federal Reserve is asking major US banks for details about their exposure to private credit following a surge in redemptions from the funds and a rise in troubled loans in the industry, according\u2026 [+272 chars]"
+    }
+  ]
+}

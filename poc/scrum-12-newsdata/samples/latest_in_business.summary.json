@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "totalResults": 7275,
+  "nextPage": "1775934552963964005",
+  "returned": 10,
+  "sampleResults": [
+    {
+      "title": "Prediction: A Cheaper EV Could Be a Game Changer for Tesla's Business",
+      "source_id": "yahoo",
+      "source_name": null,
+      "pubDate": "2026-04-11 19:20:00",
+      "country": [
+        "india"
+      ],
+      "category": [
+        "business"
+      ],
+      "description": null,
+      "content": "ONLY AVAILABLE IN PAID PLANS",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-cheaper-ev-could-game-192000013.html"
+    },
+    {
+      "title": "Khandre seeks continuation of Bidar\u2013Bengaluru flight service; hails Chief Minister\u2019s support to region",
+      "source_id": "thehindu",
+      "source_name": null,
+      "pubDate": "2026-04-11 19:19:53",
+      "country": [
+        "india"
+      ],
+      "category": [
+        "top",
+        "business"
+      ],
+      "description": "Khandre urges CM Siddaramaiah to continue Bidar\u2013Bengaluru flight service, praising state support for Kalyana Karnataka's development.",
+      "content": "ONLY AVAILABLE IN PAID PLANS",
+      "link": "https://www.thehindu.com/news/national/karnataka/khandre-seeks-continuation-of-bidarbengaluru-flight-service-hails-chief-ministers-support-to-region/article70850780.ece"
+    },
+    {
+      "title": "Haalkhata, panjika move to front shelf days ahead of Poila Baisakh",
+      "source_id": "toi",
+      "source_name": null,
+      "pubDate": "2026-04-11 19:19:00",
+      "country": [
+        "india"
+      ],
+      "category": [
+        "top",
+        "business"
+      ],
+      "description": "Kolkata: Days ahead of Poila Baisakh next week, traders in the city, especially in north and central Kolkata, have started preparations for the Bengal.",
+      "content": "ONLY AVAILABLE IN PAID PLANS",
+      "link": "https://timesofindia.indiatimes.com/city/kolkata/haalkhata-panjika-move-to-front-shelf-days-ahead-of-poila-baisakh/articleshow/130197687.cms"
+    }
+  ]
+}

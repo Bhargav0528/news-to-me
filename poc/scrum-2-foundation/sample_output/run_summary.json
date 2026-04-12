@@ -1,0 +1,75 @@
+{
+  "run_id": 1,
+  "db_path": "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-2-foundation/sample_output/news_to_me.db",
+  "source_count": 9,
+  "fetched_count": 449,
+  "inserted_count": 449,
+  "duplicate_count": 0,
+  "stored_article_count": 449,
+  "sources": [
+    {
+      "source_id": "the-hindu-general",
+      "fetched": 60,
+      "inserted": 60,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "businessline-markets",
+      "fetched": 60,
+      "inserted": 60,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "bbc-world",
+      "fetched": 29,
+      "inserted": 29,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "nyt-home",
+      "fetched": 20,
+      "inserted": 20,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "techcrunch",
+      "fetched": 20,
+      "inserted": 20,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "indian-express-india",
+      "fetched": 200,
+      "inserted": 200,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "npr-world",
+      "fetched": 10,
+      "inserted": 10,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "cnbc-top-news",
+      "fetched": 30,
+      "inserted": 30,
+      "duplicates": 0,
+      "status": "ok"
+    },
+    {
+      "source_id": "ars-technica",
+      "fetched": 20,
+      "inserted": 20,
+      "duplicates": 0,
+      "status": "ok"
+    }
+  ],
+  "completed_at": "2026-04-12T12:29:27+00:00"
+}

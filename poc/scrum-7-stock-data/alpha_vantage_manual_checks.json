@@ -1,0 +1,68 @@
+{
+  "checked_at_utc": "2026-04-12T08:31:00Z",
+  "notes": [
+    "These checks were run after the initial burst-limited run to separate rate-limit behavior from symbol-support behavior.",
+    "Alpha Vantage free tier effectively requires slow pacing; rapid back-to-back calls returned 'Information' rate-limit responses instead of quotes."
+  ],
+  "results": {
+    "QQQ": {
+      "Global Quote": {
+        "01. symbol": "QQQ",
+        "02. open": "611.8400",
+        "03. high": "613.6700",
+        "04. low": "609.5800",
+        "05. price": "611.0700",
+        "06. volume": "34038533",
+        "07. latest trading day": "2026-04-10",
+        "08. previous close": "610.1900",
+        "09. change": "0.8800",
+        "10. change percent": "0.1442%"
+      }
+    },
+    "NIFTYBEES.BSE": {
+      "Global Quote": {
+        "01. symbol": "NIFTYBEES.BSE",
+        "02. open": "269.5500",
+        "03. high": "272.2700",
+        "04. low": "269.4800",
+        "05. price": "272.0100",
+        "06. volume": "431850",
+        "07. latest trading day": "2026-04-10",
+        "08. previous close": "269.4800",
+        "09. change": "2.5300",
+        "10. change percent": "0.9388%"
+      }
+    },
+    "SENSEXBEES.BSE": {
+      "Global Quote": {
+        "01. symbol": "SENSEXBEES.BSE",
+        "02. open": "868.2300",
+        "03. high": "886.9900",
+        "04. low": "868.2300",
+        "05. price": "884.5900",
+        "06. volume": "16685",
+        "07. latest trading day": "2026-04-10",
+        "08. previous close": "876.2700",
+        "09. change": "8.3200",
+        "10. change percent": "0.9495%"
+      }
+    },
+    "TOP_GAINERS_LOSERS": {
+      "metadata": "Top gainers, losers, and most actively traded US tickers",
+      "last_updated": "2026-04-10 16:15:56 US/Eastern",
+      "sample_top_gainers": [
+        {"ticker": "FUSE", "price": "1.83", "change_percentage": "115.2941%"},
+        {"ticker": "RAYA", "price": "0.9505", "change_percentage": "107.4422%"},
+        {"ticker": "MAPSW", "price": "0.005", "change_percentage": "100.0%"},
+        {"ticker": "CREG", "price": "0.6315", "change_percentage": "85.4081%"},
+        {"ticker": "SLXNW", "price": "0.0255", "change_percentage": "82.1429%"}
+      ]
+    },
+    "NIFTY 50 search": {"bestMatches": []},
+    "SENSEX search": {
+      "bestMatches": [
+        {"1. symbol": "SENSEXBEES.BSE", "2. name": "Nippon India ETF S&P BSE Sensex", "3. type": "ETF", "4. region": "India/Bombay"}
+      ]
+    }
+  }
+}

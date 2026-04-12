@@ -1,0 +1,15 @@
+You are writing one section summary for a morning newspaper. Read the article packet and return JSON only with this schema:
+{
+  "section": "Business + Tech",
+  "lead": string,
+  "summary_points": [string],
+  "watchlist": [string]
+}
+
+Rules:
+- Use only the supplied articles.
+- lead should be 2 sentences, 60 to 90 words total.
+- summary_points must contain exactly 4 bullets, each 12 to 24 words.
+- watchlist must contain exactly 3 concise items.
+- Prefer major developments over novelty items.
+- Output valid parseable JSON and nothing else.

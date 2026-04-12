@@ -1,0 +1,61 @@
+{
+  "feed": {
+    "name": "Ars Technica",
+    "category": "Tech",
+    "url": "https://feeds.arstechnica.com/arstechnica/index"
+  },
+  "http_status": 200,
+  "final_url": "https://feeds.arstechnica.com/arstechnica/index",
+  "item_count_in_feed": 20,
+  "items_sampled": 15,
+  "articles_in_last_24h_with_timestamp": 1,
+  "freshness_hours_since_newest": 20.69,
+  "reliability": "good",
+  "sample_content_types": {
+    "long excerpt": 3,
+    "headline + short excerpt": 2
+  },
+  "sample_entries": [
+    {
+      "title": "AI models are terrible at betting on soccer\u2014especially xAI Grok",
+      "published": "2026-04-11T11:15:17+00:00",
+      "summary_words": 12,
+      "content_words": 122,
+      "content_type": "long excerpt",
+      "link": "https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/"
+    },
+    {
+      "title": "The Artemis II mission has ended. Where does NASA go from here?",
+      "published": "2026-04-11T03:24:21+00:00",
+      "summary_words": 10,
+      "content_words": 102,
+      "content_type": "headline + short excerpt",
+      "link": "https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/"
+    },
+    {
+      "title": "Four astronauts are back home after a daring ride around the Moon",
+      "published": "2026-04-11T01:21:10+00:00",
+      "summary_words": 14,
+      "content_words": 188,
+      "content_type": "long excerpt",
+      "link": "https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/"
+    },
+    {
+      "title": "Californians sue over AI tool that records doctor visits",
+      "published": "2026-04-10T21:43:33+00:00",
+      "summary_words": 8,
+      "content_words": 115,
+      "content_type": "headline + short excerpt",
+      "link": "https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/"
+    },
+    {
+      "title": "New paper argues history, not mantle plume, powers Yellowstone",
+      "published": "2026-04-10T20:06:39+00:00",
+      "summary_words": 12,
+      "content_words": 235,
+      "content_type": "long excerpt",
+      "link": "https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/"
+    }
+  ],
+  "raw_xml_path": "samples/ars-technica.xml"
+}

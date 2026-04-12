@@ -1,0 +1,60 @@
+{
+  "feed": {
+    "name": "The Hindu BusinessLine",
+    "category": "India / Business",
+    "url": "https://www.thehindubusinessline.com/feeder/default.rss"
+  },
+  "http_status": 200,
+  "final_url": "https://www.thehindubusinessline.com/feeder/default.rss",
+  "item_count_in_feed": 60,
+  "items_sampled": 15,
+  "articles_in_last_24h_with_timestamp": 15,
+  "freshness_hours_since_newest": 0.08,
+  "reliability": "good",
+  "sample_content_types": {
+    "headline + short excerpt": 5
+  },
+  "sample_entries": [
+    {
+      "title": "Retail inflation likely rose 3.5-4% in March",
+      "published": "2026-04-12T07:52:18+00:00",
+      "summary_words": 13,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindubusinessline.com/economy/retail-inflation-likely-rose-35-4-in-march/article70853305.ece"
+    },
+    {
+      "title": "Mcap of 8 of top-10 most valued firms jumps \u20b94.13 lakh cr; HDFC, ICICI Bank top gainers",
+      "published": "2026-04-12T07:36:02+00:00",
+      "summary_words": 23,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindubusinessline.com/companies/mcap-of-8-of-top-10-most-valued-firms-jumps-413-lakh-cr-hdfc-icici-bank-top-gainers/article70853558.ece"
+    },
+    {
+      "title": "Shell steps up LNG supplies to India, wins major fertiliser tenders after Gulf disruptions",
+      "published": "2026-04-12T07:33:23+00:00",
+      "summary_words": 26,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindubusinessline.com/companies/shell-steps-up-lng-supplies-to-india-wins-major-fertiliser-tenders-after-gulf-disruptions/article70853542.ece"
+    },
+    {
+      "title": "Coal India absorbs cost surge to shield consumers from price spike",
+      "published": "2026-04-12T07:31:00+00:00",
+      "summary_words": 26,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindubusinessline.com/companies/coal-india-absorbs-cost-surge-to-shield-consumers-from-price-spike/article70853487.ece"
+    },
+    {
+      "title": "TCS makes only 25k fresher offers this fiscal, more hires dependent on demand scenario: Official",
+      "published": "2026-04-12T07:20:05+00:00",
+      "summary_words": 34,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.thehindubusinessline.com/info-tech/tcs-makes-only-25k-fresher-offers-this-fiscal-more-hires-dependent-on-demand-scenario-official/article70853545.ece"
+    }
+  ],
+  "raw_xml_path": "samples/the-hindu-businessline.xml"
+}

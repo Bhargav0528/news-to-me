@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0">
+    <channel>
+        <title>Ars Technica - All content</title>
+        <atom:link href="https://arstechnica.com/feed/" rel="self" type="application/rss+xml"/>
+        <link>https://arstechnica.com</link>
+        <description>All Ars Technica stories</description>
+        <lastBuildDate>Sat, 11 Apr 2026 03:24:21 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>
+            hourly        </sy:updatePeriod>
+        <sy:updateFrequency>
+            1        </sy:updateFrequency>
+        
+<image>
+	<url>https://cdn.arstechnica.net/wp-content/uploads/2016/10/cropped-ars-logo-512_480-60x60.png</url>
+	<title>Ars Technica</title>
+	<link>https://arstechnica.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+            <item>
+                <title>AI models are terrible at betting on soccer—especially xAI Grok</title>
+                <link>https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/</link>
+                                    <comments>https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Tim Bradshaw, Financial Times]]>
+                </dc:creator>
+                <pubDate>Sat, 11 Apr 2026 11:15:17 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[ChatGPT]]></category>
+		<category><![CDATA[gambling]]></category>
+		<category><![CDATA[Grok sucks]]></category>
+		<category><![CDATA[LLMs]]></category>
+		<category><![CDATA[syndication]]></category>
+		<category><![CDATA[xAI Grok]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/</guid>
+
+                                    <description>
+                        <![CDATA[Systems from Google, OpenAI, Anthropic, and xAI struggle with the Premier League.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>AI models from Google, OpenAI, and Anthropic lost money betting on soccer matches over a Premier League season, in a new study suggesting even the most advanced systems struggle to analyze the real world over long periods.</p>
+<p>The “KellyBench” report released this week by AI start-up General Reasoning highlights the gap between AI’s rapidly advancing capabilities in certain tasks, such as writing software, and its shortcomings in other kinds of human problems.</p>
+<p>London-based General Reasoning tested eight top AI systems in a virtual re-creation of the 2023–24 Premier League season, providing them with detailed historical data and statistics about each team and previous games. The AIs were instructed to build models that would maximize returns and manage risk.</p><p><a href="https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/">Read full article</a></p>
+<p><a href="https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>2</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/premierleaguegambling-1024x648.jpg" width="1024">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/premierleaguegambling-500x500.jpg" width="500"/>
+<media:credit>	Simon Stacpoole/Offside/Getty</media:credit></media:content>
+            </item>
+                    <item>
+                <title>The Artemis II mission has ended. Where does NASA go from here?</title>
+                <link>https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/</link>
+                                    <comments>https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Sat, 11 Apr 2026 03:24:21 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[artemis]]></category>
+		<category><![CDATA[artemis II]]></category>
+		<category><![CDATA[blue origin]]></category>
+		<category><![CDATA[NASA]]></category>
+		<category><![CDATA[space]]></category>
+		<category><![CDATA[spacex]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/</guid>
+
+                                    <description>
+                        <![CDATA["The work ahead is greater than the work behind us."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>The Artemis era well and truly began Friday evening when a shiny spacecraft that had traveled 700,000 miles around the Moon, carrying four astronauts, splashed down in the Pacific Ocean off the coast of California.</p>
+<p>For NASA, for its international partners, and for all of humanity the successful conclusion of the Artemis II mission marked a return to deep space by our species after more than half a century.</p>
+<p>It was a spectacular achievement, and NASA deserves credit for making something what is very difficult look relatively easy. But it also raises an important question: What comes next?</p><p><a href="https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>21</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/art002e021278large-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/art002e021278large-500x500.jpg" width="500"/>
+<media:credit>NASA</media:credit><media:text>Artemis II brought us new perspectives on the Moon.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Four astronauts are back home after a daring ride around the Moon</title>
+                <link>https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/</link>
+                                    <comments>https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Sat, 11 Apr 2026 01:21:10 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[Space]]></category>
+		<category><![CDATA[artemis]]></category>
+		<category><![CDATA[artemis II]]></category>
+		<category><![CDATA[Christina Koch]]></category>
+		<category><![CDATA[human spaceflight]]></category>
+		<category><![CDATA[Jeremy Hansen]]></category>
+		<category><![CDATA[moon]]></category>
+		<category><![CDATA[NASA]]></category>
+		<category><![CDATA[orion spacecraft]]></category>
+		<category><![CDATA[Reid Wiseman]]></category>
+		<category><![CDATA[US Navy]]></category>
+		<category><![CDATA[victor glover]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/</guid>
+
+                                    <description>
+                        <![CDATA["I can't imagine a better crew that just completed a perfect mission right now."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Slamming into the atmosphere at more than 30 times the speed of sound, NASA’s Orion spacecraft blazed a trail over the Pacific Ocean on Friday, returning home with four astronauts and safely capping humanity’s first voyage to the Moon in nearly 54 years.</p>
+<p>Temperatures outside the capsule built up to some 5,000 degrees Fahrenheit as a sheath of plasma enveloped the Orion spacecraft, named <em>Integrity</em>, and its four long-distance travelers, temporarily blocking radio signals the Moon ship and Mission Control in Houston. Flying southwest to northeast, the spacecraft steered toward a splashdown zone southwest of San Diego, where a US Navy recovery ship held position to await the crew’s homecoming. Ground teams regained communications with Orion commander Reid Wiseman after a six-minute blackout.</p>
+<p>Airborne tracking planes beamed live video of Orion’s descent back to Mission Control, showing the capsule jettison its parachute cover and deploy a series of chutes to stabilize its plunge toward the Pacific. Then, three larger main chutes, each with an area of 10,500 square feet, opened to slow Orion for splashdown at 8:07 pm EDT Friday (00:07 UTC Saturday).</p><p><a href="https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>71</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/a2splash1-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/a2splash1-500x500.jpg" width="500"/>
+<media:credit>NASA</media:credit><media:text>Splashdown of the Artemis II mission at 8:07 pm EDT Friday (00:07 UTC Saturday).</media:text></media:content>
+            </item>
+                    <item>
+                <title>Californians sue over AI tool that records doctor visits</title>
+                <link>https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Cyrus Farivar]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 21:43:33 +0000</pubDate>
+                		<category><![CDATA[Health]]></category>
+		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[AI health]]></category>
+		<category><![CDATA[AI lawsuit]]></category>
+		<category><![CDATA[AI transparency]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/</guid>
+
+                                    <description>
+                        <![CDATA[Plaintiffs say transcription tool processed confidential chats offsite.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Several Californians <a href="https://www.documentcloud.org/documents/28035341-govuscourtscand46737610/">sued Sutter Health and MemorialCare this week</a> over allegations that an AI transcription tool was used to record them without their consent, in violation of state and federal law.</p>
+<p>The proposed class-action lawsuit, filed on Wednesday in federal court in San Francisco, states that, within the past six months, the plaintiffs received medical care at various Sutter and MemorialCare facilities.</p>
+<p>During those visits, medical staff used Abridge AI. According to the complaint, this system “captured and processed their confidential physician-patient communications. Plaintiffs did not receive clear notice that their medical conversations would be recorded by an artificial intelligence platform, transmitted outside the clinical setting, or processed through third-party systems.”</p><p><a href="https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>83</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-2148900484-1152x648-1775856309.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-2148900484-500x500-1775856294.jpg" width="500"/>
+<media:credit>Getty Images</media:credit><media:text>Voice recording. Man touching microphone icon on smartphone. Mobile application record sound, audio, music, voice message or use your voice to direct AI to search for information on Internet.</media:text></media:content>
+            </item>
+                    <item>
+                <title>New paper argues history, not mantle plume, powers Yellowstone</title>
+                <link>https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/</link>
+                                    <comments>https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[John Timmer]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 20:06:39 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[geology]]></category>
+		<category><![CDATA[hotspots]]></category>
+		<category><![CDATA[plate tectonics]]></category>
+		<category><![CDATA[volcanism]]></category>
+		<category><![CDATA[yellowstone]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/</guid>
+
+                                    <description>
+                        <![CDATA[A now-vanished plate under North America may open the crust below Yellowstone.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>North America wouldn't look much like it currently does without a tectonic plate that has largely been lost to the Earth's geological history. The Farallon plate, which has since largely vanished underneath North America, helped build the West Coast by slamming large island chains into the continent as it disappeared. California wouldn't exist without it, and one of the remaining fragments of the plate presently power the volcanoes of the Cascades.</p>
+<p>Now, a new paper suggests that the Farallon plate is still making its presence felt far from the coasts, powering one of North America's most distinctive phenomena: the Yellowstone hotspot, which has periodically blanketed much of the continent with ash. The new proposal suggests that the plate's vanishing act has created stresses that have opened paths for molten rock to reach the surface.</p>
+<h2>Hot spot or not?</h2>
+<p>Geologic hot spots exist around the globe; they're areas where deep material from the Earth's interior finds its way to the surface far from the edges of plates. In many cases, the heat that powers these hot spots is the product of what's called a mantle plume: a blob of hot viscous rock that convection drives to the surface of the mantle. In many cases, the plume appears to stay in place as the plates drift across it, creating a chain of progressively older islands as you move away from the hot spot.</p><p><a href="https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>34</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-1187698526-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-1187698526-500x500.jpg" width="500"/>
+<media:credit>Deb Snelson</media:credit><media:text>Grand Prismatic Spring Yellowstone National Park</media:text></media:content>
+            </item>
+                    <item>
+                <title>F1 moves a step closer to fixing its 2026 hybrid problem</title>
+                <link>https://arstechnica.com/cars/2026/04/f1-moves-a-step-closer-to-fixing-its-2026-hybrid-problem/</link>
+                                    <comments>https://arstechnica.com/cars/2026/04/f1-moves-a-step-closer-to-fixing-its-2026-hybrid-problem/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jonathan M. Gitlin]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 19:07:46 +0000</pubDate>
+                		<category><![CDATA[Cars]]></category>
+		<category><![CDATA[F1]]></category>
+		<category><![CDATA[Formula 1]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/04/f1-moves-a-step-closer-to-fixing-its-2026-hybrid-problem/</guid>
+
+                                    <description>
+                        <![CDATA[Algorithms, not drivers, are deciding how hard to accelerate, and that's no good.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Formula 1 is enjoying something of an unexpected break right now. The war in the Middle East led to the cancellation of F1 races scheduled for this month in Bahrain and Saudi Arabia. Instead, the teams will use this time to further develop their cars. For teams like <a href="https://arstechnica.com/cars/2026/03/nerve-damage-energy-management-and-apple-tv-f1-in-2026-starts-today/">Aston Martin</a>, Cadillac, and Williams, it will be a welcome respite and a chance to catch up to the midfield. Even Mercedes, clear and away the championship favorite this year, has things to work on if it wants to stop <a href="https://arstechnica.com/cars/2026/03/2026-australian-grand-prix-formula-1-debuts-a-new-style-of-racing/">losing</a> so many <a href="https://arstechnica.com/cars/2026/03/f1-in-china-ive-never-seen-so-many-people-in-those-grandstands/">positions</a> at the start of each race or have an easier time passing cars in traffic.</p>
+<p>That should keep the mechanics and engineers quite busy, but in case not, technical representatives from each team as well as the FIA (the sport's governing body) are sitting down throughout the month to try to fix some problems that are a consequence of F1's new technical rules.</p>
+<h2>This is about hybrids, you say?</h2>
+<p>From the <a href="https://arstechnica.com/cars/2026/02/f1-preseason-tests-shows-how-different-2026-will-be/">start</a> of this year, F1 cars have new hybrid power units. There's a 1.6 L turbocharged V6 engine that runs on <a href="https://arstechnica.com/cars/2022/11/formula-1-talks-to-ars-about-sustainability-and-synthetic-fuels/">carbon-neutral gasoline</a>, which generates 400 kW (536 hp). And there's an electric motor-generator unit (or MGU) that outputs up to 350 kW (469 hp) as long as there's charge in the 4 MJ (1.1 kWh) battery pack. As batteries go, that's about the right size for something like a Prius, but in an F1 car at full deployment, it goes from full to empty in little more than 11 seconds.</p><p><a href="https://arstechnica.com/cars/2026/04/f1-moves-a-step-closer-to-fixing-its-2026-hybrid-problem/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/04/f1-moves-a-step-closer-to-fixing-its-2026-hybrid-problem/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>43</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-2268546147-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-2268546147-500x500.jpg" width="500"/>
+<media:credit>Peter Fox/Getty Images</media:credit><media:text>Nico Hulkenberg's Audi throws up sparks during practice for the Japanese Grand Prix at Suzuka.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Report: US demands Reddit unmask ICE critic, summons firm to grand jury</title>
+                <link>https://arstechnica.com/tech-policy/2026/04/trump-admin-hounds-reddit-to-reveal-identity-of-user-who-criticized-ice/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/04/trump-admin-hounds-reddit-to-reveal-identity-of-user-who-criticized-ice/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jon Brodkin]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 18:43:25 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[ice]]></category>
+		<category><![CDATA[reddit]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/04/trump-admin-hounds-reddit-to-reveal-identity-of-user-who-criticized-ice/</guid>
+
+                                    <description>
+                        <![CDATA[Trump admin reportedly gets grand jury involved in attempt to identify Redditor.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>The Trump administration has stepped up an effort to unmask a Reddit user who criticized Immigration and Customs Enforcement (ICE). After failing to obtain information through a summons issued to Reddit, the government reportedly issued a subpoena demanding that Reddit provide the information and appear before a grand jury in Washington, DC.</p>
+<p><a href="https://theintercept.com/2026/04/10/reddit-ice-protest-grand-jury/">The Intercept</a> described the subpoena today. "According to a subpoena obtained by The Intercept, Reddit has until April 14 to provide a wide range of personal data on one of its users, whom US Immigration and Customs Enforcement agents have been trying unsuccessfully to identify for more than a month," the article said.</p>
+<p>The legal saga began in US District Court for the Northern District of California. On March 12, the anonymous Reddit user whose information is being sought <a href="https://storage.courtlistener.com/recap/gov.uscourts.cand.465800/gov.uscourts.cand.465800.1.0.pdf">filed a motion</a> to quash a summons seeking a host of information from Reddit. The summons was issued by the Department of Homeland Security and directed Reddit to turn information over to an ICE senior special agent.</p><p><a href="https://arstechnica.com/tech-policy/2026/04/trump-admin-hounds-reddit-to-reveal-identity-of-user-who-criticized-ice/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/04/trump-admin-hounds-reddit-to-reveal-identity-of-user-who-criticized-ice/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>186</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2025/07/reddit-icon-1152x648-1752522571.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2025/07/reddit-icon-500x500.jpg" width="500"/>
+<media:credit>Getty Images | picture alliance</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Microsoft's "commitment to Windows quality" starts with overhaul of beta program</title>
+                <link>https://arstechnica.com/gadgets/2026/04/microsoft-makes-it-easier-for-windows-insider-testers-to-actually-get-new-features/</link>
+                                    <comments>https://arstechnica.com/gadgets/2026/04/microsoft-makes-it-easier-for-windows-insider-testers-to-actually-get-new-features/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Andrew Cunningham]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 18:00:44 +0000</pubDate>
+                		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[windows 11]]></category>
+		<category><![CDATA[windows 11 25h2]]></category>
+		<category><![CDATA[windows 11 26h1]]></category>
+		<category><![CDATA[windows insider program]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gadgets/2026/04/microsoft-makes-it-easier-for-windows-insider-testers-to-actually-get-new-features/</guid>
+
+                                    <description>
+                        <![CDATA[Windows Insider builds remain confusing, but they should be more predictable.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Microsoft says <a href="https://arstechnica.com/gadgets/2026/03/microsoft-keeps-insisting-that-its-deeply-committed-to-the-quality-of-windows-11/">it hears the complaints people have</a> about the current state of Windows, and it wants to fix them. One of those fixes is another overhaul for its Windows Insider Program, the public beta system that Microsoft has used since Windows 10 to test and preview upcoming versions of the operating system and new app updates.</p>
+<p>The company hinted at this in its "<a href="https://blogs.windows.com/windows-insider/2026/03/20/our-commitment-to-windows-quality/">commitment to Windows quality</a>" post last month, and it's announcing details today in <a href="https://blogs.windows.com/windows-insider/2026/04/10/improving-your-windows-insider-experience/">another post</a> attributed to Microsoft Principal Group Product Manager Alec Oot.</p>
+<p><a href="https://arstechnica.com/gadgets/2023/03/new-canary-channel-will-showcase-more-experimental-less-stable-windows-builds/">Since its last reorganization in 2023</a>, the Windows Insider Program has had four testing channels. From least to most stable, these are the Canary channel, the Dev channel, the Beta channel, and the Release Preview channel. Both Canary and Dev are for earlier builds of Windows and new apps, while Beta tends to get things that are closer to finished and much more likely to ship to the general public. The Release Preview channel is a new Windows version's last stop before public release and is usually near-final.</p><p><a href="https://arstechnica.com/gadgets/2026/04/microsoft-makes-it-easier-for-windows-insider-testers-to-actually-get-new-features/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gadgets/2026/04/microsoft-makes-it-easier-for-windows-insider-testers-to-actually-get-new-features/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>85</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2022/05/win11-dark-wallpaper-1152x648.jpeg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2022/05/win11-dark-wallpaper-500x500.jpeg" width="500"/>
+<media:credit>Microsoft</media:credit></media:content>
+            </item>
+                    <item>
+                <title>"Oobleck" still holds some surprises</title>
+                <link>https://arstechnica.com/science/2026/04/oobleck-still-holds-some-surprises/</link>
+                                    <comments>https://arstechnica.com/science/2026/04/oobleck-still-holds-some-surprises/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jennifer Ouellette]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 17:57:21 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[chemistry]]></category>
+		<category><![CDATA[materials science]]></category>
+		<category><![CDATA[Non-newtonian fluids]]></category>
+		<category><![CDATA[oobleck]]></category>
+		<category><![CDATA[Physics]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/04/oobleck-still-holds-some-surprises/</guid>
+
+                                    <description>
+                        <![CDATA[Dense drops of oobleck with high shear rates spread out like a liquid before stiffening into a solid.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Mixing corn starch and water in appropriate amounts produces a slurry that is liquid when stirred slowly but hardens when you punch it—a substance colorfully dubbed “oobleck.” (The name derives from a 1949 Dr. Seuss children’s book, <a href="https://en.wikipedia.org/wiki/Bartholomew_and_the_Oobleck"><em>Bartholomew and the Oobleck</em></a>.) High-speed imaging and force measurements have revealed another surprising property of oobleck drops hitting a flat surface, according to a <a href="https://journals.aps.org/prl/abstract/10.1103/fyx7-jb1d">new paper</a> published in the journal Physical Review Letters.</p>
+<p>As <a href="https://arstechnica.com/science/2023/12/unlocking-the-secrets-of-oobleck-strange-stuff-thats-both-liquid-and-solid/">previously reported</a>, in <a href="https://en.wikipedia.org/wiki/Newtonian_fluid">an ideal fluid</a>, viscosity largely depends on temperature and pressure: Water will continue to flow regardless of other forces acting on it, such as stirring or mixing. In a non-Newtonian fluid, the viscosity changes in response to an applied strain or shearing force, thereby straddling the boundary between liquid and solid behavior. Stirring a cup of water produces a shearing force, and the water shears to move out of the way. The viscosity remains unchanged. But for non-Newtonian fluids like oobleck, the viscosity changes when a shearing force is applied.</p>
+<p>Ketchup, for instance, is a shear-thickening non-Newtonian fluid, which is one reason smacking the bottom of the bottle doesn’t make the ketchup come out any faster; the application of force increases the viscosity. Yogurt, gravy, mud, pudding, and thickened pie fillings are other examples. And so is oobleck.</p><p><a href="https://arstechnica.com/science/2026/04/oobleck-still-holds-some-surprises/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/04/oobleck-still-holds-some-surprises/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>32</slash:comments>
+                
+                
+                <media:content height="625" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/oobleck1-1152x625.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/oobleck1-500x500-1775826832.jpg" width="500"/>
+<media:credit>X. Cheng/University of Minnesota</media:credit></media:content>
+            </item>
+                    <item>
+                <title>YouTube increases Premium price again, says 90-second unskippable ads are a bug</title>
+                <link>https://arstechnica.com/gadgets/2026/04/youtube-increases-premium-price-again-says-90-second-unskippable-ads-are-a-bug/</link>
+                                    <comments>https://arstechnica.com/gadgets/2026/04/youtube-increases-premium-price-again-says-90-second-unskippable-ads-are-a-bug/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ryan Whitwam]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 17:08:58 +0000</pubDate>
+                		<category><![CDATA[Google]]></category>
+		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[ads]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[YouTube]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gadgets/2026/04/youtube-increases-premium-price-again-says-90-second-unskippable-ads-are-a-bug/</guid>
+
+                                    <description>
+                        <![CDATA[An individual plan now cost $15.99 per month, and the free tier comes with buggy ads.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Over the years, YouTube has evolved from a source of Rickrolls and cat videos to a platform for some of the Internet's most popular streaming content. Today, it costs more than ever to see that content, as YouTube has announced another price increase for its Premium service. Viewers who can't stomach the cost of Premium will be greeted by increasingly lengthy ad breaks, but YouTube says some of that is due to a bug it's now addressing.</p>
+<p>YouTube has not posted a standalone blog announcing the change, but existing subscribers are getting email alerts. The higher pricing is also live for new sign-ups in the US as of this writing. Here's the important part of YouTube's email alerts:</p>
+<blockquote><p>To continue delivering great service and features, we’re increasing your price to $15.99/month. We don’t make these decisions lightly, but this update will allow us to continue to improve Premium and support the creators and artists you watch on YouTube.</p>
+<p>You will see the change reflected on your June 7, 2026 billing date.</p></blockquote>
+<p>The new $15.99 monthly price is a $2 increase, but if you're on the family plan, the email looks a bit different. For those folks, the price is now $26.99, which is $4 higher. There's also the base Premium Lite subscription that removes most YouTube ads and used to cost $7.99 per month. It's now $1 more.</p><p><a href="https://arstechnica.com/gadgets/2026/04/youtube-increases-premium-price-again-says-90-second-unskippable-ads-are-a-bug/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gadgets/2026/04/youtube-increases-premium-price-again-says-90-second-unskippable-ads-are-a-bug/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>136</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2022/10/youtube-money-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2022/10/youtube-money-500x500.jpg" width="500"/>
+<media:credit>Jericho / Ron Amadeo</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Oldest octopus fossil found to not be an octopus </title>
+                <link>https://arstechnica.com/science/2026/04/oldest-octopus-fossil-found-to-not-be-an-octopus/</link>
+                                    <comments>https://arstechnica.com/science/2026/04/oldest-octopus-fossil-found-to-not-be-an-octopus/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jacek Krywko]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 16:54:42 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[fossils]]></category>
+		<category><![CDATA[octopus]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/04/oldest-octopus-fossil-found-to-not-be-an-octopus/</guid>
+
+                                    <description>
+                        <![CDATA[Supposed “first octopus” was something else entirely.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Pohlsepia mazonensis, a visually underwhelming fossil from Illinois, fundamentally broke our understanding of cephalopod evolution. Described in 2000 and hailed as the oldest known octopus in the fossil record, the specimen dated back to the late Carboniferous period, roughly 311 to 306 million years ago. Pohlsepia was an outlier—all other fossil records strongly suggested that crown coleoids, the group containing octopuses, squid, and cuttlefish, diverged much later, during the Jurassic.</p>
+<p>To solve this puzzle, Thomas Clements, a paleontologist at the University of Leicester, and his colleagues put this supposed oldest octopus fossil through a series of high-tech imaging tests. They found Pohlsepia was not an octopus at all. Instead, it was a decomposed, squashed nautiloid.</p>
+<h2>A Rorschach test</h2>
+<p>The reason a nautiloid managed to masquerade as an octopus for almost a quarter of a century was due to the way that fossils from the Mazon Creek Lagerstätte formed. Around 300 million years ago, this area was a brackish, tidal marine basin that was periodically inundated by massive amounts of iron-rich river mud. When organisms died and were buried in this sediment fan, the high iron content triggered the precipitation of the mineral siderite around their decaying bodies, locking them inside hard geological nodules.</p><p><a href="https://arstechnica.com/science/2026/04/oldest-octopus-fossil-found-to-not-be-an-octopus/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/04/oldest-octopus-fossil-found-to-not-be-an-octopus/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>13</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-1168201315-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-1168201315-500x500.jpg" width="500"/>
+<media:credit>	Nikos Stavrinidis / 500px / Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>What leaked "SteamGPT" files could mean for the PC gaming platform's use of AI</title>
+                <link>https://arstechnica.com/gaming/2026/04/what-is-steamgpt-leaked-files-point-to-ai-powered-valve-security-review-system/</link>
+                                    <comments>https://arstechnica.com/gaming/2026/04/what-is-steamgpt-leaked-files-point-to-ai-powered-valve-security-review-system/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Kyle Orland]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 16:32:25 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Gaming]]></category>
+		<category><![CDATA[models]]></category>
+		<category><![CDATA[Steam]]></category>
+		<category><![CDATA[Steamgpt]]></category>
+		<category><![CDATA[Valve]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/gaming/2026/04/what-is-steamgpt-leaked-files-point-to-ai-powered-valve-security-review-system/</guid>
+
+                                    <description>
+                        <![CDATA[AI tools could help moderators sift through mountains of suspicious incidents]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>These days, it seems like every tech company and their corporate parent is looking to squeeze AI tools and features into their products, whether they're wanted or not. So when files with names and functions referencing a "SteamGPT" appeared in a recent Steam client update, Valve watchers <a href="https://x.com/gabefollower/status/2041616788178256245#m">took quick notice</a>.</p>
+<p>From the outside, it's hard to tell precisely what form any such "SteamGPT" would take. But looking through variable names and references in the files themselves suggests that Valve may be looking to use AI tools to streamline internal evaluations of in-game incidents and sift through potentially suspicious accounts.</p>
+<h2>Looking at the variables</h2>
+<p>As tracked by <a href="https://github.com/SteamTracking/SteamTracking/tree/a376b60d49bdd00f18391c17ceb82a8a53c5276b">the automated SteamTracking GitHub project</a>, the term "SteamGPT" appears multiple times in <a href="https://github.com/SteamTracking/SteamTracking/blob/a376b60d49bdd00f18391c17ceb82a8a53c5276b/ProtobufsWebui/service_steamgptrenderfarm.proto">three</a> <a href="https://github.com/SteamTracking/SteamTracking/blob/a376b60d49bdd00f18391c17ceb82a8a53c5276b/ProtobufsWebui/service_steamgptsummary.proto">separate</a> <a href="https://github.com/SteamTracking/SteamTracking/blob/a376b60d49bdd00f18391c17ceb82a8a53c5276b/ProtobufsWebui/service_steamgpt.proto">files</a> added in the April 7 Steam client update. In addition to the SteamGPT naming convention—a seemingly obvious reference to the <a href="https://www.ibm.com/think/topics/gpt">generative pre-trained transformers</a> popularized by ChatGPT and its ilk—the files include mentions of terms like multi-category inference, fine-tuning, and "upstream models" that point to some sort of generative AI system.</p><p><a href="https://arstechnica.com/gaming/2026/04/what-is-steamgpt-leaked-files-point-to-ai-powered-valve-security-review-system/">Read full article</a></p>
+<p><a href="https://arstechnica.com/gaming/2026/04/what-is-steamgpt-leaked-files-point-to-ai-powered-valve-security-review-system/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>42</slash:comments>
+                
+                
+                <media:content medium="image" type="image/png" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/steamface.png">
+<media:thumbnail height="366" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/steamface-500x366.png" width="500"/>
+<media:credit>Valve</media:credit><media:text>Turn the handle for more AI.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Here's what to expect from the fiery, 14-minute return of Artemis II</title>
+                <link>https://arstechnica.com/space/2026/04/heres-what-to-expect-from-the-fiery-14-minute-return-of-artemis-ii/</link>
+                                    <comments>https://arstechnica.com/space/2026/04/heres-what-to-expect-from-the-fiery-14-minute-return-of-artemis-ii/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 13:50:26 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[artemis II]]></category>
+		<category><![CDATA[heat shield]]></category>
+		<category><![CDATA[orion]]></category>
+		<category><![CDATA[reentry]]></category>
+		<category><![CDATA[space]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/04/heres-what-to-expect-from-the-fiery-14-minute-return-of-artemis-ii/</guid>
+
+                                    <description>
+                        <![CDATA["Let’s not beat around the bush—we have to hit that angle correctly."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Death, taxes, and the gravitationally bound return of the Artemis II mission on Friday evening. These are the only certainties in life.</p>
+<p>Even if the four astronauts on board the Orion spacecraft discovered a serious flaw in their spacecraft today—and to be clear, from recent images reviewed by NASA experts, everything looks just fine—there is no chance of significantly altering the Artemis II mission’s inexorable return through Earth’s atmosphere on Friday. They're coming back one way or another.</p>
+<p>Splashdown is predicted to occur at 8:07 pm ET (00:07 UTC Saturday), a few hundred miles off the coast of Southern California. In large and important ways, this is the most critical phase of the lunar flight. Here, then, is what to expect later today.</p><p><a href="https://arstechnica.com/space/2026/04/heres-what-to-expect-from-the-fiery-14-minute-return-of-artemis-ii/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/04/heres-what-to-expect-from-the-fiery-14-minute-return-of-artemis-ii/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>305</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/art002e012476large-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/art002e012476large-500x500.jpg" width="500"/>
+<media:credit>NASA</media:credit><media:text>External images of Orion in flight show the spacecraft is in great condition after its journey around the Moon.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Pro-Iran Explosive Media trolls Trump with AI-generated Lego cartoons</title>
+                <link>https://arstechnica.com/culture/2026/04/pro-iran-explosive-media-trolls-trump-with-ai-generated-lego-cartoons/</link>
+                                    <comments>https://arstechnica.com/culture/2026/04/pro-iran-explosive-media-trolls-trump-with-ai-generated-lego-cartoons/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[David Gilbert, wired.com]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 13:18:25 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Culture]]></category>
+		<category><![CDATA[Donald Trump]]></category>
+		<category><![CDATA[donald trump iran war]]></category>
+		<category><![CDATA[Iran]]></category>
+		<category><![CDATA[Lego]]></category>
+		<category><![CDATA[memes]]></category>
+		<category><![CDATA[syndication]]></category>
+		<category><![CDATA[USA-Iran War]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/culture/2026/04/pro-iran-explosive-media-trolls-trump-with-ai-generated-lego-cartoons/</guid>
+
+                                    <description>
+                        <![CDATA[Group has released over a dozen videos mocking President Trump and the US.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Minutes after <a href="https://www.wired.com/story/this-is-how-trump-is-already-threatening-the-midterms/">President Donald Trump</a> announced that he would not wipe out “a whole civilization” on Tuesday evening, a team of self-described young Iranian activists jumped into action.</p>
+<p>Members of the group known as Explosive Media were putting the finishing touches on their latest AI-generated, <a href="https://www.wired.com/story/lego-movie-2-review/">Lego</a>-inspired Trump video. The video features a Trump mini-figure colluding with leaders from Gulf states, Iranian officials pressing a big red button labeled “back to the stone age,” and Trump throwing a chair at US generals.</p>
+<p>This was the latest of more than a dozen videos the pro-Iran group has released since the beginning of the war in February, many of which have racked up millions of views on mainstream platforms. While Iranian government accounts have posted Lego-style videos in the past, Explosive Media’s content is more sophisticated and scripted. And it's produced by a team of young pro-Iranian creators who appear deeply knowledgeable about the Internet and American culture. Already <a href="https://bsky.app/profile/andyscollick.bsky.social/post/3misz3pwjs22m">some critics</a> have <a href="https://www.forbesafrica.com/current-affairs/2026/03/29/pro-iran-videos-flood-social-media-including-a-lego-version-of-trump-but-x-meta-tiktok-are-silent">alleged</a> the group has <a href="https://www.jpost.com/middle-east/iran-news/article-889531">ties</a> to the Iranian government.</p><p><a href="https://arstechnica.com/culture/2026/04/pro-iran-explosive-media-trolls-trump-with-ai-generated-lego-cartoons/">Read full article</a></p>
+<p><a href="https://arstechnica.com/culture/2026/04/pro-iran-explosive-media-trolls-trump-with-ai-generated-lego-cartoons/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>138</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/legotrump-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/legotrump-500x500.jpg" width="500"/>
+<media:credit>Niall Carson/Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Dad stuck in support nightmare after teen lied about age on Discord</title>
+                <link>https://arstechnica.com/tech-policy/2026/04/dad-stuck-in-support-nightmare-after-teen-lied-about-age-on-discord/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/04/dad-stuck-in-support-nightmare-after-teen-lied-about-age-on-discord/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 11:30:45 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[age checks]]></category>
+		<category><![CDATA[age estimation]]></category>
+		<category><![CDATA[age verification]]></category>
+		<category><![CDATA[chatbot]]></category>
+		<category><![CDATA[child safety]]></category>
+		<category><![CDATA[discord]]></category>
+		<category><![CDATA[financial extortion]]></category>
+		<category><![CDATA[online scam]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/04/dad-stuck-in-support-nightmare-after-teen-lied-about-age-on-discord/</guid>
+
+                                    <description>
+                        <![CDATA[Data dump confirms dad's suspicions that Discord knew teen's age prior to hack.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Brady Frey did not realize that his daughter lied about her age when she set up her Discord account. He only found out after her account got hacked and he got trapped in a spiraling support nightmare while trying to stop the hacker from targeting dozens of her young friends with financial extortion scams.</p>
+<p>When Frey's daughter signed up for Discord, she was 12 and technically not old enough to have an account. But like many kids who, regulators have found, commonly lie about their age to access social media platforms, she didn't want to wait another year to join her friends on the messaging app. Hiding her age, she created an account that listed her as over 18 years old.</p>
+<p>Now 13, the teen had been happily using the app for months when she suddenly got locked out of her account after clicking on a link from an attacker posing as Discord support. Since she didn't enable two-factor authentication, the attacker was able to commandeer the account. Frey only found out what was happening when the attacker asked the teen to share her parents' banking information if she wanted to get her account back.</p><p><a href="https://arstechnica.com/tech-policy/2026/04/dad-stuck-in-support-nightmare-after-teen-lied-about-age-on-discord/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/04/dad-stuck-in-support-nightmare-after-teen-lied-about-age-on-discord/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>177</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-2260552350-1024x648.jpg" width="1024">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-2260552350-500x500.jpg" width="500"/>
+<media:credit>NurPhoto / Contributor | NurPhoto</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Rocket Report: Chinese version of Falcon 9 fails; Artemis depends on rapid heavy lift</title>
+                <link>https://arstechnica.com/space/2026/04/rocket-report-price-parity-between-ariane-6-and-falcon-9-isar-stands-down/</link>
+                                    <comments>https://arstechnica.com/space/2026/04/rocket-report-price-parity-between-ariane-6-and-falcon-9-isar-stands-down/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 11:00:00 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[rocket report]]></category>
+		<category><![CDATA[space]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/04/rocket-report-price-parity-between-ariane-6-and-falcon-9-isar-stands-down/</guid>
+
+                                    <description>
+                        <![CDATA[“As space becomes increasingly strategic, access is no longer a luxury."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Welcome to Edition 8.36 of the Rocket Report! Thank you for your indulgence of our missing the report last week, as we focused on the launch and progress of the Artemis II mission. And we are so thrilled it has been going smoothly, with brilliant imagery of the far side of the Moon. Of course, arguably the most difficult part of the flight remains ahead of the crew and Orion spacecraft: atmospheric reentry on Friday evening. We will, of course, have full and continuing coverage for you.</p>
+<p>As always, we <a href="https://arstechnica.wufoo.com/forms/launch-stories/">welcome reader submissions</a>, and if you don't want to miss an issue, please subscribe using the box below (the form will not appear on AMP-enabled versions of the site). Each report will include information on small-, medium-, and heavy-lift rockets as well as a quick look ahead at the next three launches on the calendar.</p>
+<figure class="ars-img-shortcode id-1314289 align-center">
+    <div>
+                        <img decoding="async" width="560" height="81" src="https://cdn.arstechnica.net/wp-content/uploads/2018/05/smalll.png" class="center full" alt="" srcset="https://cdn.arstechnica.net/wp-content/uploads/2018/05/smalll.png 560w, https://cdn.arstechnica.net/wp-content/uploads/2018/05/smalll-300x43.png 300w" sizes="(max-width: 560px) 100vw, 560px">
+                  </div>
+      </figure>
+
+<p><strong>Alpha rocket may launch offshore</strong>. Seagate Space Corporation <a href="https://seagatespace.com/apr-6-2026-firefly-offshore-launch-mou/">announced on Monday</a> a "memorandum of understanding" with Firefly Aerospace to explore the development of an offshore launch platform that enables a sea-based launch capability for the Alpha rocket. Seagate Space said it will work closely with Firefly to mature the design of an integrated offshore launch system capable of supporting Alpha.</p><p><a href="https://arstechnica.com/space/2026/04/rocket-report-price-parity-between-ariane-6-and-falcon-9-isar-stands-down/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/04/rocket-report-price-parity-between-ariane-6-and-falcon-9-isar-stands-down/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>76</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/55186765716_feed099d47_k-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/55186765716_feed099d47_k-500x500.jpg" width="500"/>
+<media:credit>United Launch Alliance</media:credit><media:text>The Atlas V rocket launches its heaviest mission to date on April 4.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Orion helium leak no threat to Artemis II reentry but will require redesign</title>
+                <link>https://arstechnica.com/space/2026/04/nasa-homes-in-on-likely-redesign-to-fix-orion-spacecrafts-leaky-valves/</link>
+                                    <comments>https://arstechnica.com/space/2026/04/nasa-homes-in-on-likely-redesign-to-fix-orion-spacecrafts-leaky-valves/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Fri, 10 Apr 2026 00:55:51 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[Space]]></category>
+		<category><![CDATA[airbus]]></category>
+		<category><![CDATA[artemis]]></category>
+		<category><![CDATA[artemis II]]></category>
+		<category><![CDATA[artemis iii]]></category>
+		<category><![CDATA[artemis iv]]></category>
+		<category><![CDATA[european service module]]></category>
+		<category><![CDATA[european space agency]]></category>
+		<category><![CDATA[human spaceflight]]></category>
+		<category><![CDATA[moon]]></category>
+		<category><![CDATA[NASA]]></category>
+		<category><![CDATA[orion spacecraft]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/04/nasa-homes-in-on-likely-redesign-to-fix-orion-spacecrafts-leaky-valves/</guid>
+
+                                    <description>
+                        <![CDATA[After leaks on Artemis I and II, Orion's next flight to the Moon will need new valves.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Apart from pesky issues with the <a href="https://arstechnica.com/space/2026/04/artemis-ii-is-going-so-well-that-were-left-to-talk-about-frozen-urine/">spacecraft's toilet and waste disposal system</a>, most of the Artemis II mission has proceeded like clockwork. NASA has made few changes to the flight plan since the launch of the lunar flyby mission on April 1.</p>
+<p>But ground controllers revamped the timeline Wednesday as the Artemis II astronauts zoomed toward Earth after a close <a href="https://arstechnica.com/space/2026/04/the-artemis-ii-mission-sends-back-stunning-images-of-the-far-side-of-the-moon/">encounter with the Moon</a> earlier this week. The four astronauts were supposed to take manual control of their Orion spacecraft, named <em>Integrity, </em>for a piloting demonstration Wednesday night.</p>
+<p>Instead, mission managers canceled the demo to make time for an additional test of the ship's propulsion system. The goal was to gather data on a "small leak" of helium gas, which Orion uses to push propellant through a series of tanks and pipes to feed the spacecraft's rocket engines, said Jeff Radigan, NASA's lead flight director for the Artemis II mission.</p><p><a href="https://arstechnica.com/space/2026/04/nasa-homes-in-on-likely-redesign-to-fix-orion-spacecrafts-leaky-valves/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/04/nasa-homes-in-on-likely-redesign-to-fix-orion-spacecrafts-leaky-valves/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>133</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/55194459003_3bae619a73_o-1152x648-1775781075.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/55194459003_3bae619a73_o-500x500.jpg" width="500"/>
+<media:credit>NASA</media:credit><media:text>Orion's main engine and auxiliary thrusters, seen Tuesday during an external survey of the spacecraft with a camera mounted on one of the ship's solar array wings. </media:text></media:content>
+            </item>
+                    <item>
+                <title>RFK Jr. rewrites CDC panel's charter, opening door to anti-vaccine quacks</title>
+                <link>https://arstechnica.com/health/2026/04/rfk-jr-rewrites-cdc-panels-charter-opening-door-to-anti-vaccine-quacks/</link>
+                                    <comments>https://arstechnica.com/health/2026/04/rfk-jr-rewrites-cdc-panels-charter-opening-door-to-anti-vaccine-quacks/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Beth Mole]]>
+                </dc:creator>
+                <pubDate>Thu, 09 Apr 2026 22:32:37 +0000</pubDate>
+                		<category><![CDATA[Health]]></category>
+		<category><![CDATA[ACIP]]></category>
+		<category><![CDATA[anti-vaccine]]></category>
+		<category><![CDATA[CDC]]></category>
+		<category><![CDATA[robert f kennedy jr]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/health/2026/04/rfk-jr-rewrites-cdc-panels-charter-opening-door-to-anti-vaccine-quacks/</guid>
+
+                                    <description>
+                        <![CDATA[ACIP's charter now full of anti-vaccine terms and welcomes fringe groups to CDC.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>As expected, anti-vaccine Health Secretary Robert F. Kennedy Jr. has significantly rewritten the charter for a federal vaccine advisory panel. The edits give him more power to appoint his like-minded allies as federal advisors, shift the panel's focus to alleged vaccine injuries and risks, and welcome fringe groups and anti-vaccine organizations to the Centers for Disease Control and Prevention.</p>
+<p>On Monday, a notice in the Federal Register indicated Kennedy renewed the charter for the CDC's Advisory Committee on Immunization Practices (ACIP), which is done every two years, with the last term having ended April 1. But instead of the usual humdrum renewal process, the notice on Monday <a href="https://arstechnica.com/health/2026/04/after-court-loss-rfk-jr-gives-himself-more-power-over-cdc-vaccine-panel/">indicated big changes were coming</a> to the defining document of the panel, which heavily influences federal vaccine policy that, in turn, influences state requirements and insurance coverage.</p>
+<p><a href="https://www.cdc.gov/acip/about/acip-charter.html">The new charter</a>, published Thursday, reveals new responsibilities that redirect advisors toward topics and terms dear to anti-vaccine activists. For instance, ACIP members will now be responsible for "considering analysis of cumulative effects of vaccines and their constituent components." This wording echoes explicit goals of Kennedy's anti-vaccine allies, who aim to pin complex conditions—such as allergies, autism, and neurodevelopmental conditions—on combinations of vaccinations or common ingredients in those shots, such as aluminum adjuvants. This is a pivot from anti-vaccine activists' earlier attacks that focused on individual vaccines, such as the false, fraudulent claim that the measles vaccine is linked to autism—a claim that has been roundly debunked by dozens of high-quality studies.</p><p><a href="https://arstechnica.com/health/2026/04/rfk-jr-rewrites-cdc-panels-charter-opening-door-to-anti-vaccine-quacks/">Read full article</a></p>
+<p><a href="https://arstechnica.com/health/2026/04/rfk-jr-rewrites-cdc-panels-charter-opening-door-to-anti-vaccine-quacks/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>86</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2025/03/GettyImages-2203339270-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2025/03/GettyImages-2203339270-500x500.jpg" width="500"/>
+<media:credit>Getty | Win McNamee</media:credit><media:text> US Secretary of Health and Human Services Robert F. Kennedy Jr. attends President Donald Trump's address to a joint session of Congress on March 4, 2025 in Washington, DC. </media:text></media:content>
+            </item>
+                    <item>
+                <title>AI on the couch: Anthropic gives Claude 20 hours of psychiatry</title>
+                <link>https://arstechnica.com/ai/2026/04/why-anthropic-sent-its-claude-ai-to-an-actual-psychiatrist/</link>
+                                    <comments>https://arstechnica.com/ai/2026/04/why-anthropic-sent-its-claude-ai-to-an-actual-psychiatrist/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Nate Anderson]]>
+                </dc:creator>
+                <pubDate>Thu, 09 Apr 2026 21:20:31 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[chatbot]]></category>
+		<category><![CDATA[Claude]]></category>
+		<category><![CDATA[psychiatry]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/ai/2026/04/why-anthropic-sent-its-claude-ai-to-an-actual-psychiatrist/</guid>
+
+                                    <description>
+                        <![CDATA[Mythos is "the most psychologically settled model we have trained to date."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>The AI company Anthropic released a <a href="https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf">244-page "system card"</a> (PDF) this week describing its newest model, Claude Mythos. The model is "our most capable frontier model to date," the company says, and supposedly is so good that Anthropic has decided "not to make it generally available." (The company claims that Mythos is too good at finding unknown cybersecurity bugs, and so the model is only being released to select companies like Microsoft and Apple for now.)</p>
+<p>Whatever the truth of this claim, the system card is a fascinating document. Anthropic is well-known as <a href="https://arstechnica.com/information-technology/2026/01/does-anthropic-believe-its-ai-is-conscious-or-is-that-just-what-it-wants-claude-to-think/">one of the more "AI might be conscious!" companies in the industry</a>, and its new system card claims that as models become more powerful, "It becomes increasingly likely that they have some form of experience, interests, or welfare that matters intrinsically in the way that human experience and interests do."</p>
+<p>The company isn't <em>sure</em> about this, it makes clear, but it says that "our concern is growing over time."</p><p><a href="https://arstechnica.com/ai/2026/04/why-anthropic-sent-its-claude-ai-to-an-actual-psychiatrist/">Read full article</a></p>
+<p><a href="https://arstechnica.com/ai/2026/04/why-anthropic-sent-its-claude-ai-to-an-actual-psychiatrist/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>277</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-1397973635-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-1397973635-500x500.jpg" width="500"/>
+<media:credit>Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Clinical trial shows gene editing works for β-Thalassaemia, too</title>
+                <link>https://arstechnica.com/science/2026/04/clinical-trial-shows-gene-editing-works-for-%ce%b2-thalassaemia-too/</link>
+                                    <comments>https://arstechnica.com/science/2026/04/clinical-trial-shows-gene-editing-works-for-%ce%b2-thalassaemia-too/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[John Timmer]]>
+                </dc:creator>
+                <pubDate>Thu, 09 Apr 2026 20:28:48 +0000</pubDate>
+                		<category><![CDATA[Health]]></category>
+		<category><![CDATA[Science]]></category>
+		<category><![CDATA[clinical trial]]></category>
+		<category><![CDATA[CRISPR]]></category>
+		<category><![CDATA[gene editing]]></category>
+		<category><![CDATA[β-Thalassaemia]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/04/clinical-trial-shows-gene-editing-works-for-%ce%b2-thalassaemia-too/</guid>
+
+                                    <description>
+                        <![CDATA[Improved gene editing process reactivates the fetal version of a hemoglobin gene.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Almost as soon as researchers started exploring the capabilities of the CRISPR/Cas9 system, they recognized its potential use in targeted gene editing. But the intervening decades have seen slow progress as people worked to determine how to do so in a way that would be safe for use in humans. It was only a little over two years ago, decades after CRISPR's discovery, that the FDA <a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease">approved the first CRISPR-based therapy</a>, for sickle-cell anemia.</p>
+<p>Now, following up on that success, a large Chinese collaboration has followed up with a description of an improved gene editing system that produces more focused changes and fewer mistakes. And they've used it to produce a therapy that addresses a disease that's closely related to sickle-cell anemia: β-Thalassaemia.</p>
+<h2>Gene editing and its limits</h2>
+<p>The CRISPR/Cas-9 system provides bacteria with a form of immunity. It uses specially structured RNAs (called guide RNAs) that can base-pair with a targeted sequence. The Cas-9 protein then recognizes this structure and cuts the DNA nearby. This is quite effective when the guide RNA can base-pair with a DNA virus, as the resulting cut will inactivate the virus.</p><p><a href="https://arstechnica.com/science/2026/04/clinical-trial-shows-gene-editing-works-for-%ce%b2-thalassaemia-too/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/04/clinical-trial-shows-gene-editing-works-for-%ce%b2-thalassaemia-too/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>14</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-185759358-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/04/GettyImages-185759358-500x500.jpg" width="500"/>
+<media:credit>Laguna Design</media:credit><media:text>A diagram of hemoglobin.</media:text></media:content>
+            </item>
+            </channel>
+</rss>

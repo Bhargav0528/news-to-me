@@ -1,0 +1,604 @@
+[
+  {
+    "feed": {
+      "name": "The Hindu",
+      "category": "India / General",
+      "url": "https://www.thehindu.com/feeder/default.rss"
+    },
+    "http_status": 200,
+    "final_url": "https://www.thehindu.com/feeder/default.rss",
+    "item_count_in_feed": 60,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 15,
+    "freshness_hours_since_newest": 0.2,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 4,
+      "headline/link only": 1
+    },
+    "sample_entries": [
+      {
+        "title": "First-ever life-size Vivekananda statue in U.S. unveiled in Seattle",
+        "published": "2026-04-12T07:45:10+00:00",
+        "summary_words": 25,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindu.com/news/international/first-ever-life-size-vivekananda-statue-in-us-unveiled-in-seattle/article70853444.ece"
+      },
+      {
+        "title": "Unions, experts blame delay in Aavin milk supply on poor man-management",
+        "published": "2026-04-12T07:44:51+00:00",
+        "summary_words": 0,
+        "content_words": 0,
+        "content_type": "headline/link only",
+        "link": "https://www.thehindu.com/news/national/tamil-nadu/unions-experts-blame-delay-in-aavin-milk-supply-on-poor-man-management/article70851698.ece"
+      },
+      {
+        "title": "Asha Bhosle, legendary playback singer, passes away at 92 in Mumbai",
+        "published": "2026-04-12T07:44:14+00:00",
+        "summary_words": 20,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindu.com/entertainment/music/legendary-singer-asha-bhosle-passes-away-in-mumbai/article70853571.ece"
+      },
+      {
+        "title": "Amarnath Yatra to begin from July 3; registrations to open from April 15",
+        "published": "2026-04-12T07:39:54+00:00",
+        "summary_words": 29,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindu.com/news/national/jammu-and-kashmir/amarnath-yatra-to-begin-from-july-3-registrations-to-open-from-april-15/article70853525.ece"
+      },
+      {
+        "title": "Chennai Poll Canvas: Harbour | Seeking growth, peace and stability",
+        "published": "2026-04-12T07:39:19+00:00",
+        "summary_words": 28,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindu.com/videos/chennai-poll-canvas-harbour-seeking-growth-peace-and-stability/article70850971.ece"
+      }
+    ],
+    "raw_xml_path": "samples/the-hindu.xml"
+  },
+  {
+    "feed": {
+      "name": "Indian Express India",
+      "category": "India / National",
+      "url": "https://indianexpress.com/section/india/feed/"
+    },
+    "http_status": 200,
+    "final_url": "https://indianexpress.com/section/india/feed/",
+    "item_count_in_feed": 200,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 15,
+    "freshness_hours_since_newest": 0.22,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline/link only": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Amarnath Yatra from July 3 to August 28; registration opens April 15",
+        "published": "2026-04-12T07:43:36+00:00",
+        "summary_words": 0,
+        "content_words": 0,
+        "content_type": "headline/link only",
+        "link": "https://indianexpress.com/article/india/amarnath-yatra-registration-dates-10632274/"
+      },
+      {
+        "title": "Assembly Elections 2026 Live Updates: PM Modi takes part in a massive public meeting in Siliguri",
+        "published": "2026-04-12T05:00:49+00:00",
+        "summary_words": 0,
+        "content_words": 0,
+        "content_type": "headline/link only",
+        "link": "https://indianexpress.com/article/india/assembly-elections-2026-live-updates-tmc-bjp-west-bengal-tamil-nadu-assam-kerala-10632022-10632041/"
+      },
+      {
+        "title": "\u2018Faith healing\u2019 congregation in MP village lands two pastors in jail; police probe wider \u2018conversion network\u2019",
+        "published": "2026-04-12T01:03:01+00:00",
+        "summary_words": 0,
+        "content_words": 0,
+        "content_type": "headline/link only",
+        "link": "https://indianexpress.com/article/india/faith-healing-under-scanner-madhya-pradesh-police-book-2-pastors-over-conversion-racket-in-guna-10631786/"
+      },
+      {
+        "title": "Ladakh secures distinct Aadhaar identity, UIDAI removes J&K tag",
+        "published": "2026-04-11T23:38:58+00:00",
+        "summary_words": 0,
+        "content_words": 0,
+        "content_type": "headline/link only",
+        "link": "https://indianexpress.com/article/india/ladakh-secures-distinct-aadhaar-identity-uidai-removes-jk-tag-10631828/"
+      },
+      {
+        "title": "Himachal has over 300 cases of Section 118 violations pending",
+        "published": "2026-04-11T23:37:27+00:00",
+        "summary_words": 0,
+        "content_words": 0,
+        "content_type": "headline/link only",
+        "link": "https://indianexpress.com/article/india/himachal-has-over-300-cases-of-section-118-violations-pending-10631831/"
+      }
+    ],
+    "raw_xml_path": "samples/indian-express-india.xml"
+  },
+  {
+    "feed": {
+      "name": "The Hindu BusinessLine",
+      "category": "India / Business",
+      "url": "https://www.thehindubusinessline.com/feeder/default.rss"
+    },
+    "http_status": 200,
+    "final_url": "https://www.thehindubusinessline.com/feeder/default.rss",
+    "item_count_in_feed": 60,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 15,
+    "freshness_hours_since_newest": 0.08,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Retail inflation likely rose 3.5-4% in March",
+        "published": "2026-04-12T07:52:18+00:00",
+        "summary_words": 13,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindubusinessline.com/economy/retail-inflation-likely-rose-35-4-in-march/article70853305.ece"
+      },
+      {
+        "title": "Mcap of 8 of top-10 most valued firms jumps \u20b94.13 lakh cr; HDFC, ICICI Bank top gainers",
+        "published": "2026-04-12T07:36:02+00:00",
+        "summary_words": 23,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindubusinessline.com/companies/mcap-of-8-of-top-10-most-valued-firms-jumps-413-lakh-cr-hdfc-icici-bank-top-gainers/article70853558.ece"
+      },
+      {
+        "title": "Shell steps up LNG supplies to India, wins major fertiliser tenders after Gulf disruptions",
+        "published": "2026-04-12T07:33:23+00:00",
+        "summary_words": 26,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindubusinessline.com/companies/shell-steps-up-lng-supplies-to-india-wins-major-fertiliser-tenders-after-gulf-disruptions/article70853542.ece"
+      },
+      {
+        "title": "Coal India absorbs cost surge to shield consumers from price spike",
+        "published": "2026-04-12T07:31:00+00:00",
+        "summary_words": 26,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindubusinessline.com/companies/coal-india-absorbs-cost-surge-to-shield-consumers-from-price-spike/article70853487.ece"
+      },
+      {
+        "title": "TCS makes only 25k fresher offers this fiscal, more hires dependent on demand scenario: Official",
+        "published": "2026-04-12T07:20:05+00:00",
+        "summary_words": 34,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.thehindubusinessline.com/info-tech/tcs-makes-only-25k-fresher-offers-this-fiscal-more-hires-dependent-on-demand-scenario-official/article70853545.ece"
+      }
+    ],
+    "raw_xml_path": "samples/the-hindu-businessline.xml"
+  },
+  {
+    "feed": {
+      "name": "BBC World",
+      "category": "World",
+      "url": "http://feeds.bbci.co.uk/news/world/rss.xml"
+    },
+    "http_status": 200,
+    "final_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "item_count_in_feed": 26,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 14,
+    "freshness_hours_since_newest": 0.21,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Hungarians vote on whether to end 16 years of Orb\u00e1n rule and elect rival",
+        "published": "2026-04-12T07:44:27+00:00",
+        "summary_words": 19,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.bbc.com/news/articles/cdxdepjrv95o?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "title": "'We need real peace': Easter truce fails to lift grim mood in war-torn Ukraine",
+        "published": "2026-04-12T04:20:37+00:00",
+        "summary_words": 18,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.bbc.com/news/articles/cj0vn30574no?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "title": "At least 30 feared dead in crush at Haitian tourist site",
+        "published": "2026-04-12T07:22:28+00:00",
+        "summary_words": 16,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.bbc.com/news/articles/cwyj8d49wzxo?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "title": "Prosecutor probes abuse claims against California governor candidate Swalwell",
+        "published": "2026-04-12T05:22:34+00:00",
+        "summary_words": 14,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.bbc.com/news/articles/c7vq0jnn0yro?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "title": "Why this disillusioned Trump voter spends hours searching Epstein files",
+        "published": "2026-04-12T00:30:44+00:00",
+        "summary_words": 20,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.bbc.com/news/articles/cx237vmr2lyo?at_medium=RSS&at_campaign=rss"
+      }
+    ],
+    "raw_xml_path": "samples/bbc-world.xml"
+  },
+  {
+    "feed": {
+      "name": "NPR World",
+      "category": "World",
+      "url": "https://feeds.npr.org/1004/rss.xml"
+    },
+    "http_status": 200,
+    "final_url": "https://feeds.npr.org/1004/rss.xml",
+    "item_count_in_feed": 10,
+    "items_sampled": 10,
+    "articles_in_last_24h_with_timestamp": 9,
+    "freshness_hours_since_newest": 10.87,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Pakistan hosts historic face-to-face talks between the US and Iran",
+        "published": "2026-04-11T21:04:49+00:00",
+        "summary_words": 26,
+        "content_words": 26,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.npr.org/2026/04/11/nx-s1-5779725/pakistan-hosts-historic-face-to-face-talks-between-the-us-and-iran"
+      },
+      {
+        "title": "At a concert in Budapest, anti-Orb\u00e1n sentiments take center stage ahead of election",
+        "published": "2026-04-11T21:04:47+00:00",
+        "summary_words": 17,
+        "content_words": 17,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.npr.org/2026/04/11/nx-s1-5773325/at-a-concert-in-budapest-anti-orban-sentiments-take-center-stage-ahead-of-election"
+      },
+      {
+        "title": "How Hungarian Prime Minister Viktor Orb\u00e1n's hometown became a symbol of excesses",
+        "published": "2026-04-11T21:04:45+00:00",
+        "summary_words": 31,
+        "content_words": 35,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.npr.org/2026/04/11/nx-s1-5773321/viktor-orban-hungary-hometown"
+      },
+      {
+        "title": "In Hungary, upcoming elections could bring an end to Orban's 16-year rule",
+        "published": "2026-04-11T21:04:44+00:00",
+        "summary_words": 32,
+        "content_words": 32,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.npr.org/2026/04/11/nx-s1-5773320/in-hungary-upcoming-elections-could-bring-an-end-to-orbans-16-year-rule"
+      },
+      {
+        "title": "What's it like to cover the Ukraine war as the world's attention is focused on Iran?",
+        "published": "2026-04-11T21:04:43+00:00",
+        "summary_words": 30,
+        "content_words": 30,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.npr.org/2026/04/11/nx-s1-5768193/whats-it-like-to-cover-the-ukraine-war-as-the-worlds-attention-is-focused-on-iran"
+      }
+    ],
+    "raw_xml_path": "samples/npr-world.xml"
+  },
+  {
+    "feed": {
+      "name": "NYT Home",
+      "category": "US / General",
+      "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+    },
+    "http_status": 200,
+    "final_url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "item_count_in_feed": 17,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 14,
+    "freshness_hours_since_newest": 0.8,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "What Now? Vance Leaves Iran Talks Without a Deal.",
+        "published": "2026-04-12T06:47:05+00:00",
+        "summary_words": 18,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.nytimes.com/2026/04/12/us/politics/vance-iran-talks.html"
+      },
+      {
+        "title": "Trump Was Watching a U.F.C. Fight in Miami While Iran Talks Collapsed",
+        "published": "2026-04-12T04:08:33+00:00",
+        "summary_words": 28,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.nytimes.com/2026/04/11/us/politics/trump-ufc-iran-war.html"
+      },
+      {
+        "title": "Judges Fired After Blocking Deportations of Pro-Palestinian Students",
+        "published": "2026-04-11T22:32:51+00:00",
+        "summary_words": 19,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.nytimes.com/2026/04/11/us/politics/immigration-judges-deportations-students.html"
+      },
+      {
+        "title": "Postal Service, Under Pressure, Now Faces Trump\u2019s Mail Ballot Order",
+        "published": "2026-04-11T18:40:11+00:00",
+        "summary_words": 24,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.nytimes.com/2026/04/11/us/politics/postal-service-budget-mail-ballots.html"
+      },
+      {
+        "title": "USPS Is Running Out of Money. Here\u2019s How It Could Affect Your Mail.",
+        "published": "2026-04-11T18:41:43+00:00",
+        "summary_words": 27,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.nytimes.com/2026/04/11/us/politics/postal-service-finances-mail.html"
+      }
+    ],
+    "raw_xml_path": "samples/nyt-home.xml"
+  },
+  {
+    "feed": {
+      "name": "CNBC Top News",
+      "category": "US / Business",
+      "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+    },
+    "http_status": 200,
+    "final_url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "item_count_in_feed": 30,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 8,
+    "freshness_hours_since_newest": 5.18,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Vance heads back to the U.S. without striking a deal with Iran to bring an end to the war",
+        "published": "2026-04-12T02:46:04+00:00",
+        "summary_words": 19,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.cnbc.com/2026/04/11/us-iran-talks-set-to-begin-in-islamabad-after-delegations-arrive.html"
+      },
+      {
+        "title": "Berkshire electric utility's court win could save it billions",
+        "published": "2026-04-11T11:43:24+00:00",
+        "summary_words": 12,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.cnbc.com/2026/04/11/berkshire-electric-utilitys-court-win-could-save-it-billions.html"
+      },
+      {
+        "title": "How Kodak is trying to turn around its business after teetering on bankruptcy",
+        "published": "2026-04-11T12:00:01+00:00",
+        "summary_words": 22,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.cnbc.com/2026/04/11/kodak-film-business-ceo-jim-continenza.html"
+      },
+      {
+        "title": "Vibe check from inside one of AI industry's main events: 'Claude mania'",
+        "published": "2026-04-11T12:00:01+00:00",
+        "summary_words": 15,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.cnbc.com/2026/04/11/vibe-check-from-ai-industry-humanx-anthropic-is-talk-of-the-town.html"
+      },
+      {
+        "title": "How bond market's private credit crisis fears are playing out in fixed-income ETFs",
+        "published": "2026-04-11T21:37:12+00:00",
+        "summary_words": 23,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.cnbc.com/2026/04/11/bond-market-private-credit-crisis-fixed-income-etfs.html"
+      }
+    ],
+    "raw_xml_path": "samples/cnbc-top-news.xml"
+  },
+  {
+    "feed": {
+      "name": "MarketWatch Top Stories",
+      "category": "US / Markets",
+      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+    },
+    "http_status": 200,
+    "final_url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "item_count_in_feed": 10,
+    "items_sampled": 10,
+    "articles_in_last_24h_with_timestamp": 10,
+    "freshness_hours_since_newest": 13.03,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Here are some bargain bank stocks heading into earnings season",
+        "published": "2026-04-11T18:55:00+00:00",
+        "summary_words": 15,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.marketwatch.com/story/here-are-some-bargain-bank-stocks-heading-into-earnings-season-d0e6b3da?mod=mw_rss_topstories"
+      },
+      {
+        "title": "There are years-long waiting lists to retire on college campuses. 6 steps to take before enrolling.",
+        "published": "2026-04-11T18:51:00+00:00",
+        "summary_words": 14,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.marketwatch.com/story/there-are-years-long-waiting-lists-to-retire-on-college-campuses-6-steps-to-take-before-enrolling-d7bd2d2d?mod=mw_rss_topstories"
+      },
+      {
+        "title": "United Airlines wants even higher ticket prices. It\u2019ll get them \u2014 with or without the Iran war.",
+        "published": "2026-04-11T18:42:00+00:00",
+        "summary_words": 16,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.marketwatch.com/story/united-airlines-wants-even-higher-ticket-prices-itll-get-them-with-or-without-the-iran-war-4833e1d1?mod=mw_rss_topstories"
+      },
+      {
+        "title": "Mortgage rates dip following Iran cease-fire. Why that\u2019s great timing for people selling a home.",
+        "published": "2026-04-11T18:35:00+00:00",
+        "summary_words": 12,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.marketwatch.com/story/mortgage-rates-dip-following-iran-cease-fire-why-thats-great-timing-for-people-selling-a-home-be81ad97?mod=mw_rss_topstories"
+      },
+      {
+        "title": "My wife and I want to move to Malaysia. Will we receive Social Security benefits there?",
+        "published": "2026-04-11T18:31:00+00:00",
+        "summary_words": 14,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://www.marketwatch.com/story/my-wife-and-i-want-to-move-to-malaysia-will-we-receive-social-security-benefits-there-cb38f98e?mod=mw_rss_topstories"
+      }
+    ],
+    "raw_xml_path": "samples/marketwatch-top-stories.xml"
+  },
+  {
+    "feed": {
+      "name": "TechCrunch",
+      "category": "Tech",
+      "url": "https://techcrunch.com/feed/"
+    },
+    "http_status": 200,
+    "final_url": "https://techcrunch.com/feed/",
+    "item_count_in_feed": 20,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 5,
+    "freshness_hours_since_newest": 4.95,
+    "reliability": "good",
+    "sample_content_types": {
+      "headline + short excerpt": 5
+    },
+    "sample_entries": [
+      {
+        "title": "Walmart-owned Flipkart, Amazon are squeezing India\u2019s quick commerce startups",
+        "published": "2026-04-12T03:00:00+00:00",
+        "summary_words": 19,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://techcrunch.com/2026/04/11/walmart-owned-flipkart-amazon-are-squeezing-indias-quick-commerce-startups/"
+      },
+      {
+        "title": "Kalshi wins temporary pause in Arizona criminal case",
+        "published": "2026-04-11T21:20:24+00:00",
+        "summary_words": 24,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://techcrunch.com/2026/04/11/kalshi-wins-temporary-pause-in-arizona-criminal-case/"
+      },
+      {
+        "title": "AMC will stream \u2018The Audacity\u2019 premiere in 21 parts on TikTok",
+        "published": "2026-04-11T20:32:23+00:00",
+        "summary_words": 16,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://techcrunch.com/2026/04/11/amc-will-stream-the-audacity-premiere-in-21-parts-on-tiktok/"
+      },
+      {
+        "title": "Sam Altman responds to \u2018incendiary\u2019 New Yorker article after attack on his home",
+        "published": "2026-04-11T17:18:22+00:00",
+        "summary_words": 26,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/"
+      },
+      {
+        "title": "Nvidia-backed SiFive hits $3.65 billion valuation for open AI chips",
+        "published": "2026-04-11T14:03:00+00:00",
+        "summary_words": 22,
+        "content_words": 0,
+        "content_type": "headline + short excerpt",
+        "link": "https://techcrunch.com/2026/04/11/nvidia-backed-sifive-hits-3-65-billion-valuation-for-open-ai-chips/"
+      }
+    ],
+    "raw_xml_path": "samples/techcrunch.xml"
+  },
+  {
+    "feed": {
+      "name": "Ars Technica",
+      "category": "Tech",
+      "url": "https://feeds.arstechnica.com/arstechnica/index"
+    },
+    "http_status": 200,
+    "final_url": "https://feeds.arstechnica.com/arstechnica/index",
+    "item_count_in_feed": 20,
+    "items_sampled": 15,
+    "articles_in_last_24h_with_timestamp": 1,
+    "freshness_hours_since_newest": 20.69,
+    "reliability": "good",
+    "sample_content_types": {
+      "long excerpt": 3,
+      "headline + short excerpt": 2
+    },
+    "sample_entries": [
+      {
+        "title": "AI models are terrible at betting on soccer\u2014especially xAI Grok",
+        "published": "2026-04-11T11:15:17+00:00",
+        "summary_words": 12,
+        "content_words": 122,
+        "content_type": "long excerpt",
+        "link": "https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/"
+      },
+      {
+        "title": "The Artemis II mission has ended. Where does NASA go from here?",
+        "published": "2026-04-11T03:24:21+00:00",
+        "summary_words": 10,
+        "content_words": 102,
+        "content_type": "headline + short excerpt",
+        "link": "https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/"
+      },
+      {
+        "title": "Four astronauts are back home after a daring ride around the Moon",
+        "published": "2026-04-11T01:21:10+00:00",
+        "summary_words": 14,
+        "content_words": 188,
+        "content_type": "long excerpt",
+        "link": "https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/"
+      },
+      {
+        "title": "Californians sue over AI tool that records doctor visits",
+        "published": "2026-04-10T21:43:33+00:00",
+        "summary_words": 8,
+        "content_words": 115,
+        "content_type": "headline + short excerpt",
+        "link": "https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/"
+      },
+      {
+        "title": "New paper argues history, not mantle plume, powers Yellowstone",
+        "published": "2026-04-10T20:06:39+00:00",
+        "summary_words": 12,
+        "content_words": 235,
+        "content_type": "long excerpt",
+        "link": "https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/"
+      }
+    ],
+    "raw_xml_path": "samples/ars-technica.xml"
+  }
+]

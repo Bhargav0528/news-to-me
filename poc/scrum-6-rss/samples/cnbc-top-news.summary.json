@@ -1,0 +1,60 @@
+{
+  "feed": {
+    "name": "CNBC Top News",
+    "category": "US / Business",
+    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+  },
+  "http_status": 200,
+  "final_url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+  "item_count_in_feed": 30,
+  "items_sampled": 15,
+  "articles_in_last_24h_with_timestamp": 8,
+  "freshness_hours_since_newest": 5.18,
+  "reliability": "good",
+  "sample_content_types": {
+    "headline + short excerpt": 5
+  },
+  "sample_entries": [
+    {
+      "title": "Vance heads back to the U.S. without striking a deal with Iran to bring an end to the war",
+      "published": "2026-04-12T02:46:04+00:00",
+      "summary_words": 19,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.cnbc.com/2026/04/11/us-iran-talks-set-to-begin-in-islamabad-after-delegations-arrive.html"
+    },
+    {
+      "title": "Berkshire electric utility's court win could save it billions",
+      "published": "2026-04-11T11:43:24+00:00",
+      "summary_words": 12,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.cnbc.com/2026/04/11/berkshire-electric-utilitys-court-win-could-save-it-billions.html"
+    },
+    {
+      "title": "How Kodak is trying to turn around its business after teetering on bankruptcy",
+      "published": "2026-04-11T12:00:01+00:00",
+      "summary_words": 22,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.cnbc.com/2026/04/11/kodak-film-business-ceo-jim-continenza.html"
+    },
+    {
+      "title": "Vibe check from inside one of AI industry's main events: 'Claude mania'",
+      "published": "2026-04-11T12:00:01+00:00",
+      "summary_words": 15,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.cnbc.com/2026/04/11/vibe-check-from-ai-industry-humanx-anthropic-is-talk-of-the-town.html"
+    },
+    {
+      "title": "How bond market's private credit crisis fears are playing out in fixed-income ETFs",
+      "published": "2026-04-11T21:37:12+00:00",
+      "summary_words": 23,
+      "content_words": 0,
+      "content_type": "headline + short excerpt",
+      "link": "https://www.cnbc.com/2026/04/11/bond-market-private-credit-crisis-fixed-income-etfs.html"
+    }
+  ],
+  "raw_xml_path": "samples/cnbc-top-news.xml"
+}
