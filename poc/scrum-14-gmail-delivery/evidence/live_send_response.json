@@ -1,0 +1,7 @@
+{
+  "mode": "live",
+  "status": "error",
+  "http_status": 403,
+  "error": "Forbidden",
+  "note": "Resend rejected the real-recipient send attempt before delivery. Gmail inbox placement cannot be checked until this API-level permission/block is resolved."
+}

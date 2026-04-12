@@ -1,0 +1,4 @@
+Sending email from mrmain@agentmail.to to bhargavbangalorevmurthy@gmail.com
+✅ Email sent successfully!
+   Message ID: <0100019d83a40211-d4ad7659-a7c4-4f8f-b13c-ead6b7cb521d-000000@email.amazonses.com>
+   Thread ID: 46992cd3-c4dc-4690-9daf-d53724123061
