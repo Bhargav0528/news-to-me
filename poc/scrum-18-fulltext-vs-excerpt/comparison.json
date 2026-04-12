@@ -1,0 +1,143 @@
+[
+  {
+    "article_id": 1,
+    "source": "The Hindu",
+    "title": "First-ever life-size Vivekananda statue in U.S. unveiled in Seattle",
+    "url": "https://www.thehindu.com/news/international/first-ever-life-size-vivekananda-statue-in-us-unveiled-in-seattle/article70853444.ece",
+    "excerpt_input": "The unveiling of the statue was held on the occasion of the celebration of ICCR Day and is part of India’s broader cultural diplomacy initiatives",
+    "fulltext_basis": "The first life-size Swami Vivekananda statue in the U.S. was unveiled at Seattle's Westlake Square. Officials said it is the first such installation hosted by a U.S. city government, and tied it to ICCR Day and India's cultural diplomacy efforts.",
+    "excerpt_summary": {
+      "section": "Business + Tech",
+      "lead": "India highlighted a new cultural diplomacy marker with a public unveiling linked to ICCR Day in Seattle. The excerpt signals symbolic importance, but offers little detail on scale, civic context, or why the installation stands out beyond ceremonial messaging.",
+      "summary_points": [
+        "The event was framed as part of India’s broader cultural diplomacy outreach in the United States.",
+        "The unveiling coincided with ICCR Day, giving it an official cultural-relations backdrop.",
+        "The excerpt identifies the subject as a Vivekananda statue but gives limited civic or local context.",
+        "Why the installation is notable beyond symbolism remains underexplained in the short source text."
+      ],
+      "watchlist": [
+        "Local response",
+        "Further cultural events",
+        "Diplomacy follow-through"
+      ]
+    },
+    "fulltext_summary": {
+      "section": "Business + Tech",
+      "lead": "Seattle hosted the first life-size Swami Vivekananda statue installed with city-government backing in the United States, giving India a more tangible cultural diplomacy milestone than the excerpt alone suggests. The fuller text clarifies both the public location and the precedent-setting civic sponsorship, which makes the story more concrete and newsworthy.",
+      "summary_points": [
+        "A life-size bronze Vivekananda statue was unveiled at Seattle’s busy Westlake Square downtown.",
+        "Officials said it is the first such installation hosted by a city government anywhere in the U.S.",
+        "The ceremony was linked to ICCR Day and positioned within India’s wider cultural diplomacy efforts.",
+        "Full text adds location, material, and precedent details absent from the short excerpt."
+      ],
+      "watchlist": [
+        "Public engagement",
+        "City partnerships",
+        "India-U.S. cultural ties"
+      ]
+    },
+    "score_excerpt": 4,
+    "score_fulltext": 7,
+    "delta": 3,
+    "evidence": [
+      "Excerpt gives only ceremonial framing.",
+      "Full text adds the first-in-U.S.-city-government-hosted angle.",
+      "Full text identifies exact location and installation scale."
+    ],
+    "assessment": "Full text is clearly better, but the gain is moderate because this is a straightforward ceremonial item, not a deeply analytical story."
+  },
+  {
+    "article_id": 2,
+    "source": "The Hindu BusinessLine",
+    "title": "Retail inflation likely rose 3.5-4% in March",
+    "url": "https://www.thehindubusinessline.com/economy/retail-inflation-likely-rose-35-4-in-march/article70853305.ece",
+    "excerpt_input": "LPG price hike and rising service costs seen pushing CPI above February’s 3.2%",
+    "fulltext_basis": "Analysts expect India’s March CPI to rise to roughly 3.5-4.0% from 3.2% in February. The article attributes pressure to LPG and kerosene increases and service costs, while noting food inflation remains relatively soft, gold prices may ease core inflation, and official data is due Monday.",
+    "excerpt_summary": {
+      "section": "Business + Tech",
+      "lead": "India’s March retail inflation appears set to move higher, with fuel-linked household costs and services pushing CPI above February’s level. The excerpt captures the basic direction of travel, but it does not show the likely range, offsetting factors, or timing of the official release.",
+      "summary_points": [
+        "Rising LPG prices and service costs are expected to lift March consumer inflation.",
+        "The article suggests CPI will come in above February’s 3.2% reading.",
+        "The excerpt points to cost pass-through pressure on households and businesses.",
+        "It omits estimated inflation range, food-price offsets, and release timing."
+      ],
+      "watchlist": [
+        "Official CPI print",
+        "Fuel pass-through",
+        "Services inflation"
+      ]
+    },
+    "fulltext_summary": {
+      "section": "Business + Tech",
+      "lead": "India’s retail inflation likely accelerated to roughly 3.5% to 4.0% in March from 3.2% in February, driven mainly by LPG, kerosene, and services costs rather than a broad food shock. The full article materially improves the summary by adding analyst estimates, sector detail, countervailing food trends, and the timing of the official CPI release.",
+      "summary_points": [
+        "Economists expect March CPI in a 3.5% to 4.0% range, above February’s 3.2%.",
+        "Domestic and commercial LPG hikes, plus kerosene increases, are expected to lift the fuel component.",
+        "Businesses including hotels and restaurants may have passed higher energy costs to consumers.",
+        "Food inflation stayed relatively soft, though edible oils and lower vegetable arrivals remain watchpoints."
+      ],
+      "watchlist": [
+        "Monday CPI release",
+        "Food-price trend",
+        "Core inflation path"
+      ]
+    },
+    "score_excerpt": 5,
+    "score_fulltext": 9,
+    "delta": 4,
+    "evidence": [
+      "Full text provides the 3.5-4.0% estimate range instead of just 'above 3.2%'.",
+      "Full text distinguishes fuel and services pressure from relatively benign food inflation.",
+      "Full text names the official release timing and analyst attribution."
+    ],
+    "assessment": "This is the clearest win for full text. Without it, the summary stays generic and misses the balancing details that make the inflation call credible."
+  },
+  {
+    "article_id": 3,
+    "source": "BBC World",
+    "title": "Hungarians vote on whether to end 16 years of Orbán rule and elect rival",
+    "url": "https://www.bbc.com/news/articles/cdxdepjrv95o?at_medium=RSS&at_campaign=rss",
+    "excerpt_input": "Most polls favour Péter Magyar, who fronts a grassroots party, and early figures suggest a big turnout of voters.",
+    "fulltext_basis": "Hungary saw record turnout in an election that could end Viktor Orbán’s 16-year rule. The full text adds geopolitical stakes for the EU, U.S., and Russia, Orbán and Magyar’s competing messages, allegations of irregularities, and the broader framing of democratic backsliding and a possible policy reset.",
+    "excerpt_summary": {
+      "section": "Business + Tech",
+      "lead": "Hungary’s election appears highly competitive, with polls favoring challenger Péter Magyar and turnout running strong. That gives a basic momentum read, but the excerpt strips out the deeper stakes around Orbán’s rule, Hungary’s external alignment, and the credibility of the vote itself.",
+      "summary_points": [
+        "Polls suggest challenger Péter Magyar entered election day with an advantage.",
+        "Early turnout figures indicate unusually strong voter mobilisation.",
+        "The excerpt frames the race as a possible upset without much policy context.",
+        "It lacks detail on geopolitical consequences, campaign claims, and election-integrity concerns."
+      ],
+      "watchlist": [
+        "Final turnout",
+        "Election result",
+        "Opposition momentum"
+      ]
+    },
+    "fulltext_summary": {
+      "section": "Business + Tech",
+      "lead": "Hungary’s election drew record turnout in a contest that could end Viktor Orbán’s 16-year grip on power and reshape the country’s stance toward the EU, Nato, and Russia. The full text substantially improves summary quality because it connects voter enthusiasm to regime-change stakes, competing narratives, and reported irregularities rather than treating the race as a simple polling snapshot.",
+      "summary_points": [
+        "Record turnout underscored unusually high mobilisation in a race with major domestic and geopolitical consequences.",
+        "Challenger Péter Magyar promised a reset with the EU and Nato and a harder line on corruption.",
+        "Orbán cast the vote as a fight to retain power, while critics framed it as a choice between East and West.",
+        "Civil observers reported alleged irregularities, including vote-buying and improper transport of voters."
+      ],
+      "watchlist": [
+        "Seat results",
+        "EU relations",
+        "Election-integrity probes"
+      ]
+    },
+    "score_excerpt": 4,
+    "score_fulltext": 9,
+    "delta": 5,
+    "evidence": [
+      "Excerpt contains only polling and turnout signals.",
+      "Full text adds geopolitical significance, corruption framing, and observer allegations.",
+      "Full text supports a much stronger 'why it matters' lead."
+    ],
+    "assessment": "Full text is strongly justified here. The excerpt misses most of the story’s actual significance."
+  }
+]
