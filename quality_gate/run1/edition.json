@@ -1,7 +1,7 @@
 {
   "date": "2026-04-13",
   "edition_number": 1,
-  "generated_at": "2026-04-13T13:28:49+00:00",
+  "generated_at": "2026-04-13T13:27:44+00:00",
   "pipeline_stats": {
     "articles_fetched": 119,
     "full_text_success_rate": 0.9915966386554622,

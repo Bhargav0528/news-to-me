@@ -1,0 +1,26 @@
+{
+  "fetch_summary": {
+    "articles_fetched": 120,
+    "articles_after_dedup": 119,
+    "articles_inserted": 119,
+    "duplicates_removed": 1,
+    "full_text_success_rate": 0.9916666666666667,
+    "articles_per_region": {
+      "bangalore": 22,
+      "india": 33,
+      "world": 11,
+      "us": 43,
+      "karnataka": 10
+    },
+    "articles_per_category": {
+      "top": 75,
+      "business": 22,
+      "technology": 22
+    },
+    "market_indices": 4,
+    "total_time_seconds": 30.11
+  },
+  "edition_path": "data/edition.json",
+  "email_preview_path": "data/email_preview.json",
+  "email_sent": false
+}
