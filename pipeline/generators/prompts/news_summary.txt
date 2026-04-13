@@ -1,0 +1,4 @@
+Generate summary, why_it_matters, what_to_watch, public_reactions, and context for each article.
+Summary length: 150-250 words.
+Tone: informative, slightly analytical, like a thoughtful journalist.
+Return JSON.

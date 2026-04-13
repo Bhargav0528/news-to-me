@@ -1,0 +1,4 @@
+Select the top 5-7 stories across all regions.
+Write 2-3 lines each.
+Prioritize impact on a 28-year-old Indian developer in California.
+Return JSON.

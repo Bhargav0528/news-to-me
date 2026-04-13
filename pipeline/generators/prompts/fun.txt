@@ -1,0 +1,3 @@
+Generate a medium-difficulty logic puzzle, a short riddle, and structured fun section output.
+Sudoku must come from py-sudoku and chess from Lichess API or a hardcoded set, not LLM generation.
+Return JSON.

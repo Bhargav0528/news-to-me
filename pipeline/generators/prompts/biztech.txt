@@ -1,0 +1,4 @@
+Include market snapshot and 3-5 article summaries.
+Connect stories to broader trends.
+Assume the reader is a tech professional who invests.
+Return JSON.

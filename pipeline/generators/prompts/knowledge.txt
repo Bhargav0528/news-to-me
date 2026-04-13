@@ -1,0 +1,5 @@
+Write a daily things-you-should-know section.
+Length: 300-500 words.
+Explain like talking to a smart friend.
+Include one surprising fact and one everyday connection.
+Return JSON.

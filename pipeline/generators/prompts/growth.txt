@@ -1,0 +1,5 @@
+Write for a 28-year-old South Indian developer in California, on the verge of marriage, with family responsibilities.
+Length: 400-600 words.
+Be practical, actionable, and culturally aware.
+Include 2-3 external links.
+Return JSON.
