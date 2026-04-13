@@ -1,0 +1,8 @@
+{
+  "regions": ["bangalore", "karnataka", "india", "california", "usa", "world"],
+  "topics": ["technology", "startups", "AI", "business", "stocks", "art", "science"],
+  "growth_stage": "28yo South Indian developer in California, pre-marriage, family responsibilities, first-gen professional, not wealthy background",
+  "knowledge_categories": ["history", "science", "geography", "math", "literature", "economics", "philosophy"],
+  "stocks_watchlist": ["^GSPC", "^IXIC", "^NSEI", "^BSESN"],
+  "email_to": "bhargavbangalorevmurthy@gmail.com"
+}

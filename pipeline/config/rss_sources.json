@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "deccan-herald",
+      "name": "Deccan Herald",
+      "kind": "atom",
+      "region": "bangalore",
+      "section": "top",
+      "tier": "primary",
+      "category": "Bangalore / Karnataka / India mixed",
+      "url": "https://prod-qt-images.s3.amazonaws.com/production/deccanherald/feed.xml",
+      "validated_in": ["scrum-16"],
+      "notes": [
+        "Feed is Atom, not RSS item-based XML",
+        "Sample includes Bengaluru and Karnataka category entries",
+        "At least one sampled Karnataka article fetched successfully"
+      ]
+    },
+    {
+      "id": "new-indian-express-bengaluru",
+      "name": "The New Indian Express Bengaluru",
+      "kind": "rss",
+      "region": "bangalore",
+      "section": "top",
+      "tier": "primary",
+      "category": "Bangalore local",
+      "url": "https://www.newindianexpress.com/api/v1/collections/bengaluru-cities.rss?getXmlFeed=true&id=171",
+      "validated_in": ["scrum-16"],
+      "notes": [
+        "Feed is live and populated",
+        "Sampled Bengaluru articles fetched successfully"
+      ]
+    },
+    {
+      "id": "new-indian-express-karnataka",
+      "name": "The New Indian Express Karnataka",
+      "kind": "rss",
+      "region": "karnataka",
+      "section": "top",
+      "tier": "primary",
+      "category": "Karnataka state",
+      "url": "https://www.newindianexpress.com/api/v1/collections/karnataka-states.rss?getXmlFeed=true&id=173",
+      "validated_in": ["scrum-16"],
+      "notes": [
+        "Feed is live and populated",
+        "Useful state-level supplement to Bengaluru-specific feed"
+      ]
+    },
+    {
+      "id": "the-hindu",
+      "name": "The Hindu",
+      "kind": "rss",
+      "region": "india",
+      "section": "top",
+      "tier": "primary",
+      "category": "India / General",
+      "url": "https://www.thehindu.com/feeder/default.rss",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 15 in last 24h"
+      ]
+    },
+    {
+      "id": "indian-express",
+      "name": "Indian Express India",
+      "kind": "rss",
+      "region": "india",
+      "section": "top",
+      "tier": "primary",
+      "category": "India / National",
+      "url": "https://indianexpress.com/section/india/feed/",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 15 in last 24h"
+      ]
+    },
+    {
+      "id": "the-hindu-businessline",
+      "name": "The Hindu BusinessLine",
+      "kind": "rss",
+      "region": "india",
+      "section": "business",
+      "tier": "primary",
+      "category": "India / Business",
+      "url": "https://www.thehindubusinessline.com/feeder/default.rss",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 15 in last 24h"
+      ]
+    },
+    {
+      "id": "bbc-world",
+      "name": "BBC World",
+      "kind": "rss",
+      "region": "world",
+      "section": "top",
+      "tier": "primary",
+      "category": "World",
+      "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 14 in last 24h"
+      ]
+    },
+    {
+      "id": "cnbc-top-news",
+      "name": "CNBC Top News",
+      "kind": "rss",
+      "region": "us",
+      "section": "business",
+      "tier": "primary",
+      "category": "US / Business",
+      "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 8 in last 24h"
+      ]
+    },
+    {
+      "id": "techcrunch",
+      "name": "TechCrunch",
+      "kind": "rss",
+      "region": "us",
+      "section": "technology",
+      "tier": "primary",
+      "category": "Tech",
+      "url": "https://techcrunch.com/feed/",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 5 in last 24h"
+      ]
+    },
+    {
+      "id": "ars-technica",
+      "name": "Ars Technica",
+      "kind": "rss",
+      "region": "us",
+      "section": "technology",
+      "tier": "primary",
+      "category": "Tech",
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "validated_in": ["scrum-6"],
+      "notes": [
+        "Reliability: good",
+        "Sampled 15 items, 1 in last 24h"
+      ]
+    },
+    {
+      "id": "the-guardian-us",
+      "name": "The Guardian US",
+      "kind": "rss",
+      "region": "us",
+      "section": "top",
+      "tier": "primary",
+      "category": "US general",
+      "url": "https://www.theguardian.com/us/rss",
+      "validated_in": ["scrum-16"],
+      "notes": [
+        "Feed is live and high-volume",
+        "Sampled article fetching succeeded on multiple links"
+      ]
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-# pipeline package
+"""News To Me production pipeline package."""

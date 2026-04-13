@@ -1,0 +1,9 @@
+requests
+trafilatura
+beautifulsoup4
+readability-lxml
+feedparser
+yfinance
+openai
+anthropic
+python-dotenv
