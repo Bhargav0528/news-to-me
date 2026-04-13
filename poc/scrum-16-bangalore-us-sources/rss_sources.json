@@ -1,0 +1,75 @@
+{
+  "validated_sources": [
+    {
+      "name": "Deccan Herald",
+      "category": "Bangalore / Karnataka / India mixed",
+      "feed_type": "Atom",
+      "url": "https://prod-qt-images.s3.amazonaws.com/production/deccanherald/feed.xml",
+      "status": "validated",
+      "item_count": 20,
+      "notes": [
+        "Feed is Atom, not RSS item-based XML",
+        "Sample includes Bengaluru and Karnataka category entries",
+        "At least one sampled Karnataka article fetched successfully"
+      ]
+    },
+    {
+      "name": "The New Indian Express Bengaluru",
+      "category": "Bangalore local",
+      "feed_type": "RSS",
+      "url": "https://www.newindianexpress.com/api/v1/collections/bengaluru-cities.rss?getXmlFeed=true&id=171",
+      "status": "validated",
+      "item_count": 40,
+      "notes": [
+        "Feed is live and populated",
+        "Sampled Bengaluru articles fetched successfully"
+      ]
+    },
+    {
+      "name": "The New Indian Express Karnataka",
+      "category": "Karnataka state",
+      "feed_type": "RSS",
+      "url": "https://www.newindianexpress.com/api/v1/collections/karnataka-states.rss?getXmlFeed=true&id=173",
+      "status": "validated",
+      "item_count": 40,
+      "notes": [
+        "Feed is live and populated",
+        "Useful state-level supplement to Bengaluru-specific feed"
+      ]
+    },
+    {
+      "name": "The Guardian US",
+      "category": "US general",
+      "feed_type": "RSS",
+      "url": "https://www.theguardian.com/us/rss",
+      "status": "validated",
+      "item_count": 133,
+      "notes": [
+        "Feed is live and high-volume",
+        "Sampled article fetching succeeded on multiple links"
+      ]
+    }
+  ],
+  "rejected_or_risky_sources": [
+    {
+      "name": "Deccan Herald guessed section RSS URLs",
+      "status": "rejected",
+      "reason": "404 from guessed /rss/... endpoints"
+    },
+    {
+      "name": "Bangalore Mirror candidate feed",
+      "status": "rejected",
+      "reason": "404"
+    },
+    {
+      "name": "Politico candidate feed",
+      "status": "rejected",
+      "reason": "403"
+    },
+    {
+      "name": "Washington Post National",
+      "status": "risky",
+      "reason": "RSS works, but fetch reliability was weak in sampled runs"
+    }
+  ]
+}

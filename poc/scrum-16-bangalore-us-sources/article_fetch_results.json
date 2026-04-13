@@ -1,0 +1,56 @@
+[
+  {
+    "feed": "Deccan Herald",
+    "url": "https://www.deccanherald.com/india/karnataka/survey-of-sc-communities-in-13-villages-of-belagavi-shows-50-of-houses-lack-toilet-3954476",
+    "http_status": 200,
+    "fetch_method": "trafilatura",
+    "text_length": 404,
+    "success": true
+  },
+  {
+    "feed": "Deccan Herald",
+    "url": "https://www.deccanherald.com/opinion/editorial/a-new-dawn-for-moon-exploration-3965638",
+    "http_status": 200,
+    "fetch_method": "trafilatura",
+    "text_length": 5561,
+    "success": true
+  },
+  {
+    "feed": "The New Indian Express Bengaluru",
+    "url": "https://www.newindianexpress.com/cities/bengaluru/2026/Apr/12/parishrama-pu-college-shines-as-four-students-excel-in-puc-2026-likith-nr-ranks-fourth-in-karnataka",
+    "http_status": 200,
+    "fetch_method": "trafilatura",
+    "text_length": 2070,
+    "success": true
+  },
+  {
+    "feed": "The New Indian Express Bengaluru",
+    "url": "https://www.newindianexpress.com/cities/bengaluru/2026/Apr/12/sexual-assault-on-sslc-girl-bengaluru-cops-nab-teacher-in-hiding",
+    "http_status": 200,
+    "fetch_method": "trafilatura",
+    "text_length": 2158,
+    "success": true
+  },
+  {
+    "feed": "The Guardian US",
+    "url": "https://www.theguardian.com/technology/2026/apr/12/tiktok-diagnose-cancer-chronic-illnesses-doctors",
+    "http_status": 200,
+    "fetch_method": "trafilatura",
+    "text_length": 7852,
+    "success": true
+  },
+  {
+    "feed": "The Guardian US",
+    "url": "https://www.theguardian.com/commentisfree/2026/apr/12/united-states-trump-destruction",
+    "http_status": 200,
+    "fetch_method": "trafilatura",
+    "text_length": 7268,
+    "success": true
+  },
+  {
+    "feed": "Washington Post National",
+    "url": "https://www.washingtonpost.com/nation/2026/04/11/trump-iran-morality-war-class/",
+    "success": false,
+    "error": "fetch reliability weak / timeout or connection failure in sampled run"
+  }
+]
