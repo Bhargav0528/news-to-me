@@ -1,0 +1,22 @@
+{
+  "section": "Growth",
+  "title": "Build an emergency fund without freezing your life",
+  "hook": "A useful emergency fund is less about chasing a giant number and more about making your next bad week less expensive.",
+  "advice": [
+    "Start with a two-tier target: first save one month of core expenses, then grow toward three to six months. That feels more reachable than jumping straight to a huge headline number.",
+    "Keep the money in a high-yield savings account or liquid cash fund, not mixed into investments. In the US that often means FDIC-insured savings, while in India many readers will recognize bank savings plus a sweep or liquid mutual fund for near-cash access.",
+    "Automate transfers the day after salary hits, even if it is only $50 or ₹5,000. Small fixed transfers beat waiting for a perfect surplus month.",
+    "Define emergencies before you need the money: job loss, urgent travel, medical bills, home or car repairs, visa paperwork shocks. That rule helps you avoid draining it for sales, weddings, or gadget upgrades."
+  ],
+  "resources": [
+    {
+      "label": "Consumer Financial Protection Bureau, emergency savings guide",
+      "url": "https://www.consumerfinance.gov/consumer-tools/budgeting/save-an-emergency-fund/"
+    },
+    {
+      "label": "Sebi investor education, basics of financial planning",
+      "url": "https://investor.sebi.gov.in/"
+    }
+  ],
+  "why_it_matters": "For people juggling responsibilities across countries, surprise costs often come in clusters, not one at a time. A real cash buffer protects your plans from turning into debt."
+}

@@ -1,0 +1,22 @@
+{
+  "section": "Growth",
+  "title": "Managing family finances across the US and India without constant confusion",
+  "hook": "Cross-border family money gets messy when love, duty, taxes, and exchange rates all hit the same spreadsheet.",
+  "advice": [
+    "Split the system into three buckets: household operations where you live, long-term goals, and family support transfers. That separation prevents everyday spending from hiding recurring obligations to parents or dependents abroad.",
+    "Track transfers in both currencies with the exchange rate used that day. It makes budgeting calmer and gives you a clean record if questions come up later about gifts, support, or tax treatment.",
+    "Agree on a family support policy in advance, such as a monthly amount plus a rule for medical emergencies above that cap. Clear expectations reduce guilt-driven decisions made at the worst moment.",
+    "Review account ownership, nominees, beneficiaries, and tax filing duties in both countries at least once a year. NRE or NRO accounts, US reporting, and inherited assets can create paperwork risks if nobody has a current map."
+  ],
+  "resources": [
+    {
+      "label": "IRS, foreign financial accounts and reporting overview",
+      "url": "https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements"
+    },
+    {
+      "label": "SBI NRI services overview",
+      "url": "https://sbi.co.in/web/nri"
+    }
+  ],
+  "why_it_matters": "Cross-border families often have invisible financial labor, and the friction shows up as stress long before it shows up as a missed payment. A simple structure preserves generosity without letting it become chaos."
+}

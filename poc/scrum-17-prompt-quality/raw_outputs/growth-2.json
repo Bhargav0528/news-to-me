@@ -1,0 +1,22 @@
+{
+  "section": "Growth",
+  "title": "Salary negotiation that sounds prepared, not combative",
+  "hook": "Negotiation usually works best when you make it easy for a manager to justify paying you more.",
+  "advice": [
+    "Anchor the conversation in evidence: recent wins, scope increase, revenue or efficiency impact, and current market ranges for your location. Save screenshots, metrics, and peer-level job postings before the meeting.",
+    "Use a range tied to role and market, not a random dream number. For example, say you are targeting compensation in a defined band because your work now matches a higher level.",
+    "If you are comparing US and India packages, separate cash, bonus, RSUs, provident fund, gratuity, health cover, and tax impact. A higher headline number can still be worse after benefits and relocation costs.",
+    "Prepare fallbacks: if base salary is tight, ask about title correction, review timing, sign-on bonus, learning budget, relocation support, or a written six-month compensation checkpoint."
+  ],
+  "resources": [
+    {
+      "label": "Harvard Business Review, salary negotiation guidance",
+      "url": "https://hbr.org/2023/01/a-better-way-to-negotiate-your-salary"
+    },
+    {
+      "label": "Levels.fyi compensation data",
+      "url": "https://www.levels.fyi/"
+    }
+  ],
+  "why_it_matters": "A good negotiation changes future raises, not just this month's paycheck. It is especially important when global teams can blur local market standards and leave underpaid employees feeling grateful instead of accurately valued."
+}

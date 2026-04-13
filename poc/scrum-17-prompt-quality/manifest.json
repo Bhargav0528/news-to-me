@@ -1,0 +1,17 @@
+{
+  "growth": [
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/growth-1.json",
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/growth-2.json",
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/growth-3.json"
+  ],
+  "knowledge": [
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/knowledge-1.json",
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/knowledge-2.json",
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/knowledge-3.json"
+  ],
+  "fun": [
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/fun-1.json",
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/fun-2.json",
+    "/home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me/poc/scrum-17-prompt-quality/raw_outputs/fun-3.json"
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "section": "Fun",
+  "riddle": {
+    "question": "I have cities but no houses, rivers but no water, and roads but no cars. What am I?",
+    "answer": "A map."
+  },
+  "logic_puzzle": {
+    "question": "Priya, Mateo, and Lila each brought a different fruit: apple, banana, and mango. Priya did not bring mango. Mateo brought neither apple nor mango. What did each person bring?",
+    "answer": "Mateo brought banana, so Priya brought apple and Lila brought mango."
+  },
+  "sudoku": {
+    "grid": [
+      [
+        2,
+        0,
+        0,
+        0,
+        8,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        0,
+        7,
+        0,
+        0,
+        8,
+        4
+      ],
+      [
+        0,
+        3,
+        0,
+        5,
+        0,
+        0,
+        2,
+        0,
+        9
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        5,
+        4,
+        0,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        2,
+        7,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        1,
+        0,
+        0,
+        7,
+        0,
+        4,
+        0
+      ],
+      [
+        7,
+        2,
+        0,
+        0,
+        4,
+        0,
+        0,
+        6,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        0,
+        1,
+        0,
+        0,
+        0,
+        3
+      ]
+    ],
+    "solution": [
+      [
+        2,
+        4,
+        5,
+        9,
+        8,
+        1,
+        3,
+        7,
+        6
+      ],
+      [
+        1,
+        6,
+        9,
+        2,
+        7,
+        3,
+        5,
+        8,
+        4
+      ],
+      [
+        8,
+        3,
+        7,
+        5,
+        6,
+        4,
+        2,
+        1,
+        9
+      ],
+      [
+        9,
+        7,
+        6,
+        1,
+        2,
+        5,
+        4,
+        3,
+        8
+      ],
+      [
+        5,
+        1,
+        3,
+        4,
+        9,
+        8,
+        6,
+        2,
+        7
+      ],
+      [
+        4,
+        8,
+        2,
+        7,
+        3,
+        6,
+        9,
+        5,
+        1
+      ],
+      [
+        3,
+        9,
+        1,
+        6,
+        5,
+        7,
+        8,
+        4,
+        2
+      ],
+      [
+        7,
+        2,
+        8,
+        3,
+        4,
+        9,
+        1,
+        6,
+        5
+      ],
+      [
+        6,
+        5,
+        4,
+        8,
+        1,
+        2,
+        7,
+        9,
+        3
+      ]
+    ]
+  },
+  "chess_puzzle": {
+    "fen": "8/8/8/3k4/8/4K3/8/8 w - - 0 1",
+    "task": "White to move. Find a legal move that keeps the kings non-adjacent. One answer: Kf3."
+  },
+  "validation": {
+    "riddle_quality": "Good. It is classic, easy to parse, and avoids trick wording that would feel unfair in a short newspaper section.",
+    "logic_puzzle_ambiguity": "Single-solution: Mateo can only be banana; that leaves apple and mango for Priya and Lila, and Priya not mango forces Priya=apple, Lila=mango.",
+    "sudoku_validity": "No duplicate nonzero digits appear in any row, column, or 3x3 region of the clue grid.",
+    "sudoku_solvability": "Includes a full consistent solution, indicating at least one valid solve path from the clues.",
+    "chess_fen_legality": "Legal king-only endgame position; kings are separated and the side to move has legal options."
+  }
+}
