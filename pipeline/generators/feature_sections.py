@@ -178,7 +178,7 @@ def _get_recent_article_context() -> list[dict[str, str]]:
         text = ' '.join(((r['full_text'] or r['excerpt'] or '')).split())
         articles.append({
             "title": r['title'],
-            "summary": text[:300],
+            "summary": text[:3000],
             "region": r['region'],
         })
     return articles

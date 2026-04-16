@@ -52,7 +52,7 @@ def generate_biztech(biztech_rows: list, indices: list, adapter=None) -> dict[st
 - market_impact: 1-2 sentences on how this affects markets/investors
 
 Return valid JSON only."""
-                result = adapter.generate_json(prompt, f"Title: {title}\n\nContent: {text[:300]}")
+                result = adapter.generate_json(prompt, f"Title: {title}\n\nContent: {text}")
                 articles.append({
                     'headline': result.get('headline', title),
                     'summary': result.get('summary', text[:250]),
