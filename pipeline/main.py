@@ -8,6 +8,8 @@ import logging
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
+
 from pipeline.fetchers.orchestrator import FetchOrchestrator
 from pipeline.generators.assembler import EditionAssembler
 from pipeline.publishers.emailer import EmailPublisher
@@ -20,6 +22,7 @@ DEFAULT_EMAIL_PREVIEW_PATH = Path('data/email_preview.json')
 
 def run(*, article_limit: int | None = None, send_email: bool = False) -> dict[str, Any]:
     """Run ingestion, assemble the edition, and optionally send the email."""
+    load_dotenv()
     fetch_summary = FetchOrchestrator(DEFAULT_DB_PATH, article_limit=article_limit).run()
     assembler = EditionAssembler(DEFAULT_DB_PATH)
     edition = assembler.assemble()
