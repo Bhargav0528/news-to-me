@@ -7,9 +7,9 @@ from typing import Any
 from pipeline.generators.engine import build_adapter, ModelConfig
 
 
-def _clean_text(text: str) -> str:
-    """Strip and truncate article text to ~300 chars for faster LLM processing."""
-    return ' '.join(text.strip().split())[:300]
+def _clean_text(text: str, max_chars: int = 3000) -> str:
+    """Strip whitespace and cap article text length for LLM context window."""
+    return ' '.join(text.strip().split())[:max_chars]
 
 
 def _row_to_dict(row) -> dict:
