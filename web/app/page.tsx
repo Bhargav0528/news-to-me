@@ -153,9 +153,12 @@ function NewsPlaceholder({ articles }: { articles: NewsSection }) {
       {regions.map((region) =>
         articles[region]?.length ? (
           <div key={region}>
-            <p className="subregion-header">
-              {region.charAt(0).toUpperCase() + region.slice(1)}
-            </p>
+            <div>
+              <p className="subregion-header">
+                {region.charAt(0).toUpperCase() + region.slice(1)}
+              </p>
+              <div className="subregion-header-rule" />
+            </div>
             {articles[region].slice(0, 3).map((art, i) => (
               <div key={i} className="mb-5">
                 <p className="article-headline">{art.headline}</p>
