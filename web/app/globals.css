@@ -124,4 +124,7 @@ body {
   color: var(--color-negative);
 }
 
-
+/* Spacing utilities */
+.pb-section {
+  padding-bottom: var(--spacing-section);
+}
