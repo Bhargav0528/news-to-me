@@ -94,7 +94,7 @@ body {
 
 .article-body {
   font-family: var(--font-serif);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--color-ink);
 }
@@ -120,11 +120,29 @@ body {
   color: var(--color-positive);
 }
 
-.market-negative {
-  color: var(--color-negative);
+.meta-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
 }
 
-/* Spacing utilities */
-.pb-section {
-  padding-bottom: var(--spacing-section);
+.tag-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
 }
+
+.region-header {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-muted);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 8px;
+}
+

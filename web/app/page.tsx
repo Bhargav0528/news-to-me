@@ -1,13 +1,27 @@
 import { getEdition, formatEditionDate } from "@/lib/edition";
 import { readingTime } from "@/lib/reading-time";
-import type { Article, TldrItem, BiztechArticle, GrowthSection, KnowledgeSection, NewsSection } from "@/lib/edition-types";
+import type { TldrItem, BiztechArticle, GrowthSection, KnowledgeSection, NewsSection } from "@/lib/edition-types";
 
-// Sections are built in Wave 4 (SCRUM-34 through SCRUM-38).
-// This shell only provides the masthead, section wrappers, and dividers.
-
-export default async function HomePage() {
+export default function HomePage() {
   const edition = getEdition();
   const formattedDate = formatEditionDate(edition.date);
+
+  const newsWordCount =
+    Object.values(edition.news)
+      .flat()
+      .reduce((sum, a) => sum + a.summary.split(/\s+/).length, 0) +
+    Object.values(edition.news)
+      .flat()
+      .reduce((sum, a) => sum + (a.context?.split(/\s+/).length ?? 0), 0);
+
+  const biztechWordCount = edition.biztech.articles.reduce(
+    (sum, a) => sum + a.summary.split(/\s+/).length, 0
+  );
+
+  const funWordCount = Math.round(
+    (edition.fun.riddle.question + edition.fun.logic_puzzle.question)
+      .split(/\s+/).length
+  );
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--color-paper)" }}>
@@ -16,7 +30,7 @@ export default async function HomePage() {
         <div className="max-w-3xl mx-auto px-4 py-4">
           <div className="flex items-baseline justify-between gap-4">
             <h1 className="masthead flex-1 text-center">News To Me</h1>
-            <div className="text-xs text-right shrink-0" style={{ fontFamily: "var(--font-sans)", color: "var(--color-ink-muted)" }}>
+            <div className="meta-text text-right shrink-0">
               <p>{formattedDate}</p>
               <p>Edition {edition.edition_number}</p>
             </div>
@@ -42,24 +56,25 @@ export default async function HomePage() {
             <h2 id="news-heading" className="section-header">News</h2>
           </div>
           <div className="pb-section">
-            <NewsPlaceholder articles={edition.news} />
+            <NewsPlaceholder articles={edition.news} wordCount={newsWordCount} />
           </div>
         </section>
 
         {/* ── Biz/Tech (SCRUM-36) ── */}
         <section aria-labelledby="biztech-heading">
           <div className="section-rule pt-6 pb-3">
-            <h2 id="biztech-heading" className="section-header">Biz & Tech</h2>
+            <h2 id="biztech-heading" className="section-header">Biz &amp; Tech</h2>
           </div>
           <div className="pb-section">
-            <BiztechPlaceholder biztech={edition.biztech} />
+            <BiztechPlaceholder biztech={edition.biztech} wordCount={biztechWordCount} />
           </div>
         </section>
 
         {/* ── Growth (SCRUM-37) ── */}
         <section aria-labelledby="growth-heading">
-          <div className="section-rule pt-6 pb-3">
+          <div className="section-rule pt-6 pb-3 flex justify-between items-end">
             <h2 id="growth-heading" className="section-header">Growth</h2>
+            <span className="meta-text">{readingTime(edition.growth.body)}</span>
           </div>
           <div className="pb-section">
             <GrowthPlaceholder growth={edition.growth} />
@@ -68,8 +83,9 @@ export default async function HomePage() {
 
         {/* ── Knowledge (SCRUM-37) ── */}
         <section aria-labelledby="knowledge-heading">
-          <div className="section-rule pt-6 pb-3">
+          <div className="section-rule pt-6 pb-3 flex justify-between items-end">
             <h2 id="knowledge-heading" className="section-header">Knowledge</h2>
+            <span className="meta-text">{readingTime(edition.knowledge.body)}</span>
           </div>
           <div className="pb-section">
             <KnowledgePlaceholder knowledge={edition.knowledge} />
@@ -78,8 +94,9 @@ export default async function HomePage() {
 
         {/* ── Fun (SCRUM-38) ── */}
         <section aria-labelledby="fun-heading">
-          <div className="section-rule pt-6 pb-3">
+          <div className="section-rule pt-6 pb-3 flex justify-between items-end">
             <h2 id="fun-heading" className="section-header">Fun</h2>
+            <span className="meta-text">{readingTime(String(funWordCount))}</span>
           </div>
           <div className="pb-section">
             <FunPlaceholder />
@@ -89,13 +106,16 @@ export default async function HomePage() {
         {/* ── Footer ── */}
         <footer className="pt-6 mt-8 border-t" style={{ borderColor: "var(--color-rule)" }}>
           <div className="flex justify-between items-center">
-            <p className="text-xs" style={{ fontFamily: "var(--font-sans)", color: "var(--color-ink-muted)" }}>
+            <p className="meta-text">
               Generated {new Date(edition.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })}
             </p>
-            <p className="text-xs" style={{ fontFamily: "var(--font-sans)", color: "var(--color-ink-muted)" }}>
-              {edition.pipeline_stats.articles_fetched.toLocaleString()} articles · {readingTime(edition.growth.body).replace(" min read", " min")}
+            <p className="meta-text">
+              {edition.pipeline_stats.articles_fetched.toLocaleString()} articles
             </p>
           </div>
+          <p className="meta-text mt-2">
+            Generated by News To Me pipeline
+          </p>
         </footer>
 
       </main>
@@ -110,9 +130,7 @@ function TldrPlaceholder({ items }: { items: TldrItem[] }) {
     <div className="space-y-3">
       {items.slice(0, 2).map((item, i) => (
         <div key={i} className="border-l-2 pl-3" style={{ borderColor: "var(--color-accent)" }}>
-          <p className="text-xs uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-sans)", color: "var(--color-accent)" }}>
-            {item.region?.toUpperCase()}
-          </p>
+          <p className="tag-label">{item.region?.toUpperCase()}</p>
           <p className="article-headline text-base">{item.headline}</p>
           <p className="article-body mt-1">{item.summary}</p>
         </div>
@@ -121,14 +139,14 @@ function TldrPlaceholder({ items }: { items: TldrItem[] }) {
   );
 }
 
-function NewsPlaceholder({ articles }: { articles: NewsSection }) {
+function NewsPlaceholder({ articles, wordCount }: { articles: NewsSection; wordCount: number }) {
   const regions = ["bangalore", "karnataka", "india", "us", "world"] as const;
   return (
     <div className="space-y-6">
       {regions.map((region) =>
         articles[region]?.length ? (
           <div key={region}>
-            <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-sans)", color: "var(--color-ink-muted)" }}>
+            <p className="region-header mb-2 pb-1 border-b" style={{ borderColor: "var(--color-rule)" }}>
               {region.charAt(0).toUpperCase() + region.slice(1)}
             </p>
             {articles[region].slice(0, 2).map((art, i) => (
@@ -144,21 +162,23 @@ function NewsPlaceholder({ articles }: { articles: NewsSection }) {
   );
 }
 
-function BiztechPlaceholder({ biztech }: { biztech: { market_snapshot: { indices: { name: string; value: number; change: number; change_percent: number }[] }; articles: BiztechArticle[] } }) {
+function BiztechPlaceholder({ biztech, wordCount }: { biztech: { market_snapshot: { indices: { name: string; value: number; change: number; change_percent: number }[] }; articles: BiztechArticle[] }; wordCount: number }) {
   const { indices } = biztech.market_snapshot;
   return (
     <div className="space-y-4">
       {indices.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          {indices.map((idx) => (
-            <div key={idx.name} className="border rounded p-2" style={{ borderColor: "var(--color-rule)" }}>
-              <p className="text-xs" style={{ fontFamily: "var(--font-sans)", color: "var(--color-ink-muted)" }}>{idx.name}</p>
-              <p className="market-value" style={{ fontFamily: "var(--font-sans)" }}>{idx.value.toLocaleString()}</p>
-              <p className={`market-value ${idx.change >= 0 ? "market-positive" : "market-negative"}`} style={{ fontFamily: "var(--font-sans)" }}>
-                {idx.change >= 0 ? "+" : ""}{idx.change_percent}%
-              </p>
-            </div>
-          ))}
+          {indices
+            .filter((idx) => idx.value > 0)
+            .map((idx) => (
+              <div key={idx.name} className="border rounded p-2" style={{ borderColor: "var(--color-rule)" }}>
+                <p className="meta-text">{idx.name}</p>
+                <p className="market-value">{idx.value.toLocaleString()}</p>
+                <p className={`market-value ${idx.change >= 0 ? "market-positive" : "market-negative"}`}>
+                  {idx.change >= 0 ? "+" : ""}{idx.change_percent.toFixed(2)}%
+                </p>
+              </div>
+            ))}
         </div>
       )}
       {biztech.articles.slice(0, 2).map((art, i) => (
@@ -174,9 +194,7 @@ function BiztechPlaceholder({ biztech }: { biztech: { market_snapshot: { indices
 function GrowthPlaceholder({ growth }: { growth: GrowthSection }) {
   return (
     <div>
-      <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-sans)", color: "var(--color-accent)" }}>
-        {growth.topic_category}
-      </p>
+      <p className="tag-label">{growth.topic_category}</p>
       <p className="article-headline">{growth.title}</p>
       <p className="article-body mt-2">{growth.body.slice(0, 200)}...</p>
     </div>
@@ -186,9 +204,7 @@ function GrowthPlaceholder({ growth }: { growth: GrowthSection }) {
 function KnowledgePlaceholder({ knowledge }: { knowledge: KnowledgeSection }) {
   return (
     <div>
-      <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-sans)", color: "var(--color-accent)" }}>
-        {knowledge.category}
-      </p>
+      <p className="tag-label">{knowledge.category}</p>
       <p className="article-headline">{knowledge.title}</p>
       <p className="article-body mt-2">{knowledge.body.slice(0, 200)}...</p>
     </div>
@@ -197,8 +213,6 @@ function KnowledgePlaceholder({ knowledge }: { knowledge: KnowledgeSection }) {
 
 function FunPlaceholder() {
   return (
-    <div className="text-sm" style={{ color: "var(--color-ink-muted)", fontFamily: "var(--font-sans)" }}>
-      Puzzle, sudoku, chess & riddles — coming in SCRUM-38.
-    </div>
+    <p className="meta-text">Puzzle, sudoku, chess &amp; riddles — coming in SCRUM-38.</p>
   );
 }
