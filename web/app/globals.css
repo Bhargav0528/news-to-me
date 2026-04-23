@@ -146,3 +146,14 @@ body {
   padding-left: 8px;
 }
 
+.subregion-header {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-ink);
+  border-left: 4px solid var(--color-accent);
+  padding-left: 10px;
+}
+
