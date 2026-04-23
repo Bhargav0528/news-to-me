@@ -166,3 +166,105 @@ body {
   margin-bottom: 16px;
 }
 
+/* ── Fun Section ─────────────────────────────────────────────── */
+
+.fun-subsection-header {
+  margin-bottom: 10px;
+}
+
+.fun-subsection-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-muted);
+  border-bottom: 1px solid var(--color-rule);
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+/* Logic Puzzle */
+.logic-puzzle-question {
+  margin-bottom: 8px;
+}
+
+.logic-puzzle-text {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: var(--color-ink);
+  background: transparent;
+  margin: 0;
+}
+
+.logic-puzzle-hint {
+  margin-bottom: 4px;
+}
+
+.logic-puzzle-answer {
+  margin-bottom: 4px;
+}
+
+/* Riddle */
+.riddle-question {
+  font-size: 1.0625rem;
+  margin-bottom: 4px;
+}
+
+/* Sudoku Grid */
+.sudoku-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  border: 2px solid var(--color-ink);
+  width: min(360px, 90vw);
+  aspect-ratio: 1;
+}
+
+.sudoku-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  border: 1px solid var(--color-rule);
+  aspect-ratio: 1;
+  background-color: var(--color-paper);
+  /* Thick borders between 3×3 boxes */
+}
+
+/* Thick column borders at box edges (col 3 and 6) */
+.sudoku-grid > .sudoku-cell:nth-child(9n + 4),
+.sudoku-grid > .sudoku-cell:nth-child(9n + 7) {
+  border-left: 2px solid var(--color-ink);
+}
+
+/* Thick row borders at box edges (row 3 and 6) — every 9 cells start a new row group */
+.sudoku-grid > .sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
+.sudoku-grid > .sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-top: 2px solid var(--color-ink);
+}
+
+/* Chess Board */
+.chess-grid-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
+.chess-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 2px solid var(--color-ink);
+  width: min(320px, 80vw);
+  aspect-ratio: 1;
+}
+
