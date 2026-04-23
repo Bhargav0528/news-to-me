@@ -1,20 +1,10 @@
 import { getEdition, formatEditionDate } from "@/lib/edition";
 import { readingTime, readingTimeFromWords } from "@/lib/reading-time";
-import type { TldrItem, NewsSection, BiztechArticle } from "@/lib/edition-types";
+import type { TldrItem, NewsSection } from "@/lib/edition-types";
 import Tldr from "@/components/sections/Tldr";
 import Growth from "@/components/sections/Growth";
 import Knowledge from "@/components/sections/Knowledge";
 import Biztech from "@/components/sections/Biztech";
-// Deduplicate market indices by name, keeping the one with value > 0
-function uniqueIndices(indices: { name: string; value: number; change: number; change_percent: number }[]) {
-  const seen = new Map<string, typeof indices[0]>();
-  for (const idx of indices) {
-    if (!seen.has(idx.name) || (idx.value > 0 && seen.get(idx.name)!.value === 0)) {
-      seen.set(idx.name, idx);
-    }
-  }
-  return Array.from(seen.values()).filter((idx) => idx.value > 0);
-}
 
 export default function HomePage() {
   const edition = getEdition();
@@ -56,7 +46,7 @@ export default function HomePage() {
             <span className="meta-text">{edition.tldr.length} stories</span>
           </div>
           <div className="pb-section">
-            <TldrPlaceholder items={edition.tldr} />
+            <Tldr items={edition.tldr} />
           </div>
         </section>
 
@@ -133,21 +123,7 @@ export default function HomePage() {
   );
 }
 
-// ── Placeholder components (SCRUM-34, 35, 36, 38) ──
-
-function TldrPlaceholder({ items }: { items: TldrItem[] }) {
-  return (
-    <div className="space-y-3">
-      {items.slice(0, 3).map((item, i) => (
-        <div key={i} className="border-l-2 pl-3" style={{ borderColor: "var(--color-accent)" }}>
-          <p className="tag-label">{item.region?.toUpperCase()}</p>
-          <p className="article-headline">{item.headline}</p>
-          <p className="article-body mt-1">{item.summary}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
+// ── Placeholder components (SCRUM-35, 38) ──
 
 function NewsPlaceholder({ articles }: { articles: NewsSection }) {
   const regions = ["bangalore", "karnataka", "india", "us", "world"] as const;
@@ -171,33 +147,6 @@ function NewsPlaceholder({ articles }: { articles: NewsSection }) {
           </div>
         ) : null
       )}
-    </div>
-  );
-}
-
-function BiztechPlaceholder({ biztech }: { biztech: { market_snapshot: { indices: { name: string; value: number; change: number; change_percent: number }[] }; articles: BiztechArticle[] } }) {
-  const validIndices = uniqueIndices(biztech.market_snapshot.indices);
-  return (
-    <div className="space-y-4">
-      {validIndices.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          {validIndices.map((idx) => (
-            <div key={idx.name} className="border rounded p-2" style={{ borderColor: "var(--color-rule)" }}>
-              <p className="meta-text">{idx.name}</p>
-              <p className="market-value">{idx.value.toLocaleString()}</p>
-              <p className={`market-value ${idx.change >= 0 ? "market-positive" : "market-negative"}`}>
-                {idx.change >= 0 ? "+" : ""}{idx.change_percent.toFixed(2)}%
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
-      {biztech.articles.slice(0, 3).map((art, i) => (
-        <div key={i} className="mb-5">
-          <p className="article-headline">{art.headline}</p>
-          <p className="article-body mt-1">{art.summary}</p>
-        </div>
-      ))}
     </div>
   );
 }
