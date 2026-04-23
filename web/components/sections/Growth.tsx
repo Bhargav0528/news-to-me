@@ -8,39 +8,44 @@ function parseBody(body: string): string[] {
   return body.split(/\n\n/).filter((p) => p.trim().length > 0);
 }
 
+/** Render **bold** markdown as <strong>, plain text as <span> */
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\*\*(.+)\*\*$/);
+    if (match) return <strong key={i}>{match[1]}</strong>;
+    return <span key={i}>{part}</span>;
+  });
+}
+
 export default function Growth({ growth }: GrowthProps) {
   const paragraphs = parseBody(growth.body);
 
   return (
     <article>
-      {/* Topic category tag */}
       <p className="tag-label mb-2">{growth.topic_category}</p>
 
-      {/* Title */}
       <h3 className="article-headline mb-4">{growth.title}</h3>
 
-      {/* Body paragraphs */}
       <div className="article-body space-y-3 mb-6">
         {paragraphs.map((para, i) => (
-          <p key={i}>{para.trim()}</p>
+          <p key={i}>{renderInlineMarkdown(para.trim())}</p>
         ))}
       </div>
 
-      {/* Key Takeaways */}
       {growth.key_takeaways.length > 0 && (
         <div className="mb-5">
-          <p className="font-sans text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-ink)" }}>
+          <p className="meta-text font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-ink)" }}>
             Key Takeaways
           </p>
           <ul className="article-body space-y-1 pl-4 list-disc">
             {growth.key_takeaways.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{renderInlineMarkdown(item)}</li>
             ))}
           </ul>
         </div>
       )}
 
-      {/* Further Reading */}
       {growth.further_reading.length > 0 && (
         <div>
           <p className="meta-text font-bold uppercase tracking-wider mb-1">

@@ -1,26 +1,13 @@
-import { Article, NewsSection } from "@/lib/edition-types";
+import type { Article, NewsSection } from "@/lib/edition-types";
 
-interface ArticleCardProps {
-  article: Article;
-  index: number;
-}
-
-/** Truncate summary to ~120 chars, ending at a word boundary */
-function truncate(text: string, maxChars = 120): string {
-  if (text.length <= maxChars) return text;
-  const truncated = text.slice(0, maxChars);
-  const lastSpace = truncated.lastIndexOf(" ");
-  return lastSpace > 80 ? truncated.slice(0, lastSpace) + "…" : truncated + "…";
-}
-
-function ArticleCard({ article, index }: ArticleCardProps) {
+function ArticleCard({ article, index }: { article: Article; index: number }) {
   return (
     <article className="mb-5 last:mb-0">
       <h4 className="article-headline mb-1">
         {index + 1}. {article.headline}
       </h4>
 
-      <p className="article-body mb-2">{truncate(article.summary)}</p>
+      <p className="article-body mb-2">{article.summary}</p>
 
       <details className="article-details">
         <summary
