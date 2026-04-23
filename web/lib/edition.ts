@@ -3,9 +3,10 @@ import type { Edition } from "./edition-types";
 
 /**
  * Load the current edition data.
- * Called at build time by server components — no runtime fetch.
+ * Static import at build time — no runtime fetch, no revalidation needed.
+ * Daily cron (PO-5, Sprint 3) will rebuild the whole site with fresh data.
  */
-export async function getEdition(): Promise<Edition> {
+export function getEdition(): Edition {
   return editionData as Edition;
 }
 

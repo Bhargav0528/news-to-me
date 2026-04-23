@@ -18,6 +18,7 @@ LOGGER = logging.getLogger(__name__)
 DEFAULT_DB_PATH = Path('data/news_to_me.db')
 DEFAULT_EDITION_PATH = Path('data/edition.json')
 DEFAULT_EMAIL_PREVIEW_PATH = Path('data/email_preview.json')
+WEB_EDITION_PATH = Path('web/public/data/edition.json')
 
 
 def run(*, article_limit: int | None = None, send_email: bool = False) -> dict[str, Any]:
@@ -28,6 +29,8 @@ def run(*, article_limit: int | None = None, send_email: bool = False) -> dict[s
     edition = assembler.assemble()
     DEFAULT_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
     DEFAULT_EDITION_PATH.write_text(json.dumps(edition, indent=2))
+    WEB_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
+    WEB_EDITION_PATH.write_text(json.dumps(edition, indent=2))
 
     publisher = EmailPublisher()
     preview_path = publisher.write_preview(edition, DEFAULT_EMAIL_PREVIEW_PATH)

@@ -56,9 +56,14 @@
 
 ## Responsive Strategy
 
-- Mobile: single column, full-width sections
-- Tablet+: max-width 1024px, centered
+| Breakpoint | Range | Layout |
+|-----------|-------|--------|
+| Mobile | < 768px | Single column, full-width sections |
+| Tablet | 768–1023px | Constrained to max-width |
+| Desktop | 1024px+ | max-width 1024px, centered |
+
 - No horizontal scroll ever
+- Main column: max-width 1024px, centered with auto margins
 
 ## No Images in V1
 
