@@ -1,7 +1,10 @@
 import { getEdition, formatEditionDate } from "@/lib/edition";
 import { readingTime, readingTimeFromWords } from "@/lib/reading-time";
-import type { TldrItem, BiztechArticle, GrowthSection, KnowledgeSection, NewsSection } from "@/lib/edition-types";
-
+import type { TldrItem, NewsSection, BiztechArticle } from "@/lib/edition-types";
+import Tldr from "@/components/sections/Tldr";
+import Growth from "@/components/sections/Growth";
+import Knowledge from "@/components/sections/Knowledge";
+import Biztech from "@/components/sections/Biztech";
 // Deduplicate market indices by name, keeping the one with value > 0
 function uniqueIndices(indices: { name: string; value: number; change: number; change_percent: number }[]) {
   const seen = new Map<string, typeof indices[0]>();
@@ -75,7 +78,7 @@ export default function HomePage() {
             <span className="meta-text">{readingTimeFromWords(biztechWordCount)}</span>
           </div>
           <div className="pb-section">
-            <BiztechPlaceholder biztech={edition.biztech} />
+            <Biztech biztech={edition.biztech} />
           </div>
         </section>
 
@@ -86,7 +89,7 @@ export default function HomePage() {
             <span className="meta-text">{readingTime(edition.growth.body)}</span>
           </div>
           <div className="pb-section">
-            <GrowthPlaceholder growth={edition.growth} />
+            <Growth growth={edition.growth} />
           </div>
         </section>
 
@@ -97,7 +100,7 @@ export default function HomePage() {
             <span className="meta-text">{readingTime(edition.knowledge.body)}</span>
           </div>
           <div className="pb-section">
-            <KnowledgePlaceholder knowledge={edition.knowledge} />
+            <Knowledge knowledge={edition.knowledge} />
           </div>
         </section>
 
@@ -130,7 +133,7 @@ export default function HomePage() {
   );
 }
 
-// ── Placeholder components (replaced by SCRUM-34 through SCRUM-38) ──
+// ── Placeholder components (SCRUM-34, 35, 36, 38) ──
 
 function TldrPlaceholder({ items }: { items: TldrItem[] }) {
   return (
@@ -195,26 +198,6 @@ function BiztechPlaceholder({ biztech }: { biztech: { market_snapshot: { indices
           <p className="article-body mt-1">{art.summary}</p>
         </div>
       ))}
-    </div>
-  );
-}
-
-function GrowthPlaceholder({ growth }: { growth: GrowthSection }) {
-  return (
-    <div>
-      <p className="tag-label">{growth.topic_category}</p>
-      <p className="article-headline">{growth.title}</p>
-      <p className="article-body mt-2">{growth.body.slice(0, 200)}...</p>
-    </div>
-  );
-}
-
-function KnowledgePlaceholder({ knowledge }: { knowledge: KnowledgeSection }) {
-  return (
-    <div>
-      <p className="tag-label">{knowledge.category}</p>
-      <p className="article-headline">{knowledge.title}</p>
-      <p className="article-body mt-2">{knowledge.body.slice(0, 200)}...</p>
     </div>
   );
 }
