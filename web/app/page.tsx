@@ -1,5 +1,5 @@
 import { getEdition, formatEditionDate } from "@/lib/edition";
-import { readingTime } from "@/lib/reading-time";
+import { readingTime, readingTimeFromWords } from "@/lib/reading-time";
 import type { TldrItem, BiztechArticle, GrowthSection, KnowledgeSection, NewsSection } from "@/lib/edition-types";
 
 // Deduplicate market indices by name, keeping the one with value > 0
@@ -61,7 +61,7 @@ export default function HomePage() {
         <section aria-labelledby="news-heading">
           <div className="section-rule pt-6 pb-3 flex justify-between items-end">
             <h2 id="news-heading" className="section-header">News</h2>
-            <span className="meta-text">{readingTime(String(newsWordCount))}</span>
+            <span className="meta-text">{readingTimeFromWords(newsWordCount)}</span>
           </div>
           <div className="pb-section">
             <NewsPlaceholder articles={edition.news} />
@@ -72,7 +72,7 @@ export default function HomePage() {
         <section aria-labelledby="biztech-heading">
           <div className="section-rule pt-6 pb-3 flex justify-between items-end">
             <h2 id="biztech-heading" className="section-header">Biz &amp; Tech</h2>
-            <span className="meta-text">{readingTime(String(biztechWordCount))}</span>
+            <span className="meta-text">{readingTimeFromWords(biztechWordCount)}</span>
           </div>
           <div className="pb-section">
             <BiztechPlaceholder biztech={edition.biztech} />
@@ -105,7 +105,7 @@ export default function HomePage() {
         <section aria-labelledby="fun-heading">
           <div className="section-rule pt-6 pb-3 flex justify-between items-end">
             <h2 id="fun-heading" className="section-header">Fun</h2>
-            <span className="meta-text">{readingTime(String(funWordCount))}</span>
+            <span className="meta-text">{readingTimeFromWords(funWordCount)}</span>
           </div>
           <div className="pb-section">
             <FunPlaceholder />
@@ -153,7 +153,7 @@ function NewsPlaceholder({ articles }: { articles: NewsSection }) {
       {regions.map((region) =>
         articles[region]?.length ? (
           <div key={region}>
-            <p className="subregion-header mb-3 pb-2 border-b" style={{ borderColor: "var(--color-rule)" }}>
+            <p className="subregion-header">
               {region.charAt(0).toUpperCase() + region.slice(1)}
             </p>
             {articles[region].slice(0, 3).map((art, i) => (
