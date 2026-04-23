@@ -4,15 +4,6 @@ interface TldrProps {
   items: TldrItem[];
 }
 
-function RegionTag({ region }: { region: string }) {
-  const label = region.toUpperCase();
-  return (
-    <span className="tag-label border-l-2 border-accent pl-1.5 mr-2">
-      {label}
-    </span>
-  );
-}
-
 export default function Tldr({ items }: TldrProps) {
   return (
     <section aria-label="In Brief">
@@ -22,27 +13,20 @@ export default function Tldr({ items }: TldrProps) {
             key={index}
             className="border-l-2 border-accent pl-4 py-1"
           >
-            {/* Number + Region + Headline row */}
-            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
-              <span className="font-sans text-sm font-bold text-ink-muted tabular-nums">
+            {/* Number + Region + Headline */}
+            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-2">
+              <span
+                className="text-xs font-sans font-bold tabular-nums"
+                style={{ color: "var(--color-ink-muted)" }}
+              >
                 {index + 1}.
               </span>
-              <RegionTag region={item.region} />
-              <h3 className="article-headline flex-1">{item.headline}</h3>
+              <span className="tag-label">{item.region.toUpperCase()}</span>
+              <h3 className="article-headline">{item.headline}</h3>
             </div>
 
             {/* Summary (always visible) */}
-            <p className="article-body pl-0">{item.summary}</p>
-
-            {/* Expandable full summary */}
-            <details className="article-details mt-2">
-              <summary className="meta-text text-accent hover:text-ink transition-colors">
-                Read more
-              </summary>
-              <div className="mt-2 pl-0">
-                <p className="article-body">{item.summary}</p>
-              </div>
-            </details>
+            <p className="article-body">{item.summary}</p>
           </article>
         ))}
       </div>

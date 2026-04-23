@@ -1,26 +1,28 @@
 import { getEdition, formatEditionDate } from "@/lib/edition";
 import { readingTime, readingTimeFromWords } from "@/lib/reading-time";
-import type { TldrItem, NewsSection } from "@/lib/edition-types";
 import Tldr from "@/components/sections/Tldr";
+import News from "@/components/sections/News";
+import Biztech from "@/components/sections/Biztech";
 import Growth from "@/components/sections/Growth";
 import Knowledge from "@/components/sections/Knowledge";
-import Biztech from "@/components/sections/Biztech";
+import Fun from "@/components/sections/Fun";
 
 export default function HomePage() {
   const edition = getEdition();
   const formattedDate = formatEditionDate(edition.date);
 
-  const newsWordCount =
-    Object.values(edition.news)
-      .flat()
-      .reduce((sum, a) => sum + a.summary.split(/\s+/).length, 0);
+  const newsWordCount = Object.values(edition.news)
+    .flat()
+    .reduce((sum, a) => sum + a.summary.split(/\s+/).length, 0);
 
   const biztechWordCount = edition.biztech.articles.reduce(
     (sum, a) => sum + a.summary.split(/\s+/).length, 0
   );
 
-  const funWordCount =
-    (edition.fun.riddle.question + edition.fun.logic_puzzle.question).split(/\s+/).length;
+  const funWordCount = (
+    edition.fun.riddle.question +
+    edition.fun.logic_puzzle.question
+  ).split(/\s+/).length;
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--color-paper)" }}>
@@ -57,7 +59,7 @@ export default function HomePage() {
             <span className="meta-text">{readingTimeFromWords(newsWordCount)}</span>
           </div>
           <div className="pb-section">
-            <NewsPlaceholder articles={edition.news} />
+            <News articles={edition.news} />
           </div>
         </section>
 
@@ -101,7 +103,7 @@ export default function HomePage() {
             <span className="meta-text">{readingTimeFromWords(funWordCount)}</span>
           </div>
           <div className="pb-section">
-            <FunPlaceholder />
+            <Fun fun={edition.fun} />
           </div>
         </section>
 
@@ -109,7 +111,11 @@ export default function HomePage() {
         <footer className="pt-6 mt-8 border-t" style={{ borderColor: "var(--color-rule)" }}>
           <div className="flex justify-between items-center">
             <p className="meta-text">
-              Generated {new Date(edition.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })}
+              Generated{" "}
+              {new Date(edition.generated_at).toLocaleString("en-US", {
+                dateStyle: "medium",
+                timeStyle: "short",
+              })}
             </p>
             <p className="meta-text">
               {edition.pipeline_stats.articles_fetched.toLocaleString()} articles
@@ -120,39 +126,5 @@ export default function HomePage() {
 
       </main>
     </div>
-  );
-}
-
-// ── Placeholder components (SCRUM-35, 38) ──
-
-function NewsPlaceholder({ articles }: { articles: NewsSection }) {
-  const regions = ["bangalore", "karnataka", "india", "us", "world"] as const;
-  return (
-    <div className="space-y-6">
-      {regions.map((region) =>
-        articles[region]?.length ? (
-          <div key={region}>
-            <div>
-              <p className="subregion-header">
-                {region.charAt(0).toUpperCase() + region.slice(1)}
-              </p>
-              <div className="subregion-header-rule" />
-            </div>
-            {articles[region].slice(0, 3).map((art, i) => (
-              <div key={i} className="mb-5">
-                <p className="article-headline">{art.headline}</p>
-                <p className="article-body mt-1">{art.summary}</p>
-              </div>
-            ))}
-          </div>
-        ) : null
-      )}
-    </div>
-  );
-}
-
-function FunPlaceholder() {
-  return (
-    <p className="meta-text">Puzzle, sudoku, chess &amp; riddles — coming in SCRUM-38.</p>
   );
 }
