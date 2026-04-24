@@ -75,6 +75,43 @@ This file is in `.gitignore` — it is never committed.
 
 `generate.py` automatically commits `data/edition.json` and `web/public/data/edition.json` to git **only on success**, after the LLM assembly is complete and `edition.json` is written. If LLM assembly fails or is killed, no commit happens and no email is sent.
 
+## Automated scheduling (cron)
+
+A daily cron job runs the pipeline automatically every morning. This is managed via OpenClaw's built-in scheduler, not cron(8).
+
+**Current schedule:** `news-to-me daily` — every day at **7:00 AM Pacific (America/Los_Angeles)**
+
+To view, manage, or remove the cron job:
+
+```bash
+openclaw cron list                  # see all cron jobs
+openclaw cron runs --id <jobId>     # see run history
+openclaw cron run <jobId>           # force-run now
+openclaw cron remove <jobId>       # delete a job
+```
+
+
+To recreate the daily cron job:
+
+```bash
+openclaw cron add \
+  --name "news-to-me daily" \
+  --cron "0 7 * * *" \
+  --tz "America/Los_Angeles" \
+  --session isolated \
+  --message "Run the News To Me daily pipeline end-to-end.\n\nWorking directory: /home/bbv/.openclaw/workspace/peeohsee-1/projects/news-to-me\n\nSteps:\n1. Run: .venv/bin/python -m pipeline.ingest -v\n2. Run: .venv/bin/python -m pipeline.generate --deploy -v\n3. Report results: ingest summary, status file stage, edition sections populated, deployed URL if any." \
+  --announce \
+  --channel telegram \
+  --to 8450368729
+```
+
+**How it works:**
+- Runs in an **isolated session** — does not require Becky to be online
+- Executes `.venv/bin/python -m pipeline.ingest` then `.venv/bin/python -m pipeline.generate --deploy` sequentially
+- On success: announces a summary to Mr. Main's Telegram DMs (8450368729)
+- On failure: announces the error and the last status file contents
+- Stored at `~/.openclaw/cron/jobs.json` — persists across OpenClaw restarts
+
 ## Adding new pipeline stages
 
 The status file tracks steps by name. To add a new generate step:
