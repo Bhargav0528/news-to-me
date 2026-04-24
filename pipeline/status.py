@@ -82,8 +82,7 @@ def set_step(step_name: str) -> None:
     On subsequent calls, the previous current_step moves to steps_completed
     before advancing.
 
-    Args:
-        step_name: The step being entered (must be in steps_remaining).
+    Invariant after this call: current_step is NEVER in steps_remaining.
     """
     if not STATUS_FILE.exists():
         return  # No active run — nothing to update.
@@ -98,9 +97,8 @@ def set_step(step_name: str) -> None:
         completed.append(current)
         remaining = [r for r in remaining if r != current]
 
-    # Add step_name to steps_remaining if not already there
-    if step_name not in remaining and step_name not in completed:
-        remaining.append(step_name)
+    # step_name is now the current step — it must NOT be in remaining.
+    remaining = [r for r in remaining if r != step_name]
 
     now = datetime.now(timezone.utc).isoformat()
     _write_atomically(

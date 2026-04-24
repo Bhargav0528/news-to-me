@@ -31,7 +31,7 @@ from pipeline.generators.feature_sections import (
     generate_growth_section,
     generate_knowledge_section,
 )
-from pipeline.generators.news import generate_news_sections
+from pipeline.generators.news import generate_news_region
 from pipeline.generators.tldr import generate_tldr
 from pipeline.publishers.deployer import Deployer
 from pipeline.publishers.emailer import EmailPublisher
@@ -45,23 +45,36 @@ DEFAULT_EMAIL_PREVIEW_PATH = Path("data/email_preview.json")
 WEB_EDITION_PATH = Path("web/public/data/edition.json")
 
 
-def _check_ingest_ran() -> bool:
-    """Verify that an ingest stage has completed successfully.
+def _check_ingest_ran(db_path: Path) -> None:
+    """Verify that the DB contains articles from a prior ingest run.
 
-    Returns True if the status file shows ingest completed (or any stage ran
-    before generate). If no status file exists, logs a warning and returns False.
+    Raises RuntimeError if the DB is empty, has no tables, or contains zero articles —
+    this means python3 -m pipeline.ingest needs to run first.
     """
-    s = get_status()
-    if s is None:
-        LOGGER.warning(
-            "No pipeline_status.json found. Did ingest run first? "
-            "Proceeding anyway — generate will use whatever data exists in the DB."
+    import sqlite3
+    # If DB doesn't exist yet, get_connection creates an empty file — detect that.
+    if not db_path.exists():
+        raise RuntimeError(
+            f"Database not found at {db_path}. Run `python3 -m pipeline.ingest` first."
         )
-        return False
-    if s.get("stage") == "ingest":
-        return True
-    # Any completed or partial run is acceptable — means data is present.
-    return True
+    conn = sqlite3.connect(db_path)
+    try:
+        # Check that the raw_articles table exists.
+        tables = conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='raw_articles'"
+        ).fetchone()
+        if not tables:
+            raise RuntimeError(
+                f"Database at {db_path} has no raw_articles table. "
+                "Run `python3 -m pipeline.ingest` first."
+            )
+        count = conn.execute("SELECT COUNT(*) FROM raw_articles").fetchone()[0]
+        if count == 0:
+            raise RuntimeError(
+                "Database has 0 articles. Run `python3 -m pipeline.ingest` first."
+            )
+    finally:
+        conn.close()
 
 
 def _assemble_with_tracking(
@@ -82,10 +95,16 @@ def _assemble_with_tracking(
     tldr = generate_tldr(news_rows, adapter=adapter)
 
     # --- News sections (one step per region) ----------------------------
+    # Each region is a separate LLM call so the status file accurately
+    # reflects which region is currently being generated.
+    news_sections = {}
     for region in ["bangalore", "karnataka", "india", "us", "world"]:
         set_step(f"news_{region}")
-    # generate_news_sections does all regions in one call; mark all done.
-    news_sections = generate_news_sections(news_rows, adapter=adapter)
+        news_sections[region] = generate_news_region(
+            news_rows.get(region, []),
+            region=region,
+            adapter=adapter,
+        )
 
     # --- Biz/Tech ------------------------------------------------------
     set_step("biztech")
@@ -173,8 +192,8 @@ def run(
         # Announce generate start.
         start(stage="generate", steps=GENERATE_STEPS, run_id=run_id)
 
-        # Verify ingest ran first.
-        _check_ingest_ran()
+        # Verify ingest ran first (raises if DB is empty).
+        _check_ingest_ran(db_path)
 
         # Run all LLM generators with per-section status tracking.
         adapter = build_adapter(ModelConfig())
