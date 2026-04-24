@@ -1,75 +1,88 @@
-"""Entry point for the News To Me production pipeline."""
+"""Thin dev orchestrator for the News To Me pipeline.
+
+This module exists for local development convenience only.
+It runs ingest then generate sequentially in one process.
+
+WARNING: In constrained execution environments (e.g., agent sandboxes with
+short SIGKILL timeouts), this may be terminated mid-run.
+For production use, run the two stages separately:
+
+    python3 -m pipeline.ingest    # fast, safe everywhere
+    python3 -m pipeline.generate  # slow, needs full budget
+
+See README.md for the full pipeline architecture documentation.
+"""
 
 from __future__ import annotations
 
 import argparse
 import json
 import logging
-from pathlib import Path
-from typing import Any
+import sys
 
-from dotenv import load_dotenv
-
-from pipeline.fetchers.orchestrator import FetchOrchestrator
-from pipeline.generators.assembler import EditionAssembler
-from pipeline.publishers.deployer import Deployer
-from pipeline.publishers.emailer import EmailPublisher
+from pipeline.ingest import run as run_ingest
+from pipeline.generate import run as run_generate
 
 LOGGER = logging.getLogger(__name__)
-DEFAULT_DB_PATH = Path('data/news_to_me.db')
-DEFAULT_EDITION_PATH = Path('data/edition.json')
-DEFAULT_EMAIL_PREVIEW_PATH = Path('data/email_preview.json')
-WEB_EDITION_PATH = Path('web/public/data/edition.json')
-
-
-def run(*, article_limit: int | None = None, send_email: bool = False, deploy: bool = False) -> dict[str, Any]:
-    """Run ingestion, assemble the edition, and optionally send the email or deploy."""
-    load_dotenv()
-    fetch_summary = FetchOrchestrator(DEFAULT_DB_PATH, article_limit=article_limit).run()
-    assembler = EditionAssembler(DEFAULT_DB_PATH)
-    edition = assembler.assemble()
-    DEFAULT_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
-    DEFAULT_EDITION_PATH.write_text(json.dumps(edition, indent=2))
-    WEB_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
-    WEB_EDITION_PATH.write_text(json.dumps(edition, indent=2))
-
-    publisher = EmailPublisher()
-    preview_path = publisher.write_preview(edition, DEFAULT_EMAIL_PREVIEW_PATH)
-    
-    deployed_url: str | None = None
-    if deploy:
-        LOGGER.info('Triggering Vercel deploy...')
-        deployed_url = Deployer().deploy()
-        LOGGER.info('Deployed to: %s', deployed_url)
-    
-    if send_email:
-        if deployed_url:
-            edition['_live_url'] = deployed_url
-        publisher.send(edition)
-
-    result = {
-        'fetch_summary': fetch_summary,
-        'edition_path': str(DEFAULT_EDITION_PATH),
-        'email_preview_path': str(preview_path),
-        'email_sent': send_email,
-        'deployed_url': deployed_url,
-    }
-    LOGGER.info('Pipeline result: %s', result)
-    return result
 
 
 def main() -> None:
-    """CLI entry point for the full News To Me pipeline."""
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--article-limit', type=int, default=None)
-    parser.add_argument('--send-email', action='store_true')
-    parser.add_argument('--deploy', action='store_true', help='Deploy to Vercel after assembling edition')
+    """Run ingest then generate sequentially (dev convenience only).
+
+    In production, run the two stages separately via cron or a CI runner
+    that has a longer timeout budget.
+    """
+    parser = argparse.ArgumentParser(
+        description=(
+            "News To Me pipeline (dev convenience wrapper).\n"
+            "WARNING: This may SIGKILL in constrained environments.\n"
+            "For production, run: python3 -m pipeline.ingest && python3 -m pipeline.generate"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument("--article-limit", type=int, default=None)
+    parser.add_argument("--deploy", action="store_true", help="Deploy to Vercel (generate stage only)")
+    parser.add_argument("--send-email", action="store_true", help="Send email after generate")
+    parser.add_argument(
+        "--skip-ingest",
+        action="store_true",
+        help="Skip ingest stage (use existing DB data)",
+    )
     args = parser.parse_args()
 
-    logging.basicConfig(level=logging.INFO)
-    result = run(article_limit=args.article_limit, send_email=args.send_email, deploy=args.deploy)
-    print(json.dumps(result, indent=2))
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
+
+    print("=" * 60)
+    print(" WARNING: pipeline/main.py is for LOCAL DEV only.")
+    print(" For production, run ingest and generate separately.")
+    print("=" * 60)
+
+    # Stage 1: ingest
+    if args.skip_ingest:
+        print("\n[1/2] Skipping ingest (--skip-ingest set)")
+        ingest_result = None
+    else:
+        print("\n[1/2] Running ingest stage...")
+        ingest_result = run_ingest(article_limit=args.article_limit)
+        print(f"  → Ingest complete: {ingest_result['articles_inserted']} articles inserted")
+
+    # Stage 2: generate
+    print("\n[2/2] Running generate stage...")
+    generate_result = run_generate(
+        deploy=args.deploy,
+        send_email=args.send_email,
+    )
+    print(f"  → Generate complete: edition at {generate_result['edition_path']}")
+    if generate_result.get("deployed_url"):
+        print(f"  → Deployed: {generate_result['deployed_url']}")
+    if generate_result.get("email_sent"):
+        print(f"  → Email sent")
+
+    print("\nDone.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

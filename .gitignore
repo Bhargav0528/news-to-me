@@ -6,3 +6,4 @@ __pycache__/
 .DS_Store
 
 data/*.db
+data/pipeline_status.json
