@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 
 from pipeline.fetchers.orchestrator import FetchOrchestrator
 from pipeline.generators.assembler import EditionAssembler
+from pipeline.publishers.deployer import Deployer
 from pipeline.publishers.emailer import EmailPublisher
 
 LOGGER = logging.getLogger(__name__)
@@ -21,8 +22,8 @@ DEFAULT_EMAIL_PREVIEW_PATH = Path('data/email_preview.json')
 WEB_EDITION_PATH = Path('web/public/data/edition.json')
 
 
-def run(*, article_limit: int | None = None, send_email: bool = False) -> dict[str, Any]:
-    """Run ingestion, assemble the edition, and optionally send the email."""
+def run(*, article_limit: int | None = None, send_email: bool = False, deploy: bool = False) -> dict[str, Any]:
+    """Run ingestion, assemble the edition, and optionally send the email or deploy."""
     load_dotenv()
     fetch_summary = FetchOrchestrator(DEFAULT_DB_PATH, article_limit=article_limit).run()
     assembler = EditionAssembler(DEFAULT_DB_PATH)
@@ -34,7 +35,16 @@ def run(*, article_limit: int | None = None, send_email: bool = False) -> dict[s
 
     publisher = EmailPublisher()
     preview_path = publisher.write_preview(edition, DEFAULT_EMAIL_PREVIEW_PATH)
+    
+    deployed_url: str | None = None
+    if deploy:
+        LOGGER.info('Triggering Vercel deploy...')
+        deployed_url = Deployer().deploy()
+        LOGGER.info('Deployed to: %s', deployed_url)
+    
     if send_email:
+        if deployed_url:
+            edition['_live_url'] = deployed_url
         publisher.send(edition)
 
     result = {
@@ -42,6 +52,7 @@ def run(*, article_limit: int | None = None, send_email: bool = False) -> dict[s
         'edition_path': str(DEFAULT_EDITION_PATH),
         'email_preview_path': str(preview_path),
         'email_sent': send_email,
+        'deployed_url': deployed_url,
     }
     LOGGER.info('Pipeline result: %s', result)
     return result
@@ -52,10 +63,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--article-limit', type=int, default=None)
     parser.add_argument('--send-email', action='store_true')
+    parser.add_argument('--deploy', action='store_true', help='Deploy to Vercel after assembling edition')
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO)
-    result = run(article_limit=args.article_limit, send_email=args.send_email)
+    result = run(article_limit=args.article_limit, send_email=args.send_email, deploy=args.deploy)
     print(json.dumps(result, indent=2))
 
 
