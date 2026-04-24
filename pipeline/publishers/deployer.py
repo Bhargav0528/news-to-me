@@ -210,14 +210,16 @@ class Deployer:
                 LOGGER.info("Deployment %s state: %s", uid, state)
 
                 if state == "READY":
+                    # Return the configured production URL (not the deployment-specific preview URL)
                     aliases = dep.get("alias", []) or []
                     if aliases:
+                        # Use the project's primary production alias, not the preview URL
+                        for a in aliases:
+                            if "vercel.app" in a and "news-to-me" in a:
+                                return f"https://{a}"
+                        # Fallback to first alias
                         return f"https://{aliases[0]}"
-                    url = dep.get("url", "")
-                    if url:
-                        return f"https://{url}"
-                    # Fallback: construct from deployment ID
-                    return f"https://{uid}-bhargavs-projects-cfd6c9a5.vercel.app"
+                    return f"https://web-sand-two-88.vercel.app"
 
                 if state in ("ERROR", "CANCELED", "BUILD_FAILED", "FAILED"):
                     raise RuntimeError(f"Vercel deployment failed: state={state}")
