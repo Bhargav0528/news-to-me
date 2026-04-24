@@ -109,7 +109,13 @@ class Deployer:
         env["GIT_COMMITTER_NAME"] = env["GIT_AUTHOR_NAME"]
         env["GIT_COMMITTER_EMAIL"] = env["GIT_AUTHOR_EMAIL"]
 
-        # Ensure deploy branch exists
+        # Ensure deploy branch exists and is at this commit
+        subprocess.run(
+            ["git", "fetch", "origin", self.deploy_branch],
+            cwd=git_dir,
+            capture_output=True,
+            text=True,
+        )
         result = subprocess.run(
             ["git", "rev-parse", "--verify", f"refs/heads/{self.deploy_branch}"],
             cwd=git_dir,
@@ -131,7 +137,17 @@ class Deployer:
                 env=env,
             )
 
-        # Stage the edition.json in web/public/data/
+        # Reset deploy branch to match main's current state (main has the latest code)
+        # This ensures Vercel builds from main's content, not an old deploy branch state
+        subprocess.run(
+            ["git", "reset", "--hard", "origin/main"],
+            cwd=git_dir,
+            check=True,
+            env=env,
+        )
+
+        # Stage the edition.json
+        data_file = web_dir / "public" / "data" / "edition.json"
         subprocess.run(
             ["git", "add", str(data_file.relative_to(git_dir))],
             cwd=git_dir,
@@ -146,17 +162,17 @@ class Deployer:
             text=True,
         )
         if not status.stdout.strip():
-            LOGGER.info("No changes to deploy — edition.json unchanged")
-            return
+            LOGGER.info("edition.json unchanged — pushing main state as-is")
+        else:
+            message = f"Auto-deploy: update edition.json {time.strftime('%Y-%m-%d %H:%M')}"
+            subprocess.run(
+                ["git", "commit", "-m", message],
+                cwd=git_dir,
+                check=True,
+                env=env,
+            )
 
-        message = f"Auto-deploy: update edition.json {time.strftime('%Y-%m-%d %H:%M')}"
-        subprocess.run(
-            ["git", "commit", "-m", message],
-            cwd=git_dir,
-            check=True,
-            env=env,
-        )
-
+        # Force push to deploy branch — this is the Vercel trigger
         subprocess.run(
             ["git", "push", "-f", "-u", "origin", self.deploy_branch],
             cwd=git_dir,
@@ -236,11 +252,56 @@ class Deployer:
         return self.deploy()
 
 
+def deploy_via_vercel_cli(branch: str | None = None) -> str:
+    """Deploy the web/ directory using Vercel CLI directly.
+
+    Use this when you want to deploy from any branch (e.g., local dev, testing).
+    Runs `vercel --prod` which deploys immediately without needing GitHub.
+
+    Args:
+        branch: Optional git branch name to include in the deployment name.
+
+    Returns:
+        The Vercel deployment URL.
+    """
+    import subprocess
+    web_dir = Path(__file__).resolve().parents[2] / "web"
+
+    cmd = ["vercel", "--yes", "--prod"]
+    if branch:
+        cmd.extend(["--github", "--github-branch", branch])
+
+    result = subprocess.run(cmd, cwd=web_dir, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(f"Vercel CLI deploy failed: {result.stderr}")
+
+    # Parse URL from output
+    for line in result.stdout.split("\n"):
+        if "vercel.app" in line:
+            url = line.strip().split(" ")[-1]
+            return url
+
+    raise RuntimeError(f"Could not parse Vercel URL from output: {result.stdout}")
+
+
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Deploy News To Me to Vercel")
+    parser.add_argument("--deploy", action="store_true", help="Deploy via git push to deploy branch (auto)")
+    parser.add_argument("--cli", action="store_true", help="Deploy using Vercel CLI directly")
+    parser.add_argument("--branch", "-b", default=None, help="Branch name for CLI deploy")
+    args = parser.parse_args()
+
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+
     try:
-        url = Deployer().deploy()
-        print(f"Live URL: {url}")
+        if args.cli:
+            url = deploy_via_vercel_cli(branch=args.branch)
+            print(f"Live URL: {url}")
+        else:
+            url = Deployer().deploy()
+            print(f"Live URL: {url}")
     except RuntimeError as e:
         print(f"Deploy failed: {e}", file=__import__("sys").stderr)
         raise SystemExit(1)
