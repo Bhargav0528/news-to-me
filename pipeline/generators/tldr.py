@@ -7,6 +7,11 @@ from typing import Any
 from pipeline.generators.engine import build_adapter, ModelConfig
 
 
+def _row_to_dict(row) -> dict:
+    """Convert sqlite3.Row to plain dict."""
+    return dict(row) if not isinstance(row, dict) else row
+
+
 def generate_tldr(news_sections: dict[str, list[dict[str, Any]]], adapter=None) -> list[dict[str, Any]]:
     """Build the cross-section TLDR list using LLM for distillation."""
     adapter = adapter or build_adapter(ModelConfig())
@@ -18,7 +23,7 @@ def generate_tldr(news_sections: dict[str, list[dict[str, Any]]], adapter=None) 
         articles = news_sections.get(region, [])
         if not articles:
             continue
-        lead = articles[0]
+        lead = _row_to_dict(articles[0])
         items.append({
             'headline': lead.get('headline', ''),
             'summary': lead.get('summary', ''),
