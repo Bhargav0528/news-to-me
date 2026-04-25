@@ -15,14 +15,23 @@ from pipeline.generators.assembler import EditionAssembler
 from pipeline.publishers.deployer import Deployer
 from pipeline.publishers.emailer import EmailPublisher
 
-def _commit_edition_json(git_dir: Path, edition: dict[str, Any]) -> str | None:
-    """Commit edition.json to git and push.
+LOGGER = logging.getLogger(__name__)
+DEFAULT_DB_PATH = Path('data/news_to_me.db')
+DEFAULT_EDITION_PATH = Path('data/edition.json')
+DEFAULT_EMAIL_PREVIEW_PATH = Path('data/email_preview.json')
+WEB_EDITION_PATH = Path('web/public/data/edition.json')
+
+
+def _commit_edition_local(git_dir: Path, edition: dict[str, Any]) -> str | None:
+    """Commit edition.json to the local branch (no push).
 
     Writes to both data/edition.json and web/public/data/edition.json,
-    then commits and pushes to origin/main. This ensures the deployed
-    site always has the latest content even if deploy fails.
+    then commits to the local branch. No push — deploy uses vercel --prod CLI
+    directly, which doesn't need a git remote connection.
+
+    If no changes exist, does nothing.
     """
-    import subprocess, os, time
+    import subprocess, os
     env = os.environ.copy()
     env["GIT_AUTHOR_NAME"] = "News To Me Pipeline"
     env["GIT_AUTHOR_EMAIL"] = "pipeline@newstome.local"
@@ -30,7 +39,7 @@ def _commit_edition_json(git_dir: Path, edition: dict[str, Any]) -> str | None:
     env["GIT_COMMITTER_EMAIL"] = env["GIT_AUTHOR_EMAIL"]
 
     try:
-        result = subprocess.run(
+        subprocess.run(
             ["git", "add", "data/edition.json", "web/public/data/edition.json"],
             cwd=git_dir, capture_output=True, text=True,
         )
@@ -39,9 +48,9 @@ def _commit_edition_json(git_dir: Path, edition: dict[str, Any]) -> str | None:
             cwd=git_dir, capture_output=True, text=True,
         )
         if not diff.stdout.strip():
-            LOGGER.info("edition.json unchanged — no git commit needed")
+            LOGGER.info("edition.json unchanged — no commit needed")
             return None
-        message = f"docs: update edition.json to {edition.get('date', 'unknown')} [skip ci]"
+        message = f"docs: update edition.json to {edition.get('date', 'unknown')}"
         subprocess.run(
             ["git", "commit", "-m", message],
             cwd=git_dir, check=True, env=env,
@@ -50,21 +59,11 @@ def _commit_edition_json(git_dir: Path, edition: dict[str, Any]) -> str | None:
             ["git", "rev-parse", "--short", "HEAD"],
             cwd=git_dir, capture_output=True, text=True,
         ).stdout.strip()
-        subprocess.run(
-            ["git", "push", "origin", "main"],
-            cwd=git_dir, capture_output=True, text=True,
-        )
-        LOGGER.info("Edition JSON committed: %s", hash_)
+        LOGGER.info("Edition JSON committed locally: %s", hash_)
         return hash_
     except subprocess.CalledProcessError as exc:
         LOGGER.warning("Git commit failed (non-fatal): %s", exc)
         return None
-
-LOGGER = logging.getLogger(__name__)
-DEFAULT_DB_PATH = Path('data/news_to_me.db')
-DEFAULT_EDITION_PATH = Path('data/edition.json')
-DEFAULT_EMAIL_PREVIEW_PATH = Path('data/email_preview.json')
-WEB_EDITION_PATH = Path('web/public/data/edition.json')
 
 
 def run(*, article_limit: int | None = None, send_email: bool = False, deploy: bool = False) -> dict[str, Any]:
@@ -81,13 +80,13 @@ def run(*, article_limit: int | None = None, send_email: bool = False, deploy: b
     publisher = EmailPublisher()
     preview_path = publisher.write_preview(edition, DEFAULT_EMAIL_PREVIEW_PATH)
 
-    # Commit to git BEFORE deploy — ensures website gets fresh content
-    # even if deploy step fails. Vercel deploys on next push.
-    commit_hash = _commit_edition_json(Path(__file__).resolve().parents[1], edition)
+    # Commit to local branch BEFORE deploy — ensures local git state is clean
+    # even if deploy fails. Uses vercel --prod CLI, no git push needed.
+    commit_hash = _commit_edition_local(Path(__file__).resolve().parents[1], edition)
 
     deployed_url: str | None = None
     if deploy:
-        LOGGER.info('Triggering Vercel deploy...')
+        LOGGER.info('Triggering Vercel deploy via CLI...')
         deployed_url = Deployer().deploy()
         LOGGER.info('Deployed to: %s', deployed_url)
 
