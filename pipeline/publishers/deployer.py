@@ -147,7 +147,6 @@ class Deployer:
         )
 
         # Stage the edition.json
-        data_file = web_dir / "public" / "data" / "edition.json"
         subprocess.run(
             ["git", "add", str(data_file.relative_to(git_dir))],
             cwd=git_dir,
