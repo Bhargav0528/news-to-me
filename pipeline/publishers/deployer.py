@@ -79,8 +79,9 @@ class Deployer:
         shutil.copy2(edition_src, web_data_dest)
         LOGGER.info("Copied edition.json to web/public/data/")
 
-        # Deploy via Vercel CLI — works from any branch, no git push needed
-        url = _deploy_via_vercel_cli()
+        # Deploy via Vercel CLI — runs from project root so Vercel resolves
+        # the 'web' directory correctly relative to Vercel project settings.
+        url = _deploy_via_vercel_cli(project_root=git_dir)
         LOGGER.info("Deployed to: %s", url)
         return url
 
@@ -89,11 +90,18 @@ class Deployer:
         return self.deploy()
 
 
-def _deploy_via_vercel_cli() -> str:
+def _deploy_via_vercel_cli(project_root: Path | None = None) -> str:
     """Deploy the web/ directory using Vercel CLI directly.
 
-    Runs `vercel --prod` which deploys immediately without needing GitHub
-    or a git remote connection. Works from any branch.
+    Runs `vercel --prod` from the project root — Vercel CLI reads the
+    project settings from .vercel/ in the project dir. Works from any branch.
+
+    Args:
+        project_root: Path to the news-to-me project root. Defaults to
+                      the directory containing web/. If provided, Vercel
+                      CLI will use the correct project root so the dashboard
+                      setting (which expects the web/ subdir) is resolved
+                        relative to this path.
 
     Returns:
         The Vercel deployment URL.
@@ -102,10 +110,20 @@ def _deploy_via_vercel_cli() -> str:
         RuntimeError: If the deploy fails.
     """
     import subprocess
-    web_dir = Path(__file__).resolve().parents[2] / "web"
+
+    git_dir = Path(__file__).resolve().parents[2]
+    # Vercel CLI should be run from the project root where .vercel/ lives,
+    # so Vercel resolves 'web/' correctly relative to that root.
+    project_root_dir = project_root or git_dir
 
     cmd = ["vercel", "--yes", "--prod"]
-    result = subprocess.run(cmd, cwd=web_dir, capture_output=True, text=True, timeout=300)
+    result = subprocess.run(
+        cmd,
+        cwd=project_root_dir,
+        capture_output=True,
+        text=True,
+        timeout=300,
+    )
     if result.returncode != 0:
         raise RuntimeError(f"Vercel CLI deploy failed: {result.stderr}")
 
