@@ -2,9 +2,10 @@
 
 Reads the most recent ingest data from SQLite, runs all LLM section generators
 (TLDR → news regions → biztech → growth → knowledge → fun), assembles edition.json,
-then triggers git commit and email on success only.
+then deploys, waits for rebuild, and sends email — only on full success.
 
-Slow (~10-15 min) — but runs alone in its own process budget.
+The email-last ordering is intentional: the reader should never click through
+from an email to find stale site content.
 
 Usage:
     python3 -m pipeline.generate
@@ -15,8 +16,11 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
+import os
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -36,6 +40,7 @@ from pipeline.generators.tldr import generate_tldr
 from pipeline.publishers.deployer import Deployer
 from pipeline.publishers.emailer import EmailPublisher
 from pipeline.status import start, set_step, complete, fail, get_status, GENERATE_STEPS
+from pipeline.utils.validation import validate_and_log
 
 LOGGER = logging.getLogger(__name__)
 
@@ -43,23 +48,35 @@ DEFAULT_DB_PATH = Path("data/news_to_me.db")
 DEFAULT_EDITION_PATH = Path("data/edition.json")
 DEFAULT_EMAIL_PREVIEW_PATH = Path("data/email_preview.json")
 WEB_EDITION_PATH = Path("web/public/data/edition.json")
+POST_DEPLOY_WAIT_SECONDS = 120  # 2 minutes for Vercel rebuild
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "bhargavbangalorevmurthy@gmail.com")
+
+
+def _build_version_hash(edition: dict[str, Any]) -> str:
+    """Generate a short version hash from the edition content.
+
+    Used to detect mismatch between what the email claims and what's on the site.
+    """
+    payload = json.dumps(
+        {"date": edition.get("date"), "generated_at": edition.get("generated_at")},
+        sort_keys=True,
+    )
+    return hashlib.sha256(payload.encode()).hexdigest()[:8]
 
 
 def _check_ingest_ran(db_path: Path) -> None:
     """Verify that the DB contains articles from a prior ingest run.
 
-    Raises RuntimeError if the DB is empty, has no tables, or contains zero articles —
-    this means python3 -m pipeline.ingest needs to run first.
+    Raises RuntimeError if the DB is empty, has no tables, or contains zero articles.
     """
     import sqlite3
-    # If DB doesn't exist yet, get_connection creates an empty file — detect that.
+
     if not db_path.exists():
         raise RuntimeError(
             f"Database not found at {db_path}. Run `python3 -m pipeline.ingest` first."
         )
     conn = sqlite3.connect(db_path)
     try:
-        # Check that the raw_articles table exists.
         tables = conn.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name='raw_articles'"
         ).fetchone()
@@ -77,191 +94,38 @@ def _check_ingest_ran(db_path: Path) -> None:
         conn.close()
 
 
-def _assemble_with_tracking(
-    db_path: Path,
-    adapter,
-) -> dict[str, Any]:
-    """Assemble edition with status tracking before each LLM section.
-
-    Calls status.set_step() at the start of each section so the status file
-    always shows exactly where the pipeline is or where it died.
-    """
-    from pipeline.generators.biztech import generate_biztech
-    from pipeline.generators.assembler import _prefetch_biztech_rows, _prefetch_news_rows
-
-    # --- TLDR ----------------------------------------------------------
-    set_step("tldr")
-    news_rows = _prefetch_news_rows(db_path)
-    tldr = generate_tldr(news_rows, adapter=adapter)
-
-    # --- News sections (one step per region) ----------------------------
-    # Each region is a separate LLM call so the status file accurately
-    # reflects which region is currently being generated.
-    news_sections = {}
-    for region in ["bangalore", "karnataka", "india", "us", "world"]:
-        set_step(f"news_{region}")
-        news_sections[region] = generate_news_region(
-            news_rows.get(region, []),
-            region=region,
-            adapter=adapter,
-        )
-
-    # --- Biz/Tech ------------------------------------------------------
-    set_step("biztech")
-    biztech_rows, indices = _prefetch_biztech_rows(db_path)
-    biztech = generate_biztech(biztech_rows, indices, adapter=adapter)
-
-    # --- Growth --------------------------------------------------------
-    set_step("growth")
-    growth = generate_growth_section(adapter=adapter)
-
-    # --- Knowledge ------------------------------------------------------
-    set_step("knowledge")
-    knowledge = generate_knowledge_section(adapter=adapter)
-
-    # --- Fun -----------------------------------------------------------
-    set_step("fun")
-    fun = generate_fun_section(adapter=adapter)
-
-    return {
-        "tldr": tldr,
-        "news": news_sections,
-        "biztech": biztech,
-        "growth": growth,
-        "knowledge": knowledge,
-        "fun": fun,
-    }
-
-
-def _commit_edition_json(edition: dict[str, Any]) -> str | None:
-    """Commit edition.json to git and push.
-
-    Returns the git commit hash on success, or None on failure.
-    Does NOT run if there are no changes.
-    """
-    import subprocess
+def _alert_admin(reason: str, edition: dict[str, Any] | None = None) -> None:
+    """Send an admin alert email for catastrophic pipeline failures."""
     try:
-        result = subprocess.run(
-            ["git", "add", "data/edition.json", "web/public/data/edition.json"],
-            capture_output=True,
-            text=True,
-        )
-        diff = subprocess.run(
-            ["git", "diff", "--staged", "--name-only"],
-            capture_output=True,
-            text=True,
-        )
-        if not diff.stdout.strip():
-            LOGGER.info("No changes to commit for edition.json")
-            return None
-        subprocess.run(
-            ["git", "commit", "-m", f"docs: update edition.json to {edition.get('date', 'unknown')} [skip ci]"],
-            capture_output=True,
-            text=True,
-        )
-        hash_ = subprocess.run(
-            ["git", "rev-parse", "--short", "HEAD"],
-            capture_output=True,
-            text=True,
-        ).stdout.strip()
-        subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True)
-        LOGGER.info("Edition JSON committed: %s", hash_)
-        return hash_
-    except Exception as exc:
-        LOGGER.warning("Git commit failed (non-fatal): %s", exc)
-        return None
-
-
-def run(
-    *,
-    db_path: Path = DEFAULT_DB_PATH,
-    deploy: bool = False,
-    send_email: bool = True,
-) -> dict[str, Any]:
-    """Execute the generate stage and return a result dict.
-
-    On success: writes edition.json, triggers git commit, triggers email
-    (if send_email=True), and marks status as completed.
-
-    On failure: marks status as failed and re-raises.
-    """
-    load_dotenv()
-    run_id = datetime.now(timezone.utc).isoformat()
-
-    try:
-        # Announce generate start.
-        start(stage="generate", steps=GENERATE_STEPS, run_id=run_id)
-
-        # Verify ingest ran first (raises if DB is empty).
-        _check_ingest_ran(db_path)
-
-        # Run all LLM generators with per-section status tracking.
-        adapter = build_adapter(ModelConfig())
-        sections = _assemble_with_tracking(db_path, adapter)
-
-        # Assemble the final edition payload.
-        edition: dict[str, Any] = {
-            "date": datetime.now(timezone.utc).date().isoformat(),
-            "edition_number": 1,
-            "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-            "pipeline_stats": {
-                "articles_fetched": _count_articles(db_path),
-                "full_text_success_rate": _full_text_rate(db_path),
-                "total_time_seconds": 0,
-                "token_usage": {},
-            },
-            **sections,
-        }
-
-        # Write edition.json to both data/ and web/public/data/.
-        DEFAULT_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
-        DEFAULT_EDITION_PATH.write_text(json.dumps(edition, indent=2))
-        WEB_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
-        WEB_EDITION_PATH.write_text(json.dumps(edition, indent=2))
-        LOGGER.info("edition.json written to %s and %s", DEFAULT_EDITION_PATH, WEB_EDITION_PATH)
-
-        # Commit to git (only on success).
-        commit_hash = _commit_edition_json(edition)
-
-        # Deploy to Vercel if requested (before email — email needs the URL).
-        deployed_url: str | None = None
-        if deploy:
-            LOGGER.info("Triggering Vercel deploy...")
-            deployed_url = Deployer().deploy()
-            LOGGER.info("Deployed to: %s", deployed_url)
-            edition["_live_url"] = deployed_url
-            # Re-write with the URL embedded.
-            DEFAULT_EDITION_PATH.write_text(json.dumps(edition, indent=2))
-            WEB_EDITION_PATH.write_text(json.dumps(edition, indent=2))
-
-        # Write email preview.
         publisher = EmailPublisher()
-        preview_path = publisher.write_preview(edition, DEFAULT_EMAIL_PREVIEW_PATH)
+        from pipeline.publishers.emailer import EmailConfig
 
-        # Send email — ONLY on full success.
-        email_sent = False
-        if send_email:
-            publisher.send(edition)
-            email_sent = True
-            LOGGER.info("Email sent.")
+        alert_config = EmailConfig(
+            recipient=ADMIN_EMAIL,
+            edition_url="https://web-sand-two-88.vercel.app",
+        )
+        alert_publisher = EmailPublisher(config=alert_config)
 
-        # Mark pipeline as completed.
-        complete()
+        subject = f"[ALERT] News To Me pipeline failed: {reason}"
+        text = (
+            f"Pipeline aborted on {datetime.now(timezone.utc).date().isoformat()}.\n"
+            f"Reason: {reason}\n"
+            f"Check data/broken_editions/ for details.\n"
+            f"Edition: {edition.get('date', 'unknown') if edition else 'N/A'}"
+        )
+        # Use raw AgentMail client for admin alert (no AgentMail object needed — use send directly)
+        from agentmail import AgentMail
 
-        result = {
-            "edition_path": str(DEFAULT_EDITION_PATH),
-            "email_preview_path": str(preview_path),
-            "email_sent": email_sent,
-            "deployed_url": deployed_url,
-            "commit_hash": commit_hash,
-        }
-        LOGGER.info("Generate stage complete: %s", result)
-        return result
-
+        client = AgentMail(api_key=os.getenv("AGENTMAIL_API_KEY", ""))
+        client.inboxes.messages.send(
+            inbox_id=alert_config.inbox_id,
+            to=ADMIN_EMAIL,
+            subject=subject,
+            text=text,
+        )
+        LOGGER.info("Admin alert sent to %s", ADMIN_EMAIL)
     except Exception as exc:
-        LOGGER.exception("Generate stage failed: %s", exc)
-        fail(str(exc))
-        raise
+        LOGGER.error("Failed to send admin alert: %s", exc)
 
 
 def _count_articles(db_path: Path) -> int:
@@ -284,18 +148,223 @@ def _full_text_rate(db_path: Path) -> float:
     return success / total
 
 
+def run(
+    *,
+    db_path: Path = DEFAULT_DB_PATH,
+    deploy: bool = False,
+    send_email: bool = True,
+) -> dict[str, Any]:
+    """Execute the generate stage and return a result dict.
+
+    Ordering (email-last):
+      1. Validate DB has data
+      2. Run all LLM generators
+      3. Validate edition schema
+      4. Write edition.json
+      5. Deploy to Vercel (if --deploy)
+      6. Wait 2 min for Vercel rebuild
+      7. Send email ONLY if all above succeeded
+
+    On failure: marks status as failed, logs broken edition, alerts admin, re-raises.
+    """
+    load_dotenv()
+    run_id = datetime.now(timezone.utc).isoformat()
+    stage_failed = False
+    failure_reason = ""
+
+    try:
+        start(stage="generate", steps=GENERATE_STEPS, run_id=run_id)
+        _check_ingest_ran(db_path)
+
+        adapter = build_adapter(ModelConfig())
+        sections = _run_all_sections(db_path, adapter)
+        edition = _build_edition(db_path, sections)
+        version_hash = _build_version_hash(edition)
+        edition["_version_hash"] = version_hash
+
+        # Validate before writing
+        if not validate_and_log(edition, DEFAULT_EDITION_PATH.parent):
+            broken_path = DEFAULT_EDITION_PATH.parent / "broken_editions"
+            raise RuntimeError(
+                f"Edition validation failed. Broken edition written to {broken_path}. "
+                "Fix pipeline and re-run. Email not sent."
+            )
+
+        # Write edition.json
+        _write_edition(edition)
+        LOGGER.info("edition.json written")
+
+        # Deploy if requested
+        deployed_url: str | None = None
+        if deploy:
+            deployed_url = Deployer().deploy()
+            LOGGER.info("Deployed to: %s", deployed_url)
+            # Re-write with the URL embedded after deploy
+            edition["_live_url"] = deployed_url
+            _write_edition(edition)
+
+            # Wait for Vercel rebuild (~2 min)
+            LOGGER.info("Waiting %ds for Vercel rebuild...", POST_DEPLOY_WAIT_SECONDS)
+            time.sleep(POST_DEPLOY_WAIT_SECONDS)
+
+        # Send email — ONLY on full success
+        email_sent = False
+        if send_email:
+            publisher = EmailPublisher()
+            preview_path = publisher.write_preview(edition, DEFAULT_EMAIL_PREVIEW_PATH)
+            publisher.send(edition)
+            email_sent = True
+            LOGGER.info("Email sent to %s", publisher.config.recipient)
+
+        complete()
+
+        result = {
+            "edition_path": str(DEFAULT_EDITION_PATH),
+            "email_preview_path": str(preview_path),
+            "email_sent": email_sent,
+            "deployed_url": deployed_url,
+            "version_hash": version_hash,
+        }
+        LOGGER.info("Generate stage complete: %s", result)
+        return result
+
+    except Exception as exc:
+        stage_failed = True
+        failure_reason = str(exc)
+        LOGGER.exception("Generate stage failed: %s", exc)
+        fail(failure_reason)
+
+        # Alert admin on catastrophic failure
+        _alert_admin(failure_reason)
+        raise
+
+
+def _run_all_sections(db_path: Path, adapter) -> dict[str, Any]:
+    """Run all LLM section generators with graceful degradation.
+
+    If a section fails after retries, logs ERROR, inserts sentinel value,
+    and continues to the next section. If ALL sections fail, raises.
+    """
+    from pipeline.generators.biztech import generate_biztech
+    from pipeline.generators.assembler import _prefetch_biztech_rows, _prefetch_news_rows
+
+    results: dict[str, Any] = {}
+    failed_sections: list[str] = []
+
+    # News regions first — TLDR needs enriched articles (headline/summary)
+    news_rows = _prefetch_news_rows(db_path)
+    news_sections: dict[str, list] = {}
+    for region in ["bangalore", "karnataka", "india", "us", "world"]:
+        set_step(f"news_{region}")
+        try:
+            news_sections[region] = generate_news_region(
+                news_rows.get(region, []),
+                region=region,
+                adapter=adapter,
+            )
+        except Exception as exc:
+            LOGGER.error("News region '%s' failed: %s", region, exc)
+            news_sections[region] = [{
+                "_error": "generation_failed",
+                "failed_section": f"news_{region}",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "message": str(exc),
+            }]
+            failed_sections.append(f"news_{region}")
+    results["news"] = news_sections
+
+    # TLDR — called AFTER news so enriched articles (headline/summary) are available
+    set_step("tldr")
+    try:
+        results["tldr"] = generate_tldr(news_sections, adapter=adapter)
+    except Exception as exc:
+        LOGGER.error("TLDR generation failed: %s", exc)
+        results["tldr"] = {
+            "_error": "generation_failed",
+            "failed_section": "tldr",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "message": str(exc),
+        }
+        failed_sections.append("tldr")
+
+    # Biz/Tech
+    set_step("biztech")
+    try:
+        biztech_rows, indices = _prefetch_biztech_rows(db_path)
+        results["biztech"] = generate_biztech(biztech_rows, indices, adapter=adapter)
+    except Exception as exc:
+        LOGGER.error("BizTech generation failed: %s", exc)
+        results["biztech"] = {"_error": "generation_failed", "failed_section": "biztech", "timestamp": datetime.now(timezone.utc).isoformat(), "message": str(exc), "articles": []}
+        failed_sections.append("biztech")
+
+    # Growth
+    set_step("growth")
+    try:
+        results["growth"] = generate_growth_section(adapter=adapter)
+    except Exception as exc:
+        LOGGER.error("Growth generation failed: %s", exc)
+        results["growth"] = {"_error": "generation_failed", "failed_section": "growth", "timestamp": datetime.now(timezone.utc).isoformat(), "message": str(exc), "title": "Generation failed", "body": ""}
+        failed_sections.append("growth")
+
+    # Knowledge
+    set_step("knowledge")
+    try:
+        results["knowledge"] = generate_knowledge_section(adapter=adapter)
+    except Exception as exc:
+        LOGGER.error("Knowledge generation failed: %s", exc)
+        results["knowledge"] = {"_error": "generation_failed", "failed_section": "knowledge", "timestamp": datetime.now(timezone.utc).isoformat(), "message": str(exc), "title": "Generation failed", "body": ""}
+        failed_sections.append("knowledge")
+
+    # Fun
+    set_step("fun")
+    try:
+        results["fun"] = generate_fun_section(adapter=adapter)
+    except Exception as exc:
+        LOGGER.error("Fun generation failed: %s", exc)
+        results["fun"] = {"_error": "generation_failed", "failed_section": "fun", "timestamp": datetime.now(timezone.utc).isoformat(), "message": str(exc), "riddle": {}, "sudoku": {}, "chess": {}, "logic_puzzle": {}, "previous_day_answers": {}}
+        failed_sections.append("fun")
+
+    # If every section failed, abort rather than ship a broken edition
+    all_sections = ["tldr", "news_bangalore", "news_karnataka", "news_india", "news_us", "news_world", "biztech", "growth", "knowledge", "fun"]
+    if all(s in failed_sections for s in all_sections):
+        raise RuntimeError(
+            f"All {len(all_sections)} section generators failed: {failed_sections}. "
+            "Pipeline aborted. Check API keys and data before re-running."
+        )
+
+    return results
+
+
+def _build_edition(db_path: Path, sections: dict[str, Any]) -> dict[str, Any]:
+    """Build the final edition dict from sections + metadata."""
+    return {
+        "date": datetime.now(timezone.utc).date().isoformat(),
+        "edition_number": 1,
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "pipeline_stats": {
+            "articles_fetched": _count_articles(db_path),
+            "full_text_success_rate": _full_text_rate(db_path),
+            "total_time_seconds": 0,
+            "token_usage": {},
+        },
+        **sections,
+    }
+
+
+def _write_edition(edition: dict[str, Any]) -> None:
+    """Write edition.json to both data/ and web/public/data/."""
+    DEFAULT_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DEFAULT_EDITION_PATH.write_text(json.dumps(edition, indent=2))
+    WEB_EDITION_PATH.parent.mkdir(parents=True, exist_ok=True)
+    WEB_EDITION_PATH.write_text(json.dumps(edition, indent=2))
+
+
 def main() -> None:
     """CLI entry point for the generate stage."""
     parser = argparse.ArgumentParser(description="News To Me — generate stage")
-    parser.add_argument(
-        "--deploy", action="store_true", help="Deploy to Vercel after assembling"
-    )
-    parser.add_argument(
-        "--no-email", action="store_true", help="Skip sending email (dev/debug)"
-    )
-    parser.add_argument(
-        "--verbose", "-v", action="store_true", help="Enable DEBUG logging"
-    )
+    parser.add_argument("--deploy", action="store_true", help="Deploy to Vercel after assembling")
+    parser.add_argument("--no-email", action="store_true", help="Skip sending email (dev/debug)")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable DEBUG logging")
     args = parser.parse_args()
 
     logging.basicConfig(
