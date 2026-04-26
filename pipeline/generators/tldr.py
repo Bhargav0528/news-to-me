@@ -10,7 +10,7 @@ from pipeline.generators.engine import build_adapter, ModelConfig
 def generate_tldr(news_sections: dict[str, list[dict[str, Any]]], adapter=None) -> list[dict[str, Any]]:
     """Build the cross-section TLDR list using LLM for distillation."""
     adapter = adapter or build_adapter(ModelConfig())
-    
+
     # Collect lead articles from each region
     items = []
     region_order = ['bangalore', 'karnataka', 'india', 'us', 'world']
@@ -19,26 +19,38 @@ def generate_tldr(news_sections: dict[str, list[dict[str, Any]]], adapter=None) 
         if not articles:
             continue
         lead = articles[0]
+
+        # Handle sqlite3.Row (has keys() but not .get()) and plain dict
+        if hasattr(lead, 'get'):
+            headline = lead.get('headline', '')
+            summary = lead.get('summary', '')
+        elif hasattr(lead, 'keys'):
+            d = dict(lead)
+            headline = d.get('headline', '')
+            summary = d.get('summary', '')
+        else:
+            headline = summary = ''
+
         items.append({
-            'headline': lead.get('headline', ''),
-            'summary': lead.get('summary', ''),
+            'headline': headline,
+            'summary': summary,
             'region': region,
-            'category': lead.get('category', 'top'),
+            'category': 'top',
         })
         if len(items) >= 7:
             break
-    
+
     if not items:
         return []
-    
+
     # Use LLM to pick top 5-7 and write 2-3 line summaries
     system_prompt = """You are a news editor creating a TLDR section for a personal daily newspaper.
 Select the 5-7 most important stories across all regions and write 2-3 sentence summaries.
 Prioritize stories that matter to a 28-year-old South Indian developer in California.
 Return a JSON array of objects with: headline (max 15 words), summary (2-3 sentences), region, category."""
-    
+
     user = f"Stories:\n{items}"
-    
+
     try:
         result = adapter.generate_json(system_prompt, user)
         tldr_list = result if isinstance(result, list) else result.get('tldr', result.get('stories', items))

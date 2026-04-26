@@ -251,17 +251,7 @@ def _run_all_sections(db_path: Path, adapter) -> dict[str, Any]:
     results: dict[str, Any] = {}
     failed_sections: list[str] = []
 
-    # TLDR
-    set_step("tldr")
-    try:
-        news_rows = _prefetch_news_rows(db_path)
-        results["tldr"] = generate_tldr(news_rows, adapter=adapter)
-    except Exception as exc:
-        LOGGER.error("TLDR generation failed: %s", exc)
-        results["tldr"] = {"_error": "generation_failed", "failed_section": "tldr", "timestamp": datetime.now(timezone.utc).isoformat(), "message": str(exc)}
-        failed_sections.append("tldr")
-
-    # News regions
+    # News regions first — TLDR needs enriched articles (headline/summary)
     news_rows = _prefetch_news_rows(db_path)
     news_sections: dict[str, list] = {}
     for region in ["bangalore", "karnataka", "india", "us", "world"]:
@@ -274,9 +264,28 @@ def _run_all_sections(db_path: Path, adapter) -> dict[str, Any]:
             )
         except Exception as exc:
             LOGGER.error("News region '%s' failed: %s", region, exc)
-            news_sections[region] = [{"_error": "generation_failed", "failed_section": f"news_{region}", "timestamp": datetime.now(timezone.utc).isoformat(), "message": str(exc)}]
+            news_sections[region] = [{
+                "_error": "generation_failed",
+                "failed_section": f"news_{region}",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "message": str(exc),
+            }]
             failed_sections.append(f"news_{region}")
     results["news"] = news_sections
+
+    # TLDR — called AFTER news so enriched articles (headline/summary) are available
+    set_step("tldr")
+    try:
+        results["tldr"] = generate_tldr(news_sections, adapter=adapter)
+    except Exception as exc:
+        LOGGER.error("TLDR generation failed: %s", exc)
+        results["tldr"] = {
+            "_error": "generation_failed",
+            "failed_section": "tldr",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "message": str(exc),
+        }
+        failed_sections.append("tldr")
 
     # Biz/Tech
     set_step("biztech")
