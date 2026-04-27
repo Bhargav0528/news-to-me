@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import json
+import logging
 from typing import Any
+
+LOGGER = logging.getLogger(__name__)
 
 from pipeline.generators.engine import build_adapter, ModelConfig
 
@@ -137,8 +140,16 @@ def generate_news_sections(news_rows: dict[str, list], adapter=None) -> dict[str
                 else llm_result.get("summaries", llm_result.get("articles", []))
             )
             if len(summaries) != len(rows):
+                LOGGER.warning(
+                    "news.%s: LLM returned %d summaries for %d rows — using fallback",
+                    region, len(summaries), len(rows)
+                )
                 summaries = _fallback_for_rows(rows)
-        except Exception:
+        except Exception as exc:
+            LOGGER.warning(
+                "news.%s: LLM call failed (%s: %s) — using fallback for all %d rows",
+                region, type(exc).__name__, exc, len(rows)
+            )
             summaries = _fallback_for_rows(rows)
 
         # Attach headline and source_url from original row
