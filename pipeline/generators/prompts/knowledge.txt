@@ -6,4 +6,14 @@ Pick a fascinating topic and write 300-500 words explaining it. Rules:
 - Include at least one surprising fact
 - End with a "Now you know" connection to everyday life
 
-Return JSON with: title, body (markdown), category (one of: history, science, geography, math, literature, economics, philosophy), surprising_fact, everyday_connection.
+Output plain text only. Do NOT use any markdown syntax in any text field, including:
+- Headings: NO `#`, `##`, `###`, etc.
+- Bold/italic: NO `**bold**`, `__bold__`, `*italic*`, `_italic_`
+- Lists: NO `- item`, `* item`, `1. item`
+- Blockquotes: NO `> quote`
+- Code blocks: NO backticks of any kind
+- Links: NO `[text](url)` syntax — write the URL as plain text if needed
+
+The body should read like flowing prose. Use paragraph breaks (blank lines) for structure only. Do NOT use bullet lists or numbered lists in any field.
+
+Return JSON with: title (plain text), body (plain text, NO markdown), category (one of: history, science, geography, math, literature, economics, philosophy), surprising_fact (plain text, NO markdown), everyday_connection (plain text, NO markdown).
