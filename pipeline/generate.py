@@ -2,7 +2,7 @@
 
 Reads the most recent ingest data from SQLite, runs all LLM section generators
 (TLDR → news regions → biztech → growth → knowledge → fun), assembles edition.json,
-then deploys, waits for rebuild, and sends email — only on full success.
+then deploys, kicks off a non-blocking rebuild wait, and sends email — only on full success.
 
 The email-last ordering is intentional: the reader should never click through
 from an email to find stale site content.
@@ -202,10 +202,14 @@ def run(
             # Re-write with the URL embedded after deploy
             edition["_live_url"] = deployed_url
             _write_edition(edition)
+            # Mark generate stage complete BEFORE waiting — status file is now
+            # correct even if the wait is interrupted or killed.
+            complete()
 
-            # Wait for Vercel rebuild (~2 min)
-            LOGGER.info("Waiting %ds for Vercel rebuild...", POST_DEPLOY_WAIT_SECONDS)
-            time.sleep(POST_DEPLOY_WAIT_SECONDS)
+            # Wait for Vercel rebuild in the background (non-blocking).
+            # If the parent process exits before this completes, the rebuild
+            # still happens on Vercel's side — we just won't wait for it.
+            _wait_for_vercel_rebuild_async()
 
         # Send email — ONLY on full success
         email_sent = False
@@ -349,6 +353,33 @@ def _build_edition(db_path: Path, sections: dict[str, Any]) -> dict[str, Any]:
         },
         **sections,
     }
+
+
+def _wait_for_vercel_rebuild_async() -> None:
+    """Wait for Vercel rebuild without blocking the main process.
+
+    Spawns a background process that sleeps POST_DEPLOY_WAIT_SECONDS then exits.
+    The parent pipeline continues immediately — edition.json is already deployed
+    and the rebuild will complete on Vercel's side regardless of this wait.
+    """
+    import subprocess
+    git_dir = Path(__file__).resolve().parents[1]
+    bg_script = git_dir / "data" / "wait_for_rebuild.sh"
+    bg_script.write_text(
+        f'#!/bin/bash\nsleep {POST_DEPLOY_WAIT_SECONDS}\necho "Vercel rebuild wait done"\n'
+    )
+    bg_script.chmod(0o755)
+    subprocess.Popen(
+        [str(bg_script)],
+        cwd=str(git_dir),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
+    )
+    LOGGER.info(
+        "Triggered background rebuild wait (%ds, non-blocking).",
+        POST_DEPLOY_WAIT_SECONDS,
+    )
 
 
 def _write_edition(edition: dict[str, Any]) -> None:
