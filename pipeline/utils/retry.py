@@ -63,7 +63,7 @@ def _retry(
 
 
 def llm_retry(func: Callable[..., T]) -> T:
-    """Retry decorator for LLM API calls. 3 attempts, exponential backoff starting at 2s.
+    """Retry decorator for LLM API calls. 2 attempts, exponential backoff starting at 1s.
 
     Retries on: Exception (all LLM errors).
     Logs at WARN on retry, ERROR on final failure.
@@ -72,8 +72,8 @@ def llm_retry(func: Callable[..., T]) -> T:
     def wrapper(*args: Any, **kwargs: Any) -> T:
         return _retry(
             lambda: func(*args, **kwargs),
-            max_attempts=3,
-            base_delay=2.0,
+            max_attempts=2,
+            base_delay=1.0,
             exponential=True,
             retry_on=(Exception,),
             logger=LOGGER,

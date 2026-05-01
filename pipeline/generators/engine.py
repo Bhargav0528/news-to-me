@@ -44,7 +44,7 @@ class OpenRouterAdapter:
         if not config.openrouter_api_key:
             raise RuntimeError("OPENROUTER_API_KEY is required for OpenRouter runs")
 
-    def generate_json(self, system_prompt: str, user_content: str, max_retries: int = 3) -> dict[str, Any]:
+    def generate_json(self, system_prompt: str, user_content: str, max_retries: int = 2) -> dict[str, Any]:
         """Call OpenRouter and parse the JSON response."""
         last_error: Exception | None = None
         for attempt in range(max_retries):
@@ -64,7 +64,7 @@ class OpenRouterAdapter:
                         "temperature": 0.1,
                         "max_tokens": 8000,
                     },
-                    timeout=90,
+                    timeout=30,
                 )
                 response.raise_for_status()
                 payload = response.json()
@@ -83,7 +83,7 @@ class OpenRouterAdapter:
                         lines = lines[:-1]
                     text = "\n".join(lines)
                 return json.loads(text)
-            except (requests.exceptions.HTTPError, json.JSONDecodeError, RuntimeError) as e:
+            except (requests.exceptions.RequestException, json.JSONDecodeError, RuntimeError) as e:
                 last_error = e
                 if attempt < max_retries - 1:
                     time.sleep(2 ** attempt)
