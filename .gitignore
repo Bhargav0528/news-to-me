@@ -7,3 +7,5 @@ __pycache__/
 
 data/*.db
 .vercel
+data/pipeline_status.json
+data/broken_editions/

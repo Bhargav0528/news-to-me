@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline.generators.engine import build_adapter, ModelConfig
+from pipeline.utils.validation import strip_markdown
 
 
 def _load_prompt(path: Path) -> str:
@@ -53,8 +54,8 @@ Articles from today's edition:
 
 Return JSON with:
 - title: string, engaging title
-- body: markdown, 400-600 words, practical and actionable
-- key_takeaways: list of 3 specific takeaways
+- body: plain text (NO markdown), 400-600 words, practical and actionable
+- key_takeaways: list of 3 specific takeaways, plain text only
 - further_reading: list of 2-3 resources with title and url fields
 - topic_category: string
 """
@@ -62,6 +63,9 @@ Return JSON with:
         result = adapter.generate_json(prompt, user)
         if "key_takeaways" in result and len(result["key_takeaways"]) > 3:
             result["key_takeaways"] = result["key_takeaways"][:3]
+        # Sanitize markdown from all text fields
+        result["body"] = strip_markdown(result.get("body", ""))
+        result["key_takeaways"] = [strip_markdown(k) for k in result.get("key_takeaways", [])]
         return result
     except Exception as exc:
         import logging
@@ -90,13 +94,17 @@ def generate_knowledge_section(adapter=None) -> dict[str, Any]:
 
 Return JSON with:
 - title: string, engaging title
-- body: markdown, 300-500 words, conversational tone
+- body: plain text (NO markdown), 300-500 words, conversational tone
 - category: one of history, science, geography, math, literature, economics, philosophy
-- surprising_fact: string, one fact that surprises people
-- everyday_connection: string, how this connects to daily life
+- surprising_fact: string, one fact that surprises people, plain text only
+- everyday_connection: string, how this connects to daily life, plain text only
 """
     try:
-        return adapter.generate_json(prompt, user)
+        result = adapter.generate_json(prompt, user)
+        result["body"] = strip_markdown(result.get("body", ""))
+        result["surprising_fact"] = strip_markdown(result.get("surprising_fact", ""))
+        result["everyday_connection"] = strip_markdown(result.get("everyday_connection", ""))
+        return result
     except Exception as exc:
         import logging
         logging.warning(f"Knowledge section LLM failed ({exc}), using fallback")

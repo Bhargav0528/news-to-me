@@ -8,4 +8,14 @@ You are a life coach and mentor writing for a 28-year-old professional with thes
 
 Write a 400-600 word article that is practical and actionable (not vague inspiration), acknowledges financial constraints without being condescending, and is culturally aware (Indian family dynamics + American professional life). Include 2-3 specific next steps the reader can take today.
 
-Return JSON with: title, body (markdown), key_takeaways (array of 3), further_reading (array of objects with title and url), topic_category.
+Output plain text only. Do NOT use any markdown syntax in any text field, including:
+- Headings: NO `#`, `##`, `###`, etc.
+- Bold/italic: NO `**bold**`, `__bold__`, `*italic*`, `_italic_`
+- Lists: NO `- item`, `* item`, `1. item`
+- Blockquotes: NO `> quote`
+- Code blocks: NO backticks of any kind
+- Links: NO `[text](url)` syntax — write the URL as plain text if needed
+
+The body should read like a magazine article in flowing prose. Use paragraph breaks (blank lines between paragraphs) for structure only. Do NOT use bullet lists or numbered lists in the body or key_takeaways.
+
+Return JSON with: title, body (plain text, NO markdown), key_takeaways (array of 3 strings, plain text only), further_reading (array of objects with title and url), topic_category.

@@ -8,14 +8,54 @@ is VALID and not treated as a failure. The pipeline continues even if
 one or more sections fail — only ALL sections failing is catastrophic.
 
 Usage:
-    from pipeline.utils.validation import validate_edition
-    
+    from pipeline.utils.validation import validate_edition, strip_markdown
+
     ok, errors = validate_edition(edition)
     if not ok:
         raise RuntimeError(f"Edition validation failed: {errors}")
 """
 
 from __future__ import annotations
+
+import re
+
+
+def strip_markdown(text: str) -> str:
+    """Strip all common markdown syntax from text.
+
+    Idempotent — safe to run multiple times. Patterns are applied in
+    dependency order (e.g. bold/italic before individual markers).
+
+    Covers: headings (#), bold (**bold**), italic, inline code,
+    bullet lists, numbered lists, blockquotes, link syntax.
+    """
+    if not text:
+        return text
+
+    # Headings: strip leading # and whitespace
+    text = re.sub(r"^#{1,6}\s+", "", text, flags=re.MULTILINE)
+    # Bold **text** → text
+    text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
+    # Bold __text__ → text
+    text = re.sub(r"__([^_]+)__", r"\1", text)
+    # Italic *text* → text (not adjacent to other asterisks)
+    text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"\1", text)
+    # Italic _text_ → text (not adjacent to underscores)
+    text = re.sub(r"(?<!_)_([^_]+)_(?!_)", r"\1", text)
+    # Inline code `code` → code
+    text = re.sub(r"`([^`]+)`", r"\1", text)
+    # Bullet list markers at start of line
+    text = re.sub(r"^[-*+]\s+", "", text, flags=re.MULTILINE)
+    # Numbered list markers at start of line
+    text = re.sub(r"^\d+\.\s+", "", text, flags=re.MULTILINE)
+    # Blockquote markers
+    text = re.sub(r"^>\s?", "", text, flags=re.MULTILINE)
+    # Link syntax [text](url) → url (strip display text)
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r"\2", text)
+    # Collapse multiple blank lines into one
+    text = re.sub(r"\n{3,}", "\n\n", text)
+
+    return text.strip()
 
 import logging
 import re
