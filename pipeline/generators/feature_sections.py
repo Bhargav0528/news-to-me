@@ -111,6 +111,16 @@ Return JSON with:
         return _knowledge_fallback()
 
 
+def _chess_fallback() -> dict[str, str]:
+    """Return a hardcoded chess puzzle when Lichess API is unavailable."""
+    return {
+        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+        "description": "White to move. Classic scholar's mate setup — can you finish it in one?",
+        "best_move": "Bxf7#",
+        "explanation": "1. Bxf7# is checkmate: the bishop sacrifices on f7, delivering checkmate. The black king cannot capture the bishop (queen on e8 blocks), cannot move to any safe square, and no other piece can block or capture it.",
+    }
+
+
 def _fun_fallback(sudoku_grid, sudoku_solution, chess_puzzle) -> dict[str, Any]:
     """Fallback when LLM fails for fun section."""
     return {
@@ -132,12 +142,14 @@ def _fun_fallback(sudoku_grid, sudoku_solution, chess_puzzle) -> dict[str, Any]:
 def generate_fun_section(adapter=None) -> dict[str, Any]:
     """Build the fun section via LLM generation."""
     adapter = adapter or build_adapter(ModelConfig())
-    prompt = _load_prompt(PROMPT_DIR / 'fun.txt')
+    prompt_template = _load_prompt(PROMPT_DIR / 'fun.txt')
+    import datetime
+    prompt = prompt_template.format(date=datetime.date.today().isoformat())
 
     # Build sudoku using py-sudoku (not LLM)
     sudoku_grid, sudoku_solution = _generate_sudoku()
 
-    # Get chess puzzle from hardcoded set (not LLM)
+    # Get chess puzzle from Lichess API (not LLM)
     chess_puzzle = _get_chess_puzzle()
 
     user = f"""Return JSON with:
@@ -193,51 +205,74 @@ def _get_recent_article_context() -> list[dict[str, str]]:
 
 
 def _generate_sudoku() -> tuple[list[list[int]], list[list[int]]]:
-    """Generate a valid sudoku puzzle and solution using py-sudoku."""
+    """Generate a valid sudoku puzzle and solution using py-sudoku, seeded by today's date."""
+    import datetime
     try:
         from sudoku import Sudoku
-        board = Sudoku(3, puzzle=0.5, seed=42).board
+        seed = int(datetime.date.today().strftime("%Y%m%d"))
+        board = Sudoku(3, puzzle=0.5, seed=seed).board
         solver = Sudoku(3)
         solution = solver.solve(board)
         grid = [[int(c) if c else 0 for c in row] for row in board]
         sol_grid = [[int(c) if c else 0 for c in row] for row in solution.board]
         return grid, sol_grid
     except Exception:
-        # Fallback: return a known valid puzzle
-        puzzle = [
-            [5, 3, 0, 0, 7, 0, 0, 0, 0],
-            [6, 0, 0, 1, 9, 5, 0, 0, 0],
-            [0, 9, 8, 0, 0, 0, 0, 6, 0],
-            [8, 0, 0, 0, 6, 0, 0, 0, 3],
-            [4, 0, 0, 8, 0, 3, 0, 0, 1],
-            [7, 0, 0, 0, 2, 0, 0, 0, 6],
-            [0, 6, 0, 0, 0, 0, 2, 8, 0],
-            [0, 0, 0, 4, 1, 9, 0, 0, 5],
-            [0, 0, 0, 0, 8, 0, 0, 7, 9],
+        # Fallback: date-derived hardcoded puzzle as last resort
+        import datetime, random
+        day_val = int(datetime.date.today().strftime("%Y%m%d")) % 3
+        solutions = [
+            [[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]],
+            [[1,2,3,4,5,6,7,8,9],[4,5,6,7,8,9,1,2,3],[7,8,9,1,2,3,4,5,6],[2,3,4,5,6,7,8,9,1],[5,6,7,8,9,1,2,3,4],[8,9,1,2,3,4,5,6,7],[3,4,5,6,7,8,9,1,2],[6,7,8,9,1,2,3,4,5],[9,1,2,3,4,5,6,7,8]],
+            [[9,8,7,6,5,4,3,2,1],[6,5,4,3,2,1,9,8,7],[3,2,1,9,8,7,6,5,4],[8,9,2,1,7,3,4,5,6],[1,7,3,2,4,5,6,9,8],[5,4,6,8,9,2,7,1,3],[2,3,5,7,1,6,8,4,9],[7,6,8,4,3,9,1,5,2],[4,1,9,5,6,8,2,3,7]],
         ]
-        solution = [
-            [5, 3, 4, 6, 7, 8, 9, 1, 2],
-            [6, 7, 2, 1, 9, 5, 3, 4, 8],
-            [1, 9, 8, 3, 4, 2, 5, 6, 7],
-            [8, 5, 9, 7, 6, 1, 4, 2, 3],
-            [4, 2, 6, 8, 5, 3, 7, 9, 1],
-            [7, 1, 3, 9, 2, 4, 8, 5, 6],
-            [9, 6, 1, 5, 3, 7, 2, 8, 4],
-            [2, 8, 7, 4, 1, 9, 6, 3, 5],
-            [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ]
+        solution = solutions[day_val]
+        puzzle = [row[:] for row in solution]
+        random.seed(int(datetime.date.today().strftime("%Y%m%d")))
+        blanks = 0
+        while blanks < 40:
+            r, c = random.randint(0, 8), random.randint(0, 8)
+            if puzzle[r][c] != 0:
+                puzzle[r][c] = 0
+                blanks += 1
         return puzzle, solution
 
 
 def _get_chess_puzzle() -> dict[str, str]:
-    """Return a hardcoded chess puzzle (not LLM-generated)."""
-    # Classic puzzle: White to mate in 2
-    return {
-        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
-        "description": "White to move. Find the best move.",
-        "best_move": "Bxf7#",
-        "explanation": "1. Bxf7# is checkmate: the bishop sacrifices on f7, delivering checkmate. The black king cannot capture the bishop (blocked by the queen on e8), cannot move anywhere safe, and no other piece can block or capture the bishop.",
-    }
+    """Fetch today's puzzle from Lichess daily puzzle API, with local fallback."""
+    import requests, logging
+    try:
+        resp = requests.get("https://lichess.org/api/puzzle/daily", timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        puzzle_fen = data.get("puzzle", {}).get("fen")
+        solution_moves = data.get("puzzle", {}).get("solution", [])
+        best_move_uci = solution_moves[0] if solution_moves else None
+        if not puzzle_fen or not best_move_uci:
+            raise ValueError("Missing FEN or solution in Lichess response")
+        import chess
+        board = chess.Board(puzzle_fen)
+        move = chess.Move.from_uci(best_move_uci)
+        best_move_san = board.san(move) if move in board.legal_moves else best_move_uci
+        rating = data.get("puzzle", {}).get("rating", 0)
+        themes = data.get("puzzle", {}).get("themes", [])
+        # Infer color from FEN (e.g. "w" = white to move)
+        fen_color = puzzle_fen.split()[1] if len(puzzle_fen.split()) > 1 else "w"
+        color = "Black" if fen_color == "b" else "White"
+        desc = f"{color} to move."
+        if rating:
+            desc += f" Rating: {rating}."
+        if themes:
+            desc += f" Themes: {', '.join(themes[:4])}."
+        # Build explanation
+        piece = board.piece_at(move.from_square)
+        captured = board.piece_at(move.to_square)
+        board.push(move)
+        result = "checkmate" if board.is_checkmate() else "check" if board.is_check() else "capture" if captured else "good move"
+        explanation = f"{piece.symbol().upper()} plays {best_move_san} — {result}."
+        return {"fen": puzzle_fen, "description": desc, "best_move": best_move_san, "explanation": explanation}
+    except Exception as exc:
+        logging.warning(f"Lichess puzzle fetch failed ({exc}), using fallback")
+        return _chess_fallback()
 
 
 # Expose for direct testing

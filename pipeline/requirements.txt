@@ -7,3 +7,4 @@ yfinance
 openai
 anthropic
 python-dotenv
+python-chess
